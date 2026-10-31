@@ -23,12 +23,13 @@ html { scrollbar-color: var(--primary) var(--background); }
 a { color: inherit; text-underline-offset: 5px; }
 a:focus-visible, button:focus-visible { outline: 3px solid var(--primary); outline-offset: 5px; }
 .shell { max-width: 1200px; margin: auto; padding: max(24px, env(safe-area-inset-top)) max(40px, env(safe-area-inset-right)) max(40px, env(safe-area-inset-bottom)) max(40px, env(safe-area-inset-left)); }
-.top-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); font-family: "Space Grotesk", Arial, sans-serif; }
+.top-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; font-family: "Space Grotesk", Arial, sans-serif; }
 .top-nav a { display: inline-flex; align-items: center; min-height: 48px; }
 .home-link { gap: 12px; font-size: 22px; font-weight: 700; letter-spacing: -.02em; text-decoration: none; }
 .home-link img { width: 56px; height: 56px; object-fit: contain; }
-.nav-label { font-size: 14px; color: var(--muted); }
 header { padding: 56px 0 32px; }
+.home-header { text-align: center; }
+.home-header h1 { margin: 0 auto; max-width: none; }
 h1, h2, h3 { font-family: "Space Grotesk", Arial, sans-serif; }
 h1 { font-size: 60px; line-height: 1.13; font-weight: 700; letter-spacing: -.03em; margin: 0 0 20px; max-width: 15ch; text-wrap: balance; }
 #intro { max-width: 56ch; color: var(--muted); font-size: 18px; line-height: 28px; margin: 0; }
@@ -54,7 +55,8 @@ input::-webkit-search-cancel-button { -webkit-appearance: none; }
 .directory p { color: var(--muted); font-size: 14px; line-height: 22px; margin: 0; }
 .directory img { width: 72px; height: 72px; object-fit: contain; flex-shrink: 0; }
 .directory a > div { min-width: 0; }
-.category-icon { width: 32px; height: 32px; flex-shrink: 0; color: var(--primary); }
+.category-card { --category-icon-size: calc(28px + 8px + 22px); gap: 24px; }
+.category-icon { width: var(--category-icon-size); height: var(--category-icon-size); flex-shrink: 0; color: var(--primary); }
 .arrow { margin-left: auto; flex-shrink: 0; width: 20px; height: 20px; }
 .category-icon svg, .arrow svg { display: block; width: 100%; height: 100%; }
 .empty-state { padding: 40px 24px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); }
