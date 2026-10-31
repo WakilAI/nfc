@@ -19,4 +19,4 @@ Exécutez `node check.cjs` depuis ce dossier ou `node check.cjs` à la racine. L
 
 ## Identité
 
-Fond bleu nuit, cyan électrique et traits diagonaux inspirés de la carte fournie. Le lettrage « pixel store » est typographique, sans image de logo détourée. La carte officielle fournie est reprise entière, sans recadrage, comme visuel de l'annuaire et favicon (`assets/pixel-store-card.webp`). Remplacez ce fichier par un logo officiel détouré lorsqu'il sera disponible.
+Fond bleu nuit, cyan électrique et traits diagonaux inspirés de la carte fournie. Le logo officiel fourni (`assets/pixel-store-logo.webp`, master dans `references/`) sert de visuel d'annuaire et de favicon. Le lettrage « pixel store » de la page reste typographique ; la carte promotionnelle fournie est conservée dans `references/` et n'est pas publiée.
