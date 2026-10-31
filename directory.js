@@ -17,7 +17,7 @@
     "computer-store": '<rect x="3" y="3" width="18" height="13" rx="2"/><path d="M8 21h8m-4-5v5"/>',
     "phone-store": '<rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4m-3 14h2"/>',
     "home-goods": '<path d="m3 10 9-7 9 7v11H3V10Zm6 11v-8h6v8"/>',
-    "travel-agency": '<path d="m3 10 7 2 5-8 3-1-3 10 5 4-1 2-6-2-4 5-2-1 2-6-7-3 1-2Z"/>',
+    "travel-agency": '<path d="M21 16v-2L13 9V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5L21 16Z" fill="currentColor" stroke="none"/>',
     "cosmetic-store": '<path d="M8 11h8v10H8zM9 11V6l6-3v8M8 17h8"/>',
     "shoes-store": '<path d="m4 4 5 2v5l4 3 7 2 1 5H3V10l1-6Zm-1 13h9m-2-7 3 1m0 1 2 1"/>',
     "dental-clinic": '<path d="M12 5C6-1 1 5 5 12c2 4 0 9 3 9 2 0 2-7 4-7s2 7 4 7c3 0 1-5 3-9 4-7-1-13-7-7Z"/>',
@@ -58,9 +58,7 @@
       const copy = document.createElement("div");
       copy.append(text("h3", item.name));
       if (showStores) {
-        const location = item.commune && item.wilaya ? `${item.commune}, ${item.wilaya}` : "Location to be confirmed";
-        copy.append(text("p", category ? location : categories.find(c => c.slug === item.category).name));
-        if (!category) copy.append(text("p", location));
+        if (!category) copy.append(text("p", categories.find(c => c.slug === item.category).name));
       } else {
         const count = stores.filter(store => store.category === item.slug).length;
         copy.append(text("p", `${count} store${count === 1 ? "" : "s"}`));

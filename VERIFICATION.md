@@ -1,5 +1,15 @@
 # Verification and release handoff
 
+## Orange layout and source organization — 2026-10-31
+
+- Homepage title is centered **NFC Store Links**. Removed its introduction, top directory label and navigation divider. Directory canvas is the requested Wakil Orange `#FF6B00`, with white cards and a white backing behind the supplied orange logo.
+- Category icons align with the name/count block, with a 58px slot and at least 24px horizontal spacing. Decorative arrows are omitted below 401px to preserve readable text and spacing. Travel Agency uses a recognizable filled airplane.
+- Store locations and their unused registry fields were removed at the user's request; this is no longer a release gate. Supplied Maps buttons inside individual store pages are unchanged.
+- All six store projects are grouped under `stores/<type>/<store>/`. Category landing pages remain at the top level. The preparation script maps source assets to the original public paths, keeping all store URLs and the legacy Sallon redirect stable.
+- Node/store/search/artifact checks passed. Chromium passed **108 viewport/route views**, including computed title centering, orange background, absent intro/divider/location, icon height/top alignment, minimum 24px gap, search, navigation, asset loading and legacy redirect. Fresh desktop, portrait, landscape and search screenshots were captured.
+- Visual review identified one secondary-text contrast issue on the new orange canvas. Increasing black text opacity to `.75` yields approximately **4.56:1**; targeted recapture and reviewer verdict marked the fix resolved. No remaining material findings within that review scope.
+- Earlier sections below describe previous versions; the old location confirmation requirement is superseded by removal.
+
 ## Wakil AI directory adjustments — 2026-10-31
 
 - English directory homepage and eleven category pages use the supplied Wakil AI logo/design system, locally hosted Space Grotesk and Plus Jakarta Sans, brand colors and SVG category icons. Store pages retain their existing designs and French copy.
@@ -28,7 +38,7 @@
 - Captured and visually reviewed 24 portrait/landscape screenshots. Independent Impeccable finish review: **ship locally**, no material findings. Existing decorative effects were retained in accordance with the plan.
 - No additional application dependencies. Browser checks used an existing external `playwright-core` and installed Chromium. Evidence in `.local/` and `.impeccable/review/` is intentionally excluded from Git and the Pages artifact.
 
-## Deferred locations
+## Previously deferred locations — superseded by removal
 
 User explicitly requested skipping location confirmation for now. All six registry entries therefore have `commune: null, wilaya: null` and display **Localisation à confirmer**.
 Supplied Maps destinations remain unchanged. Do not treat directory locations as release-ready.
@@ -55,7 +65,7 @@ The initial owner/administrator handoff was:
 
 ## Open release gates
 
-- Confirm all six commune + wilaya labels (deferred by user).
+- Location metadata is no longer a release gate: the user requested removing location display and the unused fields.
 - Hosting-policy suitability for the commercial NFC service. GitHub's [Pages usage limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits#usage-limits) restrict online-business/e-commerce and commercial SaaS hosting; suitability is not confirmed.
 - Physical-device and Safari acceptance are unverified; Chromium emulation does not establish them.
 

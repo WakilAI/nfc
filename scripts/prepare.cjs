@@ -9,6 +9,12 @@ function registry() {
   return context.window.STORE_DIRECTORY;
 }
 
+// Store projects are grouped in source; their existing public URLs stay stable.
+function sourceFile(file) {
+  const store = registry().stores.find(s => file.startsWith(`${s.category}/${s.slug}/`));
+  return path.resolve(root, store ? 'stores' : '.', file);
+}
+
 // Follow local runtime references rather than publishing whole store folders.
 function publicFiles() {
   const data = registry();
@@ -20,7 +26,7 @@ function publicFiles() {
   while (queue.length) {
     const file = path.posix.normalize(queue.pop());
     if (files.has(file)) continue;
-    const absolute = path.resolve(root, file);
+    const absolute = sourceFile(file);
     if (!absolute.startsWith(root + path.sep) || !fs.statSync(absolute).isFile() || fs.lstatSync(absolute).isSymbolicLink()) {
       throw new Error(`Unsafe or missing runtime file: ${file}`);
     }
@@ -50,11 +56,11 @@ function prepare() {
   for (const file of files) {
     const destination = path.join(output, file);
     fs.mkdirSync(path.dirname(destination), { recursive: true });
-    fs.copyFileSync(path.join(root, file), destination);
+    fs.copyFileSync(sourceFile(file), destination);
   }
   fs.writeFileSync(path.join(output, '.nojekyll'), '');
   console.log(`Prepared ${files.length} runtime files in _site/.`);
   return files;
 }
-module.exports = { root, registry, publicFiles, prepare };
+module.exports = { root, registry, sourceFile, publicFiles, prepare };
 if (require.main === module) prepare();
