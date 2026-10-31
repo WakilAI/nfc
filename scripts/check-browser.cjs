@@ -71,19 +71,6 @@ const { configured } = require('./check-store.cjs');
         assert.ok(await page.evaluate(() => document.activeElement?.tagName === 'A' && getComputedStyle(document.activeElement).outlineStyle !== 'none'), `${route.name}: focus missing`);
         await page.locator('a').first().evaluate(a => a.blur());
         if (!route.store) {
-          assert.equal(await page.evaluate(() => getComputedStyle(document.documentElement).backgroundColor), 'rgb(255, 107, 0)');
-          assert.equal(await page.locator('.top-nav').evaluate(el => getComputedStyle(el).borderBottomWidth), '0px');
-          if (!route.url) {
-            assert.equal(await page.locator('h1').textContent(), 'NFC Store Links');
-            assert.equal(await page.locator('h1').evaluate(el => getComputedStyle(el).textAlign), 'center');
-            assert.equal(await page.locator('#intro, .nav-label').count(), 0);
-            const geometry = await page.locator('.category-card').evaluateAll(cards => cards.map(card => {
-              const icon = card.querySelector('.category-icon').getBoundingClientRect();
-              const text = card.querySelector('div').getBoundingClientRect();
-              return { heightDifference: Math.abs(icon.height - text.height), topDifference: Math.abs(icon.y - text.y), gap: text.x - icon.right };
-            }));
-            assert.ok(geometry.every(item => item.heightDifference <= 1 && item.topDifference <= 1 && item.gap >= 24), JSON.stringify(geometry));
-          }
           assert.equal(await page.locator('html').getAttribute('lang'), 'en');
           assert.equal(await page.locator('.home-link img').getAttribute('src'), route.url ? '../wakil-ai-assests/logo.png' : './wakil-ai-assests/logo.png');
           const search = page.getByRole('searchbox');
@@ -92,7 +79,6 @@ const { configured } = require('./check-store.cjs');
           await search.fill(sample ? sample.name.toUpperCase() : 'unknown store');
           assert.equal(await page.locator('#directory > li').count(), sample ? 1 : 0);
           if (sample) {
-            assert.ok(!(await page.locator('#directory').textContent()).includes('Location'));
             assert.equal(await page.locator('#directory a').getAttribute('href'), route.url ? sample.slug + '/' : `${sample.category}/${sample.slug}/`);
             await page.evaluate(() => Promise.all(Array.from(document.images, img => img.decode())));
           }

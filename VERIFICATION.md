@@ -1,5 +1,9 @@
 # Verification and release handoff
 
+## Previous design restored — 2026-10-31
+
+At the user's request, restored only the immediately preceding directory design from `2fb3bda`: ivory canvas, previous heading/introduction/navigation, original icon sizing and artwork, and location labels. English navigation, search, categories and store pages remain intact. Store projects remain grouped under `stores/<type>/<store>/`; the source-to-public mapping and all published URLs are unchanged. Earlier orange-layout evidence below is historical.
+
 ## Orange layout and source organization — 2026-10-31
 
 - Homepage title is centered **NFC Store Links**. Removed its introduction, top directory label and navigation divider. Directory canvas is the requested Wakil Orange `#FF6B00`, with white cards and a white backing behind the supplied orange logo.

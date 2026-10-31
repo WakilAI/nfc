@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-31T12:58:59.799271+00:00",
+  "generatedAt": "2026-10-31T12:13:29.637587+00:00",
   "title": "Design System: Wakil AI — Store Directory",
   "extensions": {
     "colorMeta": {
       "background": {
-        "role": "primary",
-        "displayName": "Wakil Orange canvas"
+        "role": "neutral",
+        "displayName": "Warm white"
       },
       "surface": {
         "role": "neutral",
         "displayName": "White"
       },
       "panel": {
-        "role": "primary",
-        "displayName": "Orange hover surface"
+        "role": "neutral",
+        "displayName": "Soft panel"
       },
       "border": {
         "role": "neutral",
@@ -63,10 +63,6 @@
         "value": "767px"
       },
       {
-        "name": "category-arrow-hidden",
-        "value": "400px"
-      },
-      {
         "name": "narrow-store-card",
         "value": "360px"
       }
@@ -77,9 +73,9 @@
       "name": "Category card",
       "kind": "card",
       "refersTo": "category-card",
-      "description": "Same-tab category grid link with a 58px symbol aligned to name/count and a decorative arrow hidden up to 400px.",
-      "html": "<a class=\"ds-card\" href=\"home-goods/\"><span class=\"ds-icon\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m3 10 9-7 9 7v11H3V10Zm6 11v-8h6v8\"/></svg></span><div><h3>Home Goods</h3><p>1 store</p></div><svg class=\"ds-arrow\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a>",
-      "css": ".ds-card{display:grid;grid-template-columns:58px minmax(0,1fr) 20px;align-items:center;align-content:center;column-gap:24px;min-height:144px;padding:24px;background:var(--surface,#fff);color:var(--ink,#111);border:1px solid var(--border,#e8e4de);border-radius:16px;text-decoration:none}.ds-card:hover{border-color:var(--orange,#ff6b00);background:var(--panel,#ff6b00)}.ds-card:focus-visible{outline:3px solid var(--ink,#111);outline-offset:5px}.ds-card>div{min-width:0}.ds-card h3{font-family:\"Space Grotesk\",Arial,sans-serif;font-size:20px;font-weight:600;line-height:28px;letter-spacing:-.005em;margin:0 0 8px;overflow-wrap:anywhere}.ds-card p{font-family:\"Plus Jakarta Sans\",Arial,sans-serif;font-size:14px;line-height:22px;color:var(--muted,rgba(17,17,17,.75));margin:0}.ds-icon{position:relative;align-self:stretch;width:58px;min-height:58px;color:var(--primary,#a04100)}.ds-icon svg{position:absolute;inset:0;width:100%;height:100%}.ds-card:hover .ds-icon{color:var(--ink,#111)}.ds-arrow{width:20px;height:20px;margin-left:auto}@media(max-width:767px){.ds-card{min-height:112px;padding:20px}}@media(max-width:400px){.ds-card{grid-template-columns:58px minmax(0,1fr)}.ds-arrow{display:none}}"
+      "description": "Same-tab category link with inline symbol, store count and arrow.",
+      "html": "<a class=\"ds-card\" href=\"home-goods/\"><svg class=\"ds-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m3 10 9-7 9 7v11H3V10Zm6 11v-8h6v8\"/></svg><div><h3>Home Goods</h3><p>1 store</p></div><svg class=\"ds-arrow\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-card{display:flex;align-items:center;gap:16px;min-height:144px;padding:24px;background:var(--surface,#fff);color:var(--ink,#111);border:1px solid var(--border,#e8e4de);border-radius:16px;text-decoration:none}.ds-card:hover{border-color:var(--orange,#ff6b00);background:var(--panel,#f8f7f4)}.ds-card:focus-visible{outline:3px solid var(--primary,#a04100);outline-offset:5px}.ds-card h3{font-family:\"Space Grotesk\",Arial,sans-serif;font-size:20px;font-weight:600;line-height:28px;letter-spacing:-.005em;margin:0 0 8px;overflow-wrap:anywhere}.ds-card p{font-family:\"Plus Jakarta Sans\",Arial,sans-serif;font-size:14px;line-height:22px;color:var(--muted,rgba(17,17,17,.70));margin:0}.ds-icon{width:32px;height:32px;flex-shrink:0;color:var(--primary,#a04100)}.ds-arrow{width:20px;height:20px;margin-left:auto;flex-shrink:0}@media(max-width:767px){.ds-card{min-height:112px;padding:20px}}"
     },
     {
       "name": "Store-name search",
@@ -87,33 +83,32 @@
       "refersTo": "search-field",
       "description": "Root searches all store names; category pages search only their stores. Runtime adds clear action, polite result count and distinct empty states.",
       "html": "<div class=\"ds-search\"><label for=\"ds-store-search\">Search all stores</label><div class=\"ds-field\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><circle cx=\"10.5\" cy=\"10.5\" r=\"7.5\"/><path d=\"m16 16 5 5\"/></svg><input id=\"ds-store-search\" type=\"search\" placeholder=\"Search by store name\" autocomplete=\"off\" spellcheck=\"false\"></div></div>",
-      "css": ".ds-search{max-width:720px;font-family:\"Plus Jakarta Sans\",Arial,sans-serif;color:var(--ink,#111)}.ds-search label{display:block;font-family:\"Space Grotesk\",Arial,sans-serif;font-size:14px;font-weight:600;margin-bottom:12px}.ds-field{position:relative}.ds-field>svg{position:absolute;left:20px;top:20px;width:24px;height:24px;color:var(--primary,#a04100);pointer-events:none}.ds-field input{box-sizing:border-box;width:100%;height:64px;padding:16px 64px 16px 56px;font:inherit;background:var(--surface,#fff);color:var(--ink,#111);border:1px solid var(--border,#e8e4de);border-radius:8px;caret-color:var(--primary,#a04100)}.ds-field input::placeholder{color:var(--muted,rgba(17,17,17,.75))}.ds-field input:focus-visible{outline:2px solid var(--ink,#111);outline-offset:2px}"
+      "css": ".ds-search{max-width:720px;font-family:\"Plus Jakarta Sans\",Arial,sans-serif;color:var(--ink,#111)}.ds-search label{display:block;font-family:\"Space Grotesk\",Arial,sans-serif;font-size:14px;font-weight:600;margin-bottom:12px}.ds-field{position:relative}.ds-field>svg{position:absolute;left:20px;top:20px;width:24px;height:24px;color:var(--primary,#a04100);pointer-events:none}.ds-field input{box-sizing:border-box;width:100%;height:64px;padding:16px 64px 16px 56px;font:inherit;background:var(--surface,#fff);color:var(--ink,#111);border:1px solid var(--border,#e8e4de);border-radius:8px;caret-color:var(--primary,#a04100)}.ds-field input::placeholder{color:var(--muted,rgba(17,17,17,.70))}.ds-field input:focus-visible{outline:2px solid var(--orange,#ff6b00);outline-offset:2px}"
     }
   ],
   "narrative": {
     "northStar": "Warm Tactile Precision",
-    "overview": "The supplied Wakil AI brand system remains the reference for geometric typography and orange. The user’s explicit orange canvas with white cards supersedes its white-first rule. Scope is the English root and eleven category pages; independent store pages retain local brands and French copy. The centered root heading reads NFC Store Links without an intro or upper directory label.",
+    "overview": "The supplied Wakil AI design system governs this white-first, warm directory with geometric typography and purposeful orange accents. This records the implemented CSS subset, without a separate visual comp. Scope is the English root and eleven category pages; individual store pages retain local brands and French copy.",
     "keyCharacteristics": [
-      "Wakil Orange canvas, white cards and delicate borders.",
+      "Warm white canvas, white cards and delicate borders.",
       "Self-hosted Space Grotesk headings/navigation and Plus Jakarta Sans body.",
-      "58px category symbols aligned to name/count, proportioned store logos and whole-card navigation."
+      "SVG category icons, proportioned store logos and whole-card navigation."
     ],
     "rules": [
       {
-        "name": "The Orange Canvas Rule",
-        "body": "Keep the shared directory canvas orange and cards white at rest; this confirmed override supersedes white-first brand guidance.",
+        "name": "The White-First Rule",
+        "body": "Warmth comes from the canvas and orange accents, without stacking decorative beige layers.",
         "section": "colors"
       }
     ],
     "dos": [
       "Do apply the shared system only to directory pages.",
       "Do preserve supplied logos and visible keyboard focus.",
-      "Do let content wrap and scroll naturally.",
-      "Do keep store types in root search results and omit locations from every card."
+      "Do let content wrap and scroll naturally."
     ],
     "donts": [
       "Don't propagate directory branding into store pages.",
-      "Don't crop, recolor or fabricate logos, or add location labels to directory cards.",
+      "Don't crop, recolor or fabricate logos or location facts.",
       "Don't add shadows or motion absent from the implementation."
     ]
   }

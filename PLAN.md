@@ -1,6 +1,6 @@
 # NFC store directory — implementation plan
 
-Status: Implemented, committed, pushed, deployed and live-verified on 2026-10-31, including the follow-up Wakil AI branding, English navigation, search and category adjustments. hosting-policy suitability and physical-device/Safari acceptance remain open. See `VERIFICATION.md` for evidence.
+Status: Implemented, committed, pushed, deployed and live-verified on 2026-10-31, including the follow-up Wakil AI branding, English navigation, search and category adjustments. Location confirmation remains deferred by the user; hosting-policy suitability and physical-device/Safari acceptance remain open. See `VERIFICATION.md` for evidence.
 
 ## Goal and confirmed decisions
 
@@ -9,7 +9,7 @@ Create a public English directory for Algerian stores whose customers scan NFC p
 - Include all six existing stores at launch.
 - Use static HTML, CSS, and JavaScript without added dependencies or a framework.
 - Use the supplied Wakil AI design system and logo from `wakil-ai-assests`; preserve each store's existing design.
-- Show each store's logo and name on its card. Location display and metadata were removed at the user's request.
+- Show each store's logo, name, and confirmed commune + wilaya on its card.
 - Maintain stores through their folders and one shared registry; no browser admin interface.
 - Hide buttons with empty destinations, retaining their entries in configuration.
 - No existing NFC or QR URLs need migration. Keep the chosen store URLs stable after launch.
@@ -26,7 +26,7 @@ Create a public English directory for Algerian stores whose customers scan NFC p
 
 ## Store organization and directory behavior
 
-Group the store projects under `stores/<type>/<store>/`, keeping runtime assets and useful project documentation together. Preparation maps them to these public paths:
+Group store projects under `stores/<type>/<store>/`, keeping runtime assets and documentation together. Preparation preserves these public paths:
 
 - `food/ino-burger/`
 - `clothing-store/maison-allure/`
@@ -35,13 +35,13 @@ Group the store projects under `stores/<type>/<store>/`, keeping runtime assets 
 - `computer-store/myb-hardware/`
 - `phone-store/vegas-phone/`
 
-Create an English root directory titled « NFC Store Links », centered without introductory copy, with the requested Wakil Orange canvas, Wakil AI branding, SVG category icons and store counts. Category labels match their URL slugs in title case (for example, Clothing Store → `clothing-store/`). Each category has its own `index.html` containing its store cards and navigation back to the homepage. The complete store card is a normal link that opens the store page in the same tab.
+Create an English root directory with Wakil AI branding, SVG category icons and store counts. Category labels match their URL slugs in title case (for example, Clothing Store → `clothing-store/`). Each category has its own `index.html` containing its store cards and navigation back to the homepage. The complete store card is a normal link that opens the store page in the same tab.
 
 Store-name search on the homepage spans all stores; search inside a category is scoped to that category. Support case, accent and apostrophe differences, clearing and useful no-result messages. The directory has eleven types: Food, Clothing Store, Perfume Store, Computer Store, Phone Store, Home Goods, Travel Agency, Cosmetic Store, Shoes Store, Dental Clinic and Jewelry Store. Upcoming types show zero stores with an honest empty state.
 
-Use one shared `stores.js` registry containing categories and each store's name, category, slug and logo path. Derive store URLs from category and slug. Share the directory's CSS and rendering JavaScript; keep individual store pages independent of directory rendering. Provide a useful JavaScript-disabled message and ordinary navigation links.
+Use one shared `stores.js` registry containing categories and each store's name, category, slug, confirmed location, and logo path. Derive store URLs from category and slug. Share the directory's CSS and rendering JavaScript; keep individual store pages independent of directory rendering. Provide a useful JavaScript-disabled message and ordinary navigation links.
 
-Store projects live under `stores/<type>/<store>/` in source; the preparation script maps them to the existing public URLs. Keep supplied Maps destinations on individual store pages. Location metadata is no longer required.
+Resolve location labels from the existing supplied Maps destinations. Ask for confirmation when results are ambiguous; never infer an address from the store name. Confirm all six labels before treating directory content as release-ready.
 
 Use relative paths compatible with the `/nfc/` deployment prefix. Support mobile portrait, touch landscape, and desktop with natural vertical scrolling, readable text, visible keyboard focus, and comfortable touch targets. Preserve logo proportions and avoid broken images.
 
@@ -80,8 +80,8 @@ Completion requires reporting local checks separately from live deployment check
 
 ## Assumptions, exclusions, and release gates
 
-Defaults: English directory labels, existing French store pages, the category assignments above, same-tab directory navigation, and no custom domain initially.
+Defaults: English directory labels, existing French store pages, the category assignments above, confirmed commune + wilaya location text, same-tab directory navigation, and no custom domain initially.
 
 Excluded: admin interface, accounts, analytics, a framework, added application dependencies, and store redesigns. Search was added by the user's follow-up request.
 
-Open release gates: hosting-policy suitability and physical-device/Safari acceptance. Pages activation and previous live verification have passed. Repository creation and visibility changes are **not** required.
+Open release gates: confirmed location labels; any maintainer/admin or organization setup needed for Pages; hosting-policy suitability; successful deployment and live verification. Repository creation and visibility changes are **not** required.

@@ -1,15 +1,15 @@
-# NFC Store Links
+# Wakil AI Store Directory
 
 Static English directory for Algerian stores with NFC plates or QR codes. Browse store types or search by name, then open a store’s existing page of useful links. Individual store pages keep their own French copy and visual identity.
 
 ## Edit and check
 
-- `stores.js`: store types, names and logos. Type labels are their URL slug words in title case. Keep slugs stable after launch.
+- `stores.js`: store types, names, logos and locations. Type labels are their URL slug words in title case. Keep slugs stable after launch.
 - `directory.js`, `search.js`, `directory.css`: shared directory rendering, name matching and Wakil AI styling.
 - `wakil-ai-assests/design-system.md` and `logo.png`: supplied brand authority. `DESIGN.md` records the implemented directory subset. Fonts are hosted locally with their Google Fonts OFL licenses in `wakil-ai-assests/fonts/`.
 - `stores/<type>/<store>/links.js`: editable store labels, destinations and order. Ino Burger retains `window.INO_LINKS`; other stores use `window.LINKTREE_LINKS`.
 - Empty destinations are retained in configuration and omitted publicly. Only `https:`, `tel:` and `mailto:` are accepted. Editable labels render as text.
-- Store cards show no location. Maps destinations on individual store pages are preserved.
+- Cards show the previous location label again. Pending locations remain explicitly unconfirmed; supplied Maps destinations are unchanged.
 
 ```powershell
 node check.cjs
