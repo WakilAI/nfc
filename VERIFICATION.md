@@ -10,7 +10,7 @@
 - Chromium passed **126 viewport/route views** and 42 generated screenshots, covering link order, image loading, 48px targets, keyboard focus, natural scrolling, no horizontal overflow, search/navigation/refresh/Back and no-JS fallbacks.
 - The prepared `_site/` contains the OVYX page, CSS, scripts and both logo variants; its `references/` and README are not published.
 - The temporary `stores-not-implemented/Clothing Store/` folder was removed after migration.
-- **Live deployment not yet run** for OVYX.
+- **Live-verified:** commit `38b70aa` deployed via [Actions run 41238020879](https://github.com/WakilAI/nfc/actions/runs/41238020879). `https://wakilai.github.io/nfc/clothing-store/ovyx/` returns 200 with seven links including WhatsApp, the tightened logo/tagline spacing, both logo variants, homepage search returning the store, and no failed requests.
 
 ## Pixel Store page — 2026-10-31
 
@@ -22,7 +22,7 @@
 - Chromium passed **120 viewport/route views** and 40 generated screenshots, covering link order, image loading, 48px targets, keyboard focus, natural scrolling, no horizontal overflow, search/navigation/refresh/Back and no-JS fallbacks.
 - The prepared `_site/` contains the Pixel Store page, CSS, scripts and logo image; its `references/` and README are not published.
 - The temporary `stores-not-implemented/Phone Store/` folder was removed after migration.
-- **Live-verified:** commit `4116ce9` deployed via [Actions run 41233988435](https://github.com/WakilAI/nfc/actions/runs/41233988435). `https://wakilai.github.io/nfc/phone-store/pixel-store/` returns 200 with five links, both removed decorations gone, the card asset loading, homepage search returning the store, and no failed requests.
+- **Live-verified:** commit `4116ce9` deployed via [Actions run 41233988435](https://github.com/WakilAI/nfc/actions/runs/41233988435), then the official logo shipped with `38b70aa` ([run 41238020879](https://github.com/WakilAI/nfc/actions/runs/41238020879)). `https://wakilai.github.io/nfc/phone-store/pixel-store/` returns 200 with five links, both removed decorations gone, the official logo asset loading, homepage search returning the store, and no failed requests.
 
 ## COSMABENT store page — 2026-10-31
 
@@ -33,7 +33,7 @@
 - Chromium passed **114 viewport/route views** and 38 generated screenshots with the existing external `playwright-core`/Chromium installation, covering the new page's link order, image loading, 48px targets, keyboard focus, natural scrolling and no horizontal overflow.
 - The prepared `_site/` contains the COSMABENT page, CSS, scripts, configuration and WebP logo, with no plate references or documentation.
 - The temporary COSMABENT folder was removed after migration; the other pending stores remain untouched in `stores-not-implemented/`.
-- **Live-verified:** commit `8443156` (with title follow-up `014f49a`) deployed via [Actions run 41214995020](https://github.com/WakilAI/nfc/actions/runs/41214995020) and [run 41215085657](https://github.com/WakilAI/nfc/actions/runs/41215085657), both green. `https://wakilai.github.io/nfc/cosmetic-store/cosmabent/` and its CSS/JS/assets return 200; the live page title, brand lockup, six links and 512px logo render correctly, the homepage search returns the COSMABENT card, and no requests or page scripts failed.
+- **Live-verified:** commit `8443156` (with title follow-up `014f49a`) deployed via [Actions run 41214995020](https://github.com/WakilAI/nfc/actions/runs/41214995020) and [run 41215085657](https://github.com/WakilAI/nfc/actions/runs/41215085657); the latest deployment `38b70aa` ([run 41238020879](https://github.com/WakilAI/nfc/actions/runs/41238020879)) serves seven links including WhatsApp. `https://wakilai.github.io/nfc/cosmetic-store/cosmabent/` and its CSS/JS/assets return 200; the live page title, brand lockup, links and 512px logo render correctly, the homepage search returns the COSMABENT card, and no requests or page scripts failed.
 
 ## Complete category-folder grouping — 2026-10-31
 
