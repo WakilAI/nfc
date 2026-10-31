@@ -16,7 +16,7 @@ node check.cjs
 node scripts/prepare.cjs
 ```
 
-No application dependencies or framework are required. Checks cover all six stores, search normalization and category scope, registry validity, unique URLs, safe destinations, the legacy redirect and the deployment artifact. The remaining hosting and device acceptance gates are recorded in `VERIFICATION.md`.
+No application dependencies or framework are required. Checks cover all seven stores, search normalization and category scope, registry validity, unique URLs, safe destinations, the legacy redirect and the deployment artifact. The remaining hosting and device acceptance gates are recorded in `VERIFICATION.md`.
 
 Preparation stages only required runtime files in ignored `_site/`, including fonts and their license files. Tests, docs, unused artwork, masters and local verification material stay outside the deployed artifact. Useful originals remain in the public source repository.
 
@@ -28,7 +28,7 @@ All eleven category folders live under `stores/`, including their landing pages,
 
 Homepage search finds stores across all types. Category search stays within its type. Matching ignores case, accents, apostrophe style and repeated spaces. Clear search restores the default list; no matches and categories with no stores have explicit empty states. Search requires JavaScript; ordinary fallback links still allow browsing with JavaScript disabled.
 
-Eleven types are registered: Food, Clothing Store, Perfume Store, Computer Store, Phone Store, Home Goods, Travel Agency, Cosmetic Store, Shoes Store, Dental Clinic and Jewelry Store. The five upcoming types currently have no stores.
+Eleven types are registered: Food, Clothing Store, Perfume Store, Computer Store, Phone Store, Home Goods, Travel Agency, Cosmetic Store, Shoes Store, Dental Clinic and Jewelry Store. The four upcoming types currently have no stores.
 
 Sallon d’or sells curtains and interior decoration, so its page lives at `home-goods/sallon-dor/`. The previous `clothing-store/sallon-dor/` URL redirects and includes a normal fallback link.
 
@@ -40,7 +40,7 @@ Use an existing Playwright installation without adding it to the website. Set `P
 node scripts/check-browser.cjs
 ```
 
-The script serves `_site/` locally under `/nfc/`, checks 108 page/viewport combinations plus search/navigation/legacy-redirect flows, and saves ignored screenshots in `.impeccable/review/`. Node checks do not require Playwright. Use a static server for `_site/` to preview the complete site. The `stores/` source folder is mapped to existing public URLs during preparation. Individual store pages can still be opened directly.
+The script serves `_site/` locally under `/nfc/`, checks 114 page/viewport combinations plus search/navigation/legacy-redirect flows, and saves ignored screenshots in `.impeccable/review/`. Node checks do not require Playwright. Use a static server for `_site/` to preview the complete site. The `stores/` source folder is mapped to existing public URLs during preparation. Individual store pages can still be opened directly.
 
 ## Add a store
 

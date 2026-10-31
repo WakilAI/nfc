@@ -1,5 +1,16 @@
 # Verification and release handoff
 
+## COSMABENT store page — 2026-10-31
+
+- Added COSMABENT at `stores/cosmetic-store/cosmabent/` and to the shared registry as the seventh store. Cosmetic Store now has one store; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.
+- Confirmed links: Google reviews, Instagram, Facebook, TikTok, telephone and Google Maps. The configured WhatsApp entry has an empty destination and is not rendered. Phone is `+213 778 07 96 03` (`tel:+213778079603`).
+- Bespoke French page uses an ivory/fuchsia palette, satin halo, serif headings and the supplied logo. The hero shows the logo uncropped and unframed on a soft dark halo, with a “Cosmabent Cosmetics” lockup in a Trajan-like serif; no square card or logo tile remains. The logo master (1080×1080 PNG) is preserved in `references/`; the transparent 512×512 WebP (129 410 octets) is used on the page and the opaque 512×512 WebP (33.6 KB) remains the directory card image. Four supplied plate mockups are stored in `references/` and are not published.
+- `node check.cjs` passed: 11 categories, 7 unique stores, safe destinations, per-store checks and a 60-file deployment artifact. Search checks now cover `COSMABENT` and Cosmetic Store scoping.
+- Chromium passed **114 viewport/route views** and 38 generated screenshots with the existing external `playwright-core`/Chromium installation, covering the new page's link order, image loading, 48px targets, keyboard focus, natural scrolling and no horizontal overflow.
+- The prepared `_site/` contains the COSMABENT page, CSS, scripts, configuration and WebP logo, with no plate references or documentation.
+- The temporary COSMABENT folder was removed after migration; the other pending stores remain untouched in `stores-not-implemented/`.
+- **Live deployment not yet run.** Confirm a push before claiming the public COSMABENT URL is live.
+
 ## Complete category-folder grouping — 2026-10-31
 
 Moved all eleven category folders under `stores/`, including landing pages and the legacy redirect, as clarified by the user. No category folder remains at the repository root. Updated preparation and source-path assertions. All Node/store/search/artifact checks passed; SHA-256 comparison confirms that every deployed file and public path is byte-identical before and after this source-only move. No design changes were made; browser tests were not repeated for identical runtime output.

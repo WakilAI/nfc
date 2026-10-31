@@ -18,5 +18,7 @@ assert.deepEqual(names('not a real store'), []);
 assert.deepEqual(names('<img src=x onerror=alert(1)>'), []);
 assert.deepEqual(names('midho', stores.filter(store => store.category === 'clothing-store')), []);
 assert.deepEqual(names('sallon', stores.filter(store => store.category === 'home-goods')), ['sallon-dor']);
+assert.deepEqual(names('COSMABENT'), ['cosmabent']);
+assert.deepEqual(names('cosmabent', stores.filter(store => store.category === 'cosmetic-store')), ['cosmabent']);
 assert.deepEqual(names('', []), []);
 console.log('PASS search: case, accents, apostrophes, whitespace, no results and category scope.');

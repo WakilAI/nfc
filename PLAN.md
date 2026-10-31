@@ -1,6 +1,6 @@
 # NFC store directory — implementation plan
 
-Status: Implemented, committed, pushed, deployed and live-verified on 2026-10-31, including the follow-up Wakil AI branding, English navigation, search and category adjustments. Location confirmation remains deferred by the user; hosting-policy suitability and physical-device/Safari acceptance remain open. See `VERIFICATION.md` for evidence.
+Status: Implemented, committed, pushed, deployed and live-verified on 2026-10-31, including the follow-up Wakil AI branding, English navigation, search and category adjustments. COSMABENT was added later on 2026-10-31 as a seventh store. Location confirmation remains deferred by the user; hosting-policy suitability and physical-device/Safari acceptance remain open. See `VERIFICATION.md` for evidence.
 
 ## Goal and confirmed decisions
 
