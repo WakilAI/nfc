@@ -10,7 +10,7 @@
 - Chromium passed **120 viewport/route views** and 40 generated screenshots, covering link order, image loading, 48px targets, keyboard focus, natural scrolling, no horizontal overflow, search/navigation/refresh/Back and no-JS fallbacks.
 - The prepared `_site/` contains the Pixel Store page, CSS, scripts and card image; its `references/` and README are not published.
 - The temporary `stores-not-implemented/Phone Store/` folder was removed after migration.
-- **Live deployment not yet run** for Pixel Store.
+- **Live-verified:** commit `4116ce9` deployed via [Actions run 41233988435](https://github.com/WakilAI/nfc/actions/runs/41233988435). `https://wakilai.github.io/nfc/phone-store/pixel-store/` returns 200 with five links, both removed decorations gone, the card asset loading, homepage search returning the store, and no failed requests.
 
 ## COSMABENT store page — 2026-10-31
 
