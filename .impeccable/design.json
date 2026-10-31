@@ -1,181 +1,69 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-31T11:38:42.494Z",
-  "title": "Design System: Nos commerces — Directory",
+  "generatedAt": "2026-10-31T12:13:29.637587+00:00",
+  "title": "Design System: Wakil AI — Store Directory",
   "extensions": {
     "colorMeta": {
-      "ink": {
-        "role": "primary",
-        "displayName": "Green-gray ink",
-        "tonalRamp": [
-          "oklch(15% 0.0314 169.55)",
-          "oklch(26% 0.0314 169.55)",
-          "oklch(38% 0.0314 169.55)",
-          "oklch(49% 0.0314 169.55)",
-          "oklch(61% 0.0314 169.55)",
-          "oklch(72% 0.0314 169.55)",
-          "oklch(84% 0.0314 169.55)",
-          "oklch(95% 0.0314 169.55)"
-        ]
-      },
       "background": {
         "role": "neutral",
-        "displayName": "Pale paper",
-        "tonalRamp": [
-          "oklch(15% 0.0054 117.92)",
-          "oklch(26% 0.0054 117.92)",
-          "oklch(38% 0.0054 117.92)",
-          "oklch(49% 0.0054 117.92)",
-          "oklch(61% 0.0054 117.92)",
-          "oklch(72% 0.0054 117.92)",
-          "oklch(84% 0.0054 117.92)",
-          "oklch(95% 0.0054 117.92)"
-        ]
+        "displayName": "Warm white"
       },
       "surface": {
         "role": "neutral",
-        "displayName": "White surface",
-        "tonalRamp": [
-          "oklch(15% 0.0000 89.88)",
-          "oklch(26% 0.0000 89.88)",
-          "oklch(38% 0.0000 89.88)",
-          "oklch(49% 0.0000 89.88)",
-          "oklch(61% 0.0000 89.88)",
-          "oklch(72% 0.0000 89.88)",
-          "oklch(84% 0.0000 89.88)",
-          "oklch(95% 0.0000 89.88)"
-        ]
+        "displayName": "White"
       },
-      "muted": {
+      "panel": {
         "role": "neutral",
-        "displayName": "Muted foliage",
-        "tonalRamp": [
-          "oklch(15% 0.0272 156.85)",
-          "oklch(26% 0.0272 156.85)",
-          "oklch(38% 0.0272 156.85)",
-          "oklch(49% 0.0272 156.85)",
-          "oklch(61% 0.0272 156.85)",
-          "oklch(72% 0.0272 156.85)",
-          "oklch(84% 0.0272 156.85)",
-          "oklch(95% 0.0272 156.85)"
-        ]
+        "displayName": "Soft panel"
       },
       "border": {
         "role": "neutral",
-        "displayName": "Soft edge",
-        "tonalRamp": [
-          "oklch(15% 0.0125 137.79)",
-          "oklch(26% 0.0125 137.79)",
-          "oklch(38% 0.0125 137.79)",
-          "oklch(49% 0.0125 137.79)",
-          "oklch(61% 0.0125 137.79)",
-          "oklch(72% 0.0125 137.79)",
-          "oklch(84% 0.0125 137.79)",
-          "oklch(95% 0.0125 137.79)"
-        ]
+        "displayName": "Warm delicate border"
       },
-      "hover": {
+      "ink": {
         "role": "neutral",
-        "displayName": "Pale leaf",
-        "tonalRamp": [
-          "oklch(15% 0.0123 137.78)",
-          "oklch(26% 0.0123 137.78)",
-          "oklch(38% 0.0123 137.78)",
-          "oklch(49% 0.0123 137.78)",
-          "oklch(61% 0.0123 137.78)",
-          "oklch(72% 0.0123 137.78)",
-          "oklch(84% 0.0123 137.78)",
-          "oklch(95% 0.0123 137.78)"
-        ]
+        "displayName": "Black ink"
       },
-      "sage": {
+      "muted": {
         "role": "neutral",
-        "displayName": "Sage",
-        "tonalRamp": [
-          "oklch(15% 0.0340 159.74)",
-          "oklch(26% 0.0340 159.74)",
-          "oklch(38% 0.0340 159.74)",
-          "oklch(49% 0.0340 159.74)",
-          "oklch(61% 0.0340 159.74)",
-          "oklch(72% 0.0340 159.74)",
-          "oklch(84% 0.0340 159.74)",
-          "oklch(95% 0.0340 159.74)"
-        ]
+        "displayName": "Secondary ink"
       },
-      "focus": {
+      "orange": {
         "role": "primary",
-        "displayName": "Forest focus",
-        "tonalRamp": [
-          "oklch(15% 0.0743 161.43)",
-          "oklch(26% 0.0743 161.43)",
-          "oklch(38% 0.0743 161.43)",
-          "oklch(49% 0.0743 161.43)",
-          "oklch(61% 0.0743 161.43)",
-          "oklch(72% 0.0743 161.43)",
-          "oklch(84% 0.0743 161.43)",
-          "oklch(95% 0.0743 161.43)"
-        ]
+        "displayName": "Wakil Orange"
       },
-      "selection": {
-        "role": "neutral",
-        "displayName": "Selection leaf",
-        "tonalRamp": [
-          "oklch(15% 0.0237 149.36)",
-          "oklch(26% 0.0237 149.36)",
-          "oklch(38% 0.0237 149.36)",
-          "oklch(49% 0.0237 149.36)",
-          "oklch(61% 0.0237 149.36)",
-          "oklch(72% 0.0237 149.36)",
-          "oklch(84% 0.0237 149.36)",
-          "oklch(95% 0.0237 149.36)"
-        ]
-      },
-      "selection-ink": {
-        "role": "neutral",
-        "displayName": "Deep selection ink",
-        "tonalRamp": [
-          "oklch(15% 0.0500 163.94)",
-          "oklch(26% 0.0500 163.94)",
-          "oklch(38% 0.0500 163.94)",
-          "oklch(49% 0.0500 163.94)",
-          "oklch(61% 0.0500 163.94)",
-          "oklch(72% 0.0500 163.94)",
-          "oklch(84% 0.0500 163.94)",
-          "oklch(95% 0.0500 163.94)"
-        ]
+      "primary": {
+        "role": "primary",
+        "displayName": "Deep orange"
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Directory heading",
-        "purpose": "Root and category page h1."
-      },
-      "body": {
-        "displayName": "Directory text",
-        "purpose": "Navigation, metadata and card copy."
-      },
-      "intro": {
-        "displayName": "Introduction",
-        "purpose": "Short introduction, up to 52ch."
+        "purpose": "Root and category h1; mobile role applies up to 767px."
       },
       "card-title": {
         "displayName": "Card title",
-        "purpose": "Category or store name; 1.125rem on mobile."
+        "purpose": "Store and category names."
       },
-      "footer": {
-        "displayName": "Footer",
-        "purpose": "Closing directory caption."
+      "body": {
+        "displayName": "Body copy",
+        "purpose": "Plus Jakarta Sans directory text."
       }
     },
     "shadows": [],
     "motion": [],
     "breakpoints": [
       {
-        "name": "single-column",
-        "value": "700px"
+        "name": "two-column",
+        "value": "1100px"
       },
       {
-        "name": "narrow-phone",
+        "name": "single-column",
+        "value": "767px"
+      },
+      {
+        "name": "narrow-store-card",
         "value": "360px"
       }
     ]
@@ -185,47 +73,43 @@
       "name": "Category card",
       "kind": "card",
       "refersTo": "category-card",
-      "description": "Whole-card same-tab category link with store count.",
-      "html": "<a class=\"ds-card\" href=\"food/\"><div class=\"ds-copy\"><h2>Restauration</h2><p>1 commerce</p></div><span class=\"ds-arrow\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></span></a>",
-      "css": ".ds-card{display:flex;align-items:center;gap:24px;min-height:144px;padding:28px;background:#fff;color:#243a32;border:1px solid #d9dfd7;border-radius:12px;text-decoration:none;font-family:\"Segoe UI\",Arial,sans-serif}.ds-card:hover{background:#edf3eb;border-color:#81998b}.ds-card:focus-visible{outline:3px solid #296248;outline-offset:5px}.ds-copy{min-width:0}.ds-card h2{font-size:1.3rem;font-weight:600;line-height:1.35;margin:0 0 8px;overflow-wrap:anywhere}.ds-card p{color:#516257;line-height:1.5;margin:0}.ds-arrow{margin-left:auto;flex-shrink:0;width:24px;height:24px}.ds-arrow svg{width:100%;height:100%}@media(max-width:700px){.ds-card{min-height:112px;padding:20px;gap:16px}.ds-card h2{font-size:1.125rem}}"
+      "description": "Same-tab category link with inline symbol, store count and arrow.",
+      "html": "<a class=\"ds-card\" href=\"home-goods/\"><svg class=\"ds-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m3 10 9-7 9 7v11H3V10Zm6 11v-8h6v8\"/></svg><div><h3>Home Goods</h3><p>1 store</p></div><svg class=\"ds-arrow\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-card{display:flex;align-items:center;gap:16px;min-height:144px;padding:24px;background:var(--surface,#fff);color:var(--ink,#111);border:1px solid var(--border,#e8e4de);border-radius:16px;text-decoration:none}.ds-card:hover{border-color:var(--orange,#ff6b00);background:var(--panel,#f8f7f4)}.ds-card:focus-visible{outline:3px solid var(--primary,#a04100);outline-offset:5px}.ds-card h3{font-family:\"Space Grotesk\",Arial,sans-serif;font-size:20px;font-weight:600;line-height:28px;letter-spacing:-.005em;margin:0 0 8px;overflow-wrap:anywhere}.ds-card p{font-family:\"Plus Jakarta Sans\",Arial,sans-serif;font-size:14px;line-height:22px;color:var(--muted,rgba(17,17,17,.70));margin:0}.ds-icon{width:32px;height:32px;flex-shrink:0;color:var(--primary,#a04100)}.ds-arrow{width:20px;height:20px;margin-left:auto;flex-shrink:0}@media(max-width:767px){.ds-card{min-height:112px;padding:20px}}"
     },
     {
-      "name": "Store card",
-      "kind": "card",
-      "refersTo": "store-card",
-      "description": "Store link layout; insert the original runtime logo in the reserved slot. Preview omits artwork rather than fabricating a store identity.",
-      "html": "<a class=\"ds-card ds-store\" href=\"ino-burger/\"><span class=\"ds-logo-slot\" aria-hidden=\"true\"></span><div class=\"ds-copy\"><h2>Ino Burger</h2><p>Localisation à confirmer</p></div><span class=\"ds-arrow\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></span></a>",
-      "css": ".ds-card{display:flex;align-items:center;gap:24px;min-height:144px;padding:28px;background:#fff;color:#243a32;border:1px solid #d9dfd7;border-radius:12px;text-decoration:none;font-family:\"Segoe UI\",Arial,sans-serif}.ds-card:hover{background:#edf3eb;border-color:#81998b}.ds-card:focus-visible{outline:3px solid #296248;outline-offset:5px}.ds-copy{min-width:0}.ds-card h2{font-size:1.3rem;font-weight:600;line-height:1.35;margin:0 0 8px;overflow-wrap:anywhere}.ds-card p{color:#516257;line-height:1.5;margin:0}.ds-arrow{margin-left:auto;flex-shrink:0;width:24px;height:24px}.ds-arrow svg{width:100%;height:100%}@media(max-width:700px){.ds-card{min-height:112px;padding:20px;gap:16px}.ds-card h2{font-size:1.125rem}}.ds-logo-slot{width:96px;height:96px;flex-shrink:0}@media(max-width:700px){.ds-logo-slot{width:72px;height:72px}}@media(max-width:360px){.ds-store{padding:16px;gap:12px}.ds-logo-slot{width:60px;height:60px}}"
-    },
-    {
-      "name": "Directory navigation",
-      "kind": "nav",
-      "refersTo": "navigation",
-      "description": "Wrapping home and back links with comfortable targets and visible focus.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"Navigation principale\"><a class=\"ds-home\" href=\"../\">Nos commerces</a><a href=\"../\">Toutes les catégories</a></nav>",
-      "css": ".ds-nav{display:flex;flex-wrap:wrap;gap:8px 28px;border-bottom:1px solid #d9dfd7;padding-bottom:16px;font-family:\"Segoe UI\",Arial,sans-serif;color:#243a32}.ds-nav a{display:inline-flex;align-items:center;min-height:48px;color:inherit;text-underline-offset:5px}.ds-nav a:focus-visible{outline:3px solid #296248;outline-offset:5px}.ds-home{font-weight:650;text-decoration:none}"
+      "name": "Store-name search",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Root searches all store names; category pages search only their stores. Runtime adds clear action, polite result count and distinct empty states.",
+      "html": "<div class=\"ds-search\"><label for=\"ds-store-search\">Search all stores</label><div class=\"ds-field\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><circle cx=\"10.5\" cy=\"10.5\" r=\"7.5\"/><path d=\"m16 16 5 5\"/></svg><input id=\"ds-store-search\" type=\"search\" placeholder=\"Search by store name\" autocomplete=\"off\" spellcheck=\"false\"></div></div>",
+      "css": ".ds-search{max-width:720px;font-family:\"Plus Jakarta Sans\",Arial,sans-serif;color:var(--ink,#111)}.ds-search label{display:block;font-family:\"Space Grotesk\",Arial,sans-serif;font-size:14px;font-weight:600;margin-bottom:12px}.ds-field{position:relative}.ds-field>svg{position:absolute;left:20px;top:20px;width:24px;height:24px;color:var(--primary,#a04100);pointer-events:none}.ds-field input{box-sizing:border-box;width:100%;height:64px;padding:16px 64px 16px 56px;font:inherit;background:var(--surface,#fff);color:var(--ink,#111);border:1px solid var(--border,#e8e4de);border-radius:8px;caret-color:var(--primary,#a04100)}.ds-field input::placeholder{color:var(--muted,rgba(17,17,17,.70))}.ds-field input:focus-visible{outline:2px solid var(--orange,#ff6b00);outline-offset:2px}"
     }
   ],
   "narrative": {
-    "northStar": "A calm local directory",
-    "overview": "The French directory is light, minimal and easy to scan: generous serif headings introduce restrained category and store cards. Muted green-gray surfaces leave the store names and original logos prominent.\n\nScope is the root homepage and the five category pages using `directory.css` and `directory.js`. This records the implemented, code-led direction; no visual comps were approved. Each individual store keeps its independent identity. Store-local styles and design documents govern store pages, including existing Maison Allure and Ino Burger `DESIGN.md` files.",
+    "northStar": "Warm Tactile Precision",
+    "overview": "The supplied Wakil AI design system governs this white-first, warm directory with geometric typography and purposeful orange accents. This records the implemented CSS subset, without a separate visual comp. Scope is the English root and eleven category pages; individual store pages retain local brands and French copy.",
     "keyCharacteristics": [
-      "Light neutral surfaces with green-gray text and focus accents.",
-      "Georgia display headings with Segoe UI body text.",
-      "Whole-card navigation, proportioned logos and natural scrolling."
+      "Warm white canvas, white cards and delicate borders.",
+      "Self-hosted Space Grotesk headings/navigation and Plus Jakarta Sans body.",
+      "SVG category icons, proportioned store logos and whole-card navigation."
     ],
-    "rules": [],
+    "rules": [
+      {
+        "name": "The White-First Rule",
+        "body": "Warmth comes from the canvas and orange accents, without stacking decorative beige layers.",
+        "section": "colors"
+      }
+    ],
     "dos": [
-      "Do apply this system only to the directory homepage and category pages.",
-      "Do preserve each store's logo proportions and independent visual design.",
-      "Do keep complete cards clickable, keyboard focus visible and touch targets at least 48px high.",
-      "Do let content wrap and scroll naturally across mobile, landscape and desktop."
+      "Do apply the shared system only to directory pages.",
+      "Do preserve supplied logos and visible keyboard focus.",
+      "Do let content wrap and scroll naturally."
     ],
     "donts": [
-      "Don't propagate directory fonts, colors or card styles into individual store pages.",
-      "Don't crop or recolor store logos to fit the directory palette.",
-      "Don't add directory animations or decorative components absent from the implemented system.",
-      "Don't present unconfirmed locations as established facts."
+      "Don't propagate directory branding into store pages.",
+      "Don't crop, recolor or fabricate logos or location facts.",
+      "Don't add shadows or motion absent from the implementation."
     ]
   }
 }

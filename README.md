@@ -1,71 +1,52 @@
-# Nos commerces
+# Wakil AI Store Directory
 
-Annuaire français statique pour les commerces équipés de plaques NFC ou de QR codes.
-Parcours : catégorie → commerce → liens utiles. Les scans ouvrent directement la page du commerce.
-Aucun framework, backend ni dépendance à installer pour le site ou les contrôles Node.
+Static English directory for Algerian stores with NFC plates or QR codes. Browse store types or search by name, then open a store’s existing page of useful links. Individual store pages keep their own French copy and visual identity.
 
-## Modifier et vérifier
+## Edit and check
 
-- `stores.js` : catégories, noms, logos et localisation. Les champs `commune` et `wilaya` restent `null` tant qu'ils ne sont pas confirmés ; la carte affiche « Localisation à confirmer ».
-- `<catégorie>/<commerce>/links.js` : textes, destinations et ordre des liens. Ino Burger conserve sa convention `window.INO_LINKS` ; les autres utilisent `window.LINKTREE_LINKS`.
-- Une destination vide masque le bouton sans supprimer sa configuration. Seuls `https:`, `tel:` et `mailto:` sont acceptés. Les textes sont rendus sans HTML.
-- Les pages des commerces restent indépendantes du rendu de l'annuaire.
+- `stores.js`: store types, names, logos and locations. Type labels are their URL slug words in title case. Keep slugs stable after launch.
+- `directory.js`, `search.js`, `directory.css`: shared directory rendering, name matching and Wakil AI styling.
+- `wakil-ai-assests/design-system.md` and `logo.png`: supplied brand authority. `DESIGN.md` records the implemented directory subset. Fonts are hosted locally with their Google Fonts OFL licenses in `wakil-ai-assests/fonts/`.
+- `<type>/<store>/links.js`: editable store labels, destinations and order. Ino Burger retains `window.INO_LINKS`; other stores use `window.LINKTREE_LINKS`.
+- Empty destinations are retained in configuration and omitted publicly. Only `https:`, `tel:` and `mailto:` are accepted. Editable labels render as text.
+- Leave both `commune` and `wilaya` as `null` until confirmed. Cards display “Location to be confirmed”.
 
 ```powershell
 node check.cjs
 node scripts/prepare.cjs
 ```
 
-Le contrôle racine lance les vérifications des six commerces, valide le registre,
-les destinations et la fermeture des références de fichiers publics. Il crée `_site/`,
-exclu de Git, avec uniquement les fichiers nécessaires à l'exécution.
-`node check.cjs --release` exige aussi toutes les communes et wilayas confirmées.
-Il ne remplace pas les autres portes de sortie décrites dans `VERIFICATION.md`.
+No application dependencies or framework are required. Checks cover all six stores, search normalization and category scope, registry validity, unique URLs, safe destinations, the legacy redirect and the deployment artifact. `node check.cjs --release` additionally requires confirmed locations; it does not close the other release gates in `VERIFICATION.md`.
 
-Ouvrez `index.html` pour une prévisualisation simple ou servez `_site/` avec un serveur statique.
-L'annuaire propose des liens ordinaires vers les catégories et les commerces sans JavaScript.
-Les pages des commerces affichent un message lorsque JavaScript est désactivé.
+Preparation stages only required runtime files in ignored `_site/`, including fonts and their license files. Tests, docs, unused artwork, masters and local verification material stay outside the deployed artifact. Useful originals remain in the public source repository.
 
-## Vérification navigateur
+## Search and store types
 
-`scripts/check-browser.cjs` utilise une installation Playwright existante, sans l'ajouter au site.
-Configurez `PLAYWRIGHT_MODULE` avec le chemin de `playwright-core` et, si nécessaire,
-`CHROMIUM_PATH` avec le navigateur Chromium installé, puis :
+Homepage search finds stores across all types. Category search stays within its type. Matching ignores case, accents, apostrophe style and repeated spaces. Clear search restores the default list; no matches and categories with no stores have explicit empty states. Search requires JavaScript; ordinary fallback links still allow browsing with JavaScript disabled.
+
+Eleven types are registered: Food, Clothing Store, Perfume Store, Computer Store, Phone Store, Home Goods, Travel Agency, Cosmetic Store, Shoes Store, Dental Clinic and Jewelry Store. The five upcoming types currently have no stores.
+
+Sallon d’or sells curtains and interior decoration, so its page lives at `home-goods/sallon-dor/`. The previous `clothing-store/sallon-dor/` URL redirects and includes a normal fallback link.
+
+## Browser verification
+
+Use an existing Playwright installation without adding it to the website. Set `PLAYWRIGHT_MODULE` to its `playwright-core` path and, if needed, `CHROMIUM_PATH` to an installed Chromium executable, then run:
 
 ```powershell
 node scripts/check-browser.cjs
 ```
 
-Le script sert uniquement `_site/` sous `/nfc/` sur une interface locale, exécute 72 vues
-(12 pages × 6 formats), contrôle la navigation et crée des captures locales ignorées dans
-`.impeccable/review/`. Les tests Node restent exécutables sans Playwright.
+The script serves `_site/` locally under `/nfc/`, checks 108 page/viewport combinations plus search/navigation/legacy-redirect flows, and saves ignored screenshots in `.impeccable/review/`. Node checks do not require Playwright. Open `index.html` directly for a basic preview or use a static server for `_site/`.
 
-## Ajouter un commerce
+## Add a store
 
-1. Utilisez le skill `nfc-linktree` pour créer le dossier dans la catégorie appropriée. Conservez les références originales et la documentation avec le projet.
-2. Renseignez `links.js`, puis ajoutez le commerce à `stores.js` avec son logo et une commune + wilaya confirmées. Conservez les slugs après lancement.
-3. Ajoutez un lien ordinaire vers le commerce dans le bloc `noscript` de la page de catégorie. Pour une nouvelle catégorie, créez son `index.html` sur le modèle existant et ajoutez son lien dans le `noscript` de l'accueil.
-4. Exécutez `node check.cjs`, les vérifications navigateur et `node check.cjs --release`.
-5. Committez les chemins concernés et poussez sur `main` dans `WakilAI/nfc`. Le workflow vérifie le site puis prépare et déploie l'artifact Pages.
+1. Use the `nfc-linktree` skill to create the folder under its type; preserve supplied artwork and documentation.
+2. Fill `links.js`, add the store to `stores.js` with its logo and confirmed commune + wilaya, and add a direct link to the type page’s `noscript` fallback.
+3. For a new type, add its registry entry, matching SVG icon in `directory.js`, category page on the existing model and homepage fallback link. Empty types are supported.
+4. Run Node checks, browser checks and release checks, then commit the intended paths and push to `main` in `WakilAI/nfc`.
 
-## GitHub Pages
+## Deployment
 
-Le dépôt existant est [WakilAI/nfc](https://github.com/WakilAI/nfc), public.
-Le workflow `.github/workflows/pages.yml` se lance sur `main` ou manuellement.
-Seul `_site/` est déployé ; les tests, la documentation, les masters et les références inutilisées restent hors de l'artifact.
-Les originaux utiles restent versionnés dans le dépôt public.
+[WakilAI/nfc](https://github.com/WakilAI/nfc) is the existing public repository. `.github/workflows/pages.yml` checks, prepares, uploads and deploys on pushes to `main` or manual dispatch. GitHub Pages is configured to use GitHub Actions. Expected site: [Wakil AI Store Directory](https://wakilai.github.io/nfc/).
 
-Si Pages n'est pas activé, un propriétaire/administrateur doit ouvrir
-[Settings → Pages](https://github.com/WakilAI/nfc/settings/pages), sélectionner **GitHub Actions**
-comme source et enregistrer. Ensuite, relancer le workflow **Check and deploy Pages** dans
-[Actions](https://github.com/WakilAI/nfc/actions/workflows/pages.yml) sur `main`.
-Si une politique d'organisation bloque les actions utilisées, autoriser `actions/checkout`,
-`actions/setup-node`, `actions/upload-pages-artifact`, `actions/configure-pages` et `actions/deploy-pages`.
-
-Adresse attendue uniquement : `https://wakilai.github.io/nfc/`.
-Ne programmer/ imprimer aucune destination NFC/QR avant vérification de l'adresse effective et des douze pages en ligne.
-
-L'adéquation de GitHub Pages à ce service commercial reste une porte de sortie ouverte.
-Les [limites d'utilisation GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits#usage-limits)
-restreignent notamment l'hébergement de sites principalement destinés aux transactions commerciales ou à un SaaS commercial.
-La mise en place du workflow ne confirme pas cette adéquation.
+See `VERIFICATION.md` for observed deployment status and open release gates. Confirm live URLs before programming NFC plates or printing QR codes. The commercial service’s suitability under [GitHub Pages usage limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits#usage-limits) remains unresolved.

@@ -13,7 +13,9 @@ function registry() {
 function publicFiles() {
   const data = registry();
   const files = new Set();
-  const queue = ['index.html', ...data.categories.map(c => `${c.slug}/index.html`),
+  const queue = ['index.html', 'clothing-store/sallon-dor/index.html',
+    'wakil-ai-assests/fonts/space-grotesk-OFL.txt', 'wakil-ai-assests/fonts/plus-jakarta-sans-OFL.txt',
+    ...data.categories.map(c => `${c.slug}/index.html`),
     ...data.stores.flatMap(s => [`${s.category}/${s.slug}/index.html`, s.logo])];
   while (queue.length) {
     const file = path.posix.normalize(queue.pop());
@@ -22,7 +24,7 @@ function publicFiles() {
     if (!absolute.startsWith(root + path.sep) || !fs.statSync(absolute).isFile() || fs.lstatSync(absolute).isSymbolicLink()) {
       throw new Error(`Unsafe or missing runtime file: ${file}`);
     }
-    if (!/\.(html|css|js|svg|png|jpg|jpeg|webp|ico|woff2)$/.test(file)) throw new Error(`Unexpected runtime type: ${file}`);
+    if (!/\.(html|css|js|svg|png|jpg|jpeg|webp|ico|woff2)$/.test(file) && !file.endsWith('-OFL.txt')) throw new Error(`Unexpected runtime type: ${file}`);
     files.add(file);
     if (!/\.(html|css|js|svg)$/.test(file)) continue;
     const source = fs.readFileSync(absolute, 'utf8');

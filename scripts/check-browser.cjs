@@ -42,6 +42,7 @@ const { configured } = require('./check-store.cjs');
         await page.goto(base + route.url);
         await page.waitForFunction(() => document.querySelector('#link-status, #directory-status')?.hidden);
         await page.evaluate(() => Promise.all(Array.from(document.images, img => img.decode())));
+        await page.evaluate(() => document.fonts.ready);
         const metrics = await page.evaluate(() => ({
           overflow: document.documentElement.scrollWidth > innerWidth || document.body.scrollWidth > innerWidth,
           broken: Array.from(document.images).filter(img => !img.complete || !img.naturalWidth).map(img => img.src),
@@ -69,6 +70,35 @@ const { configured } = require('./check-store.cjs');
         await page.keyboard.press('Tab');
         assert.ok(await page.evaluate(() => document.activeElement?.tagName === 'A' && getComputedStyle(document.activeElement).outlineStyle !== 'none'), `${route.name}: focus missing`);
         await page.locator('a').first().evaluate(a => a.blur());
+        if (!route.store) {
+          assert.equal(await page.locator('html').getAttribute('lang'), 'en');
+          assert.equal(await page.locator('.home-link img').getAttribute('src'), route.url ? '../wakil-ai-assests/logo.png' : './wakil-ai-assests/logo.png');
+          const search = page.getByRole('searchbox');
+          assert.ok(await search.isVisible());
+          const sample = route.url ? stores.find(s => s.category === route.url.slice(0, -1)) : stores.find(s => s.slug === 'midho-prive');
+          await search.fill(sample ? sample.name.toUpperCase() : 'unknown store');
+          assert.equal(await page.locator('#directory > li').count(), sample ? 1 : 0);
+          if (sample) {
+            assert.equal(await page.locator('#directory a').getAttribute('href'), route.url ? sample.slug + '/' : `${sample.category}/${sample.slug}/`);
+            await page.evaluate(() => Promise.all(Array.from(document.images, img => img.decode())));
+          }
+          const box = await search.boundingBox();
+          assert.ok(box.width >= 48 && box.height >= 48);
+          await search.fill('<img src=x onerror=alert(1)>');
+          assert.equal(await page.locator('#directory > li').count(), 0);
+          assert.ok(await page.locator('#empty-state').isVisible());
+          assert.equal(await page.locator('#empty-state h3').textContent(), 'No stores found');
+          await page.getByRole('button', { name: 'Clear search' }).click();
+          assert.ok(await search.evaluate(el => el === document.activeElement));
+          assert.equal(await page.locator('#directory > li').count(), route.url ? stores.filter(s => s.category === route.url.slice(0, -1)).length : categories.length);
+          if (route.url === 'clothing-store/') {
+            await search.fill('sallon');
+            assert.equal(await page.locator('#directory > li').count(), 0, 'Search must stay within its category');
+            await page.getByRole('button', { name: 'Clear search' }).click();
+          }
+          if (!route.url) assert.equal(await page.locator('.category-icon svg').count(), categories.length);
+          await search.evaluate(el => el.blur());
+        }
         if (viewport.width === 390 || viewport.width === 844) {
           await page.evaluate(() => window.scrollTo(0, 0));
           await page.screenshot({ path: path.join(screenshots, `${route.name}-${viewport.width}.png`), fullPage: true });
@@ -93,6 +123,10 @@ const { configured } = require('./check-store.cjs');
       await page.goBack();
       assert.equal(page.url(), base);
     }
+    await page.goto(base + 'clothing-store/sallon-dor/');
+    await page.waitForURL(base + 'home-goods/sallon-dor/');
+    await page.waitForFunction(() => document.getElementById('link-status').hidden);
+    assert.equal(page.url(), base + 'home-goods/sallon-dor/');
     const nojs = await browser.newContext({ javaScriptEnabled: false });
     const fallback = await nojs.newPage();
     for (const route of routes) {
@@ -102,7 +136,7 @@ const { configured } = require('./check-store.cjs');
     }
     fs.mkdirSync(path.join(root, '.local'), { recursive: true });
     fs.writeFileSync(path.join(root, '.local/browser-report.json'), JSON.stringify(reports, null, 2));
-    console.log(`PASS browser: ${reports.length} viewport/route views, 24 screenshots, all store flows, refreshes, Back, no-JS, asset loading, targets, focus, natural scrolling, link order and empty-link omission.`);
+    console.log(`PASS browser: ${reports.length} viewport/route views, ${routes.length * 2} screenshots, search/matching/clearing/empty states/category scope, all store flows, legacy URL, refreshes, Back, no-JS, asset loading, targets, focus, natural scrolling, link order and empty-link omission.`);
   } finally {
     if (browser) await browser.close();
     await new Promise(resolve => server.close(resolve));

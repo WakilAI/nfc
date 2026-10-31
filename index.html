@@ -1,31 +1,37 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Retrouvez les commerces et leurs liens utiles : restauration, mode et maison, parfumerie, informatique et téléphonie.">
-  <meta name="theme-color" content="#f7f8f4">
-  <title>Nos commerces</title>
-  <link rel="stylesheet" href="directory.css">
-  <script src="stores.js" defer></script>
-  <script src="directory.js" defer></script>
+  <meta name="description" content="Find local stores and their useful links in the Wakil AI store directory.">
+  <meta name="theme-color" content="#FCFAF7">
+  <title>Store Directory | Wakil AI</title>
+  <link rel="icon" href="./wakil-ai-assests/logo.png" type="image/png">
+  <link rel="stylesheet" href="./directory.css">
+  <script src="./stores.js" defer></script>
+  <script src="./search.js" defer></script>
+  <script src="./directory.js" defer></script>
 </head>
 <body>
   <div class="shell">
-    <nav class="top-nav" aria-label="Navigation principale"><a class="home-link" href="./">Nos commerces</a></nav>
+    <nav class="top-nav" aria-label="Main navigation"><a class="home-link" href="./" aria-label="Wakil AI store directory"><img src="./wakil-ai-assests/logo.png" alt="" width="56" height="56">Wakil AI</a><span class="nav-label">Store directory</span></nav>
     <main>
-      <header><h1>Nos commerces</h1><p id="intro">Choisissez une catégorie pour découvrir les commerces.</p></header>
-      <p id="directory-status" role="status">Chargement des commerces… Si la liste ne s’affiche pas, actualisez la page.</p>
-      <ul id="directory" class="directory" aria-label="Catégories de commerces"></ul>
-      <noscript><div class="fallback"><p>JavaScript est désactivé. Accédez directement aux catégories :</p><ul>
-        <li><a href="food/">Restauration</a></li>
-        <li><a href="clothing-store/">Mode &amp; maison</a></li>
-        <li><a href="perfume-store/">Parfumerie</a></li>
-        <li><a href="computer-store/">Informatique</a></li>
-        <li><a href="phone-store/">Téléphonie</a></li>
-      </ul></div></noscript>
+      <header><h1>Find your next local favourite.</h1><p id="intro">Discover local stores, explore by type or go straight to the name you know.</p></header>
+      <search id="search-form" class="search-form" hidden aria-label="Store search">
+        <label for="store-search">Search all stores</label>
+        <div class="search-field">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg>
+          <input id="store-search" type="search" placeholder="Search by store name" autocomplete="off" aria-controls="directory" spellcheck="false">
+          <button id="clear-search" class="clear-search" type="button" aria-label="Clear search" hidden><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+        </div>
+      </search>
+      <p id="directory-status" role="status">Loading stores… If the list does not appear, refresh the page.</p>
+      <div class="listing-header"><h2 id="listing-title">Browse store types</h2><p id="results-status" role="status" aria-live="polite" aria-atomic="true"></p></div>
+      <ul id="directory" class="directory" aria-label="Store types or search results"></ul>
+      <div id="empty-state" class="empty-state" hidden><h3>No stores found</h3><p>Try another store name.</p></div>
+      <noscript><style>#directory-status,.listing-header { display:none; }</style><div class="fallback"><p>JavaScript is off. Browse using the links below; name search needs JavaScript.</p><ul><li><a href="food/">Food</a></li><li><a href="clothing-store/">Clothing Store</a></li><li><a href="perfume-store/">Perfume Store</a></li><li><a href="computer-store/">Computer Store</a></li><li><a href="phone-store/">Phone Store</a></li><li><a href="home-goods/">Home Goods</a></li><li><a href="travel-agency/">Travel Agency</a></li><li><a href="cosmetic-store/">Cosmetic Store</a></li><li><a href="shoes-store/">Shoes Store</a></li><li><a href="dental-clinic/">Dental Clinic</a></li><li><a href="jewelry-store/">Jewelry Store</a></li></ul></div></noscript>
     </main>
-    <footer>Un commerce, tous ses liens utiles.</footer>
+    <footer>A local store. All its useful links.</footer>
   </div>
 </body>
 </html>

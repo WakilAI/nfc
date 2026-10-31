@@ -1,141 +1,160 @@
 ---
-name: Nos commerces — Directory
-description: Light French category and store navigation; independent store identities remain local.
+name: Wakil AI — Store Directory
+description: A warm, precise directory that keeps each store's identity intact.
 colors:
-  ink: "#243a32"
-  background: "#f7f8f4"
+  background: "#fcfaf7"
   surface: "#fff"
-  muted: "#516257"
-  border: "#d9dfd7"
-  hover: "#edf3eb"
-  sage: "#81998b"
-  focus: "#296248"
-  selection: "#d7e6d9"
-  selection-ink: "#183c2d"
+  panel: "#f8f7f4"
+  border: "#e8e4de"
+  ink: "#111"
+  muted: "rgba(17, 17, 17, .70)"
+  orange: "#ff6b00"
+  primary: "#a04100"
 typography:
   display:
-    fontFamily: 'Georgia, "Times New Roman", serif'
-    fontSize: "clamp(2.5rem, 7vw, 4.5rem)"
-    fontWeight: 400
-    lineHeight: 1.12
-    letterSpacing: "-.025em"
-  body:
-    fontFamily: '"Segoe UI", Arial, sans-serif'
-    fontSize: "1rem"
-  intro:
-    fontFamily: '"Segoe UI", Arial, sans-serif'
-    fontSize: "1.125rem"
-    lineHeight: 1.65
-  card-title:
-    fontFamily: '"Segoe UI", Arial, sans-serif'
-    fontSize: "1.3rem"
+    fontFamily: '"Space Grotesk", Arial, sans-serif'
+    fontSize: "60px"
+    fontWeight: 700
+    lineHeight: 1.13
+    letterSpacing: "-.03em"
+  display-mobile:
+    fontFamily: '"Space Grotesk", Arial, sans-serif'
+    fontSize: "38px"
+    fontWeight: 700
+    lineHeight: "44px"
+    letterSpacing: "-.02em"
+  headline:
+    fontFamily: '"Space Grotesk", Arial, sans-serif'
+    fontSize: "24px"
     fontWeight: 600
-    lineHeight: 1.35
-  footer:
-    fontSize: ".875rem"
-    lineHeight: 1.6
+    lineHeight: "32px"
+    letterSpacing: "-.01em"
+  card-title:
+    fontFamily: '"Space Grotesk", Arial, sans-serif'
+    fontSize: "20px"
+    fontWeight: 600
+    lineHeight: "28px"
+    letterSpacing: "-.005em"
+  body:
+    fontFamily: '"Plus Jakarta Sans", Arial, sans-serif'
+    fontSize: "16px"
+  intro:
+    fontFamily: '"Plus Jakarta Sans", Arial, sans-serif'
+    fontSize: "18px"
+    lineHeight: "28px"
+  metadata:
+    fontFamily: '"Plus Jakarta Sans", Arial, sans-serif'
+    fontSize: "14px"
+    lineHeight: "22px"
 rounded:
-  card: "12px"
+  field: "8px"
+  card: "16px"
 spacing:
-  tight: "8px"
-  compact: "12px"
+  compact: "8px"
+  label: "12px"
   standard: "16px"
   mobile-card: "20px"
-  shell: "24px"
-  desktop-card: "28px"
+  desktop-card: "24px"
   section: "32px"
-  footer: "48px"
+  search: "40px"
+  header: "56px"
 components:
   category-card:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
     rounded: "{rounded.card}"
-    padding: "28px"
+    padding: "24px"
   store-card:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
     rounded: "{rounded.card}"
-    padding: "28px"
+    padding: "24px"
   card-hover:
-    backgroundColor: "{colors.hover}"
-  navigation:
+    backgroundColor: "{colors.panel}"
+  search-field:
+    backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
+    rounded: "{rounded.field}"
+    height: "64px"
+    padding: "16px 64px 16px 56px"
 ---
 
-# Design System: Nos commerces — Directory
+# Design System: Wakil AI — Store Directory
 
 ## Overview
 
-**Creative North Star: "A calm local directory"**
+**Creative North Star: "Warm Tactile Precision"**
 
-The French directory is light, minimal and easy to scan: generous serif headings introduce restrained category and store cards. Muted green-gray surfaces leave the store names and original logos prominent.
+The supplied `wakil-ai-assests/design-system.md` governs the directory identity: white-first warmth, clear geometric typography and purposeful Wakil Orange. This document records its implemented subset from `directory.css`; unused agency tokens are omitted. No separate visual comp governs the work.
 
-Scope is the root homepage and the five category pages using `directory.css` and `directory.js`. This records the implemented, code-led direction; no visual comps were approved. Each individual store keeps its independent identity. Store-local styles and design documents govern store pages, including existing Maison Allure and Ino Burger `DESIGN.md` files.
+Scope is the English root directory and eleven category pages. The supplied Wakil AI logo identifies this shared shell. Individual store pages retain their local brands, French copy and store-local design guidance.
 
 **Key Characteristics:**
-- Light neutral surfaces with green-gray text and focus accents.
-- Georgia display headings with Segoe UI body text.
-- Whole-card navigation, proportioned logos and natural scrolling.
+- Warm white canvas, white cards and delicate borders.
+- Geometric headings and navigation paired with readable body text.
+- SVG category icons, proportioned store logos and whole-card navigation.
 
 ## Colors
 
-The palette uses one restrained green family against pale neutral surfaces. The frontmatter contains the normative values extracted from `directory.css`.
+The frontmatter preserves the actual CSS token names and values.
 
 ### Primary
 
-- **Forest focus** (`focus`): keyboard outline.
-- **Green-gray ink** (`ink`): headings, navigation and directional arrows.
+- **Wakil Orange** (`orange`): card hover borders, text selection and search focus.
+- **Deep orange** (`primary`): category/search icons, link/button focus and scrollbar thumb.
 
 ### Neutral
 
-- **Pale paper** (`background`): the page canvas.
-- **White surface** (`surface`): category and store cards.
-- **Muted foliage** (`muted`): introduction, metadata and footer.
-- **Soft edge** (`border`): card outlines, navigation and footer dividers.
-- **Pale leaf** (`hover`): immediate card hover surface.
-- **Sage** (`sage`): hover border and scrollbar thumb.
-- **Selection leaf / deep selection ink** (`selection`, `selection-ink`): selected text.
+- **Warm white** (`background`): page canvas.
+- **White** (`surface`): cards and search input.
+- **Soft panel** (`panel`): card hover fill and clear-search button.
+- **Warm delicate border** (`border`): outlines, dividers and clear-button hover fill.
+- **Black ink** (`ink`): headings, navigation, arrows and input text.
+- **Secondary ink** (`muted`): introduction, metadata, placeholders, status and footer.
+
+**The White-First Rule.** Warmth comes from the canvas and orange accents, without stacking decorative beige layers.
 
 ## Typography
 
-Georgia, with Times New Roman and serif fallbacks, gives display headings a welcoming character. Segoe UI, with Arial and sans-serif fallbacks, keeps navigation and metadata direct.
+Space Grotesk serves headings and navigation; Plus Jakarta Sans serves body text. Both are self-hosted variable WOFF2 fonts with Arial and sans-serif fallbacks and swap loading. The shipped weight ranges are 400–700 and 400–600 respectively.
 
-The fluid display role is reserved for the page heading. Introduction copy has a maximum measure of 52ch. Card titles use the frontmatter desktop role, reducing to 1.125rem at widths of 700px or less. Card descriptions use a line height of 1.5; navigation branding uses weight 650. Long titles can wrap anywhere.
+Use display for page headings, balanced within 15ch, and display-mobile at the mobile breakpoint. Introduction copy stays within 56ch. Section headings use headline, reducing to (20px/28px) on mobile; card names use card-title at every size. Navigation branding is (22px, 700), while search labels are (14px, 600) in Space Grotesk. Preserve wrapping for long store names.
 
 ## Layout
 
-A centered shell has a maximum width of 1060px including its padding. Safe-area-aware outer padding is at least 24px horizontally and at the top, with 36px at the bottom. At widths of 360px or less, horizontal padding becomes at least 16px.
+The centered shell is (1200px) maximum including padding. Desktop horizontal padding is (40px), becoming (32px) at widths up to (1100px), then (20px) up to (767px). Safe-area insets are respected. Top padding is (24px), reducing to (16px) on mobile; bottom padding is at least (40px).
 
-Cards use two equal columns with a 16px gap; at 700px or less they become one column with a 12px gap. Desktop cards have a minimum height of 144px, 28px padding and 24px internal gaps; mobile cards use 112px, 20px and 16px respectively. Store cards at 360px or less use 16px padding and a 12px gap.
-
-Navigation wraps naturally. Header spacing is 52px above and 32px below, with its top reduced to 36px on mobile. The footer follows content with a 48px margin. All pages scroll naturally; no fixed-height viewport composition or directory animation is implemented.
+The directory grid uses three equal columns with (24px) gaps, two columns with (20px) gaps up to (1100px), and one column with (16px) gaps up to (767px). Header spacing is (56px) above and (32px) below, with mobile top spacing (40px). Search is at most (720px) wide. The footer follows content with a (56px) margin. Pages scroll naturally, including touch landscape.
 
 ## Elevation & Depth
 
-Depth comes from white surfaces, subtle one-pixel borders and a pale hover fill. Directory cards have no shadows, gradients or overlays; hover changes are immediate.
+The implemented directory has no shadows, gradients, animation or transitions. White surfaces, one-pixel warm borders and immediate hover fill changes establish separation.
 
 ## Shapes
 
-Cards use gently rounded corners from the card radius token. Direction is conveyed by a crisp 24px inline SVG arrow with a 1.5 stroke. Logos retain their proportions using contained image fitting inside square slots: 96px on desktop, 72px on mobile, and 60px in store cards at 360px or less.
+Cards and empty-state panels use the card radius; the search field and its clear button use the field radius. Category symbols are (32px) inline stroke SVGs; directional arrows are (20px). Store logos use contained fitting in (72px) square slots, reducing to (64px) on mobile and (52px) in store cards up to (360px). Keep original artwork proportions and colors.
 
 ## Components
 
-**Category cards:** A complete same-tab anchor contains a category title, store count and decorative arrow. No category illustration or icon is added.
+**Category cards:** Whole-card same-tab anchors combine an SVG symbol, English category name, store count and arrow. Desktop minimum height is (144px); mobile uses (112px). Padding follows desktop-card or mobile-card. Hover changes the border to orange and the fill to panel.
 
-**Store cards:** The same anchor structure adds the store's original logo, name and location. Unconfirmed locations read “Localisation à confirmer”; do not invent location metadata. Logos have empty alternative text because the adjacent visible name identifies the destination.
+**Store cards:** The same frame uses the original logo and name. Category pages show location; global search also shows the category. Unconfirmed locations read “Location to be confirmed”. At widths up to (360px), store cards use (16px) padding and (12px) internal gaps. Decorative logos have empty alternative text because the adjacent name labels the link.
 
-**Navigation and fallback links:** Text links have a minimum height of 48px; full cards exceed that target. Keyboard focus uses a 3px outline with a 5px offset. Ordinary links and French no-JavaScript fallback lists preserve navigation.
+**Search:** A visible label precedes the field, with an inset search SVG and a (48px) clear button. Root search finds store names across all categories; category search stays within its category. Matching ignores case, accents, apostrophes and repeated spaces. Clearing restores the category or store listing and returns focus to the input. Result counts announce politely. Search appears only after JavaScript initializes; ordinary fallback links remain available without JavaScript.
+
+**Empty states:** A bordered white panel distinguishes “No stores found” after a query from “No stores here yet” in an unpopulated category. Guidance suggests another name or clearing search when relevant.
+
+**Navigation and focus:** The header pairs the supplied logo with the Wakil AI name; category pages offer “All store types”. Navigation wraps, with minimum (48px) link targets. Links and buttons use a deep-orange (3px) outline offset (5px); input focus uses an orange (2px) outline offset (2px).
 
 ## Do's and Don'ts
 
 ### Do:
-- Do apply this system only to the directory homepage and category pages.
-- Do preserve each store's logo proportions and independent visual design.
-- Do keep complete cards clickable, keyboard focus visible and touch targets at least 48px high.
-- Do let content wrap and scroll naturally across mobile, landscape and desktop.
+- Do apply this shared system only to the root directory and category pages.
+- Do preserve the supplied Wakil AI logo and each store's original artwork.
+- Do preserve visible keyboard focus, comfortable targets and natural scrolling.
+- Do keep English directory copy separate from French store-page copy.
 
 ### Don't:
-- Don't propagate directory fonts, colors or card styles into individual store pages.
-- Don't crop or recolor store logos to fit the directory palette.
-- Don't add directory animations or decorative components absent from the implemented system.
-- Don't present unconfirmed locations as established facts.
+- Don't propagate directory branding into independent store pages.
+- Don't crop, recolor or fabricate store logos or location facts.
+- Don't add shadows or motion to a system that currently implements neither.

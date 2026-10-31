@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Find local stores and their useful links in the Wakil AI store directory.">
+  <meta name="theme-color" content="#FCFAF7">
+  <title>Jewelry Store â€” Store Directory | Wakil AI</title>
+  <link rel="icon" href="../wakil-ai-assests/logo.png" type="image/png">
+  <link rel="stylesheet" href="../directory.css">
+  <script src="../stores.js" defer></script>
+  <script src="../search.js" defer></script>
+  <script src="../directory.js" defer></script>
+</head>
+<body data-category="jewelry-store">
+  <div class="shell">
+    <nav class="top-nav" aria-label="Main navigation"><a class="home-link" href="../" aria-label="Wakil AI store directory"><img src="../wakil-ai-assests/logo.png" alt="" width="56" height="56">Wakil AI</a><a href="../">All store types</a></nav>
+    <main>
+      <header><h1>Jewelry Store</h1><p id="intro">Find a store and open its contact details, social pages and useful links.</p></header>
+      <search id="search-form" class="search-form" hidden aria-label="Store search">
+        <label for="store-search">Search stores in Jewelry Store</label>
+        <div class="search-field">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg>
+          <input id="store-search" type="search" placeholder="Search by store name" autocomplete="off" aria-controls="directory" spellcheck="false">
+          <button id="clear-search" class="clear-search" type="button" aria-label="Clear search" hidden><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+        </div>
+      </search>
+      <p id="directory-status" role="status">Loading storesâ€¦ If the list does not appear, refresh the page.</p>
+      <div class="listing-header"><h2 id="listing-title">Stores</h2><p id="results-status" role="status" aria-live="polite" aria-atomic="true"></p></div>
+      <ul id="directory" class="directory" aria-label="Stores"></ul>
+      <div id="empty-state" class="empty-state" hidden><h3>No stores found</h3><p>Try another store name.</p></div>
+      <noscript><style>#directory-status,.listing-header { display:none; }</style><div class="fallback"><p>JavaScript is off. Browse using the links below; name search needs JavaScript.</p><p>No stores here yet. New stores will appear here.</p><a href="../">Browse all store types</a></div></noscript>
+    </main>
+    <footer>A local store. All its useful links.</footer>
+  </div>
+</body>
+</html>

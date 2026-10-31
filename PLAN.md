@@ -1,14 +1,14 @@
 # NFC store directory — implementation plan
 
-Status: Implemented, locally verified, committed and pushed to `main` on 2026-10-31. GitHub Actions checks and artifact upload passed; Pages deployment is blocked by missing Pages configuration and collaborator permissions. Location confirmation was deferred by the user. See `VERIFICATION.md` for evidence and the exact owner handoff.
+Status: Initial implementation committed and pushed on 2026-10-31; follow-up Wakil AI branding, English navigation, search and category adjustments verified locally. GitHub Pages is now configured to use GitHub Actions. Location confirmation remains deferred by the user. See `VERIFICATION.md` for observed deployment evidence and remaining release gates.
 
 ## Goal and confirmed decisions
 
-Create a public French directory for Algerian stores whose customers scan NFC plates or QR codes. Directory visitors browse **store categories → store cards → store pages**. NFC scans open the individual store page directly.
+Create a public English directory for Algerian stores whose customers scan NFC plates or QR codes. Directory visitors browse **store categories → store cards → store pages** or search by store name. Individual store pages keep their existing French copy and design. NFC scans open the individual store page directly.
 
 - Include all six existing stores at launch.
 - Use static HTML, CSS, and JavaScript without added dependencies or a framework.
-- Give the directory a light, minimal design; preserve each store's existing design.
+- Use the supplied Wakil AI design system and logo from `wakil-ai-assests`; preserve each store's existing design.
 - Show each store's logo, name, and confirmed commune + wilaya on its card.
 - Maintain stores through their folders and one shared registry; no browser admin interface.
 - Hide buttons with empty destinations, retaining their entries in configuration.
@@ -30,12 +30,14 @@ Move the existing store folders, keeping their runtime assets and useful project
 
 - `food/ino-burger/`
 - `clothing-store/maison-allure/`
-- `clothing-store/sallon-dor/`
+- `home-goods/sallon-dor/` (curtains and interior decoration; preserve the old clothing-store URL with a redirect)
 - `perfume-store/midho-prive/`
 - `computer-store/myb-hardware/`
 - `phone-store/vegas-phone/`
 
-Create a root `index.html` titled **« Nos commerces »**, with French category cards and store counts. Each category has its own `index.html` containing its store cards and navigation back to the homepage. The complete store card is a normal link that opens the store page in the same tab.
+Create an English root directory with Wakil AI branding, SVG category icons and store counts. Category labels match their URL slugs in title case (for example, Clothing Store → `clothing-store/`). Each category has its own `index.html` containing its store cards and navigation back to the homepage. The complete store card is a normal link that opens the store page in the same tab.
+
+Store-name search on the homepage spans all stores; search inside a category is scoped to that category. Support case, accent and apostrophe differences, clearing and useful no-result messages. The directory has eleven types: Food, Clothing Store, Perfume Store, Computer Store, Phone Store, Home Goods, Travel Agency, Cosmetic Store, Shoes Store, Dental Clinic and Jewelry Store. Upcoming types show zero stores with an honest empty state.
 
 Use one shared `stores.js` registry containing categories and each store's name, category, slug, confirmed location, and logo path. Derive store URLs from category and slug. Share the directory's CSS and rendering JavaScript; keep individual store pages independent of directory rendering. Provide a useful JavaScript-disabled message and ordinary navigation links.
 
@@ -71,15 +73,15 @@ After local verification, commit the intended work coherently and push to the ex
 - Review directory pages and all six stores at 320, 360, 390, and 430px portrait widths, 844×390 touch landscape, and a desktop viewport. Inspect portrait and landscape screenshots.
 - Check logo loading, horizontal overflow, keyboard focus, touch targets, natural scrolling to the last link, preserved link destinations/order, and omission of empty links. Respect reduced motion if animation is present.
 - Verify the deployment artifact excludes development material and contains every required runtime asset.
-- After deployment, check the live homepage, all five category URLs, and all six store URLs, including direct refreshes and asset loading beneath `/nfc/`.
+- After deployment, check the live homepage, all eleven category URLs, all six store URLs and the legacy Sallon d’or redirect, including direct refreshes and asset loading beneath `/nfc/`.
 - Encode or print final NFC/QR destinations only after the live URLs are confirmed.
 
 Completion requires reporting local checks separately from live deployment checks. Browser emulation does not establish physical-device or Safari acceptance.
 
 ## Assumptions, exclusions, and release gates
 
-Defaults: French labels, the category assignments above, confirmed commune + wilaya location text, same-tab directory navigation, and no custom domain initially.
+Defaults: English directory labels, existing French store pages, the category assignments above, confirmed commune + wilaya location text, same-tab directory navigation, and no custom domain initially.
 
-Excluded: admin interface, accounts, analytics, search, a framework, added dependencies, and store redesigns.
+Excluded: admin interface, accounts, analytics, a framework, added application dependencies, and store redesigns. Search was added by the user's follow-up request.
 
 Open release gates: confirmed location labels; any maintainer/admin or organization setup needed for Pages; hosting-policy suitability; successful deployment and live verification. Repository creation and visibility changes are **not** required.
