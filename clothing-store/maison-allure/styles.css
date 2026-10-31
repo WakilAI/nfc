@@ -1,0 +1,40 @@
+/* Noir et or confirmés, d'après le logo et la plaque 2. */
+:root {
+  color-scheme: dark;
+  --background: #090909;
+  --surface: #10100f;
+  --ink: #f7edda;
+  --muted: #c5b99e;
+  --accent: #e6bf70;
+  --border: #806739;
+  font-family: system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--background);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+::selection { background: var(--accent); color: var(--background); }
+html { scrollbar-color: var(--accent) var(--background); }
+.page { width: min(100%, 480px); margin: 32px auto; background: var(--background); }
+.brand { display: grid; place-items: center; padding: 16px 24px 8px; }
+.brand img { display: block; width: 230px; max-width: 100%; height: auto; object-fit: contain; }
+.brand h1 { margin: 8px 0 0; color: var(--accent); font-family: Georgia, serif; font-size: 30px; font-weight: 400; line-height: 1.2; text-align: center; overflow-wrap: anywhere; }
+.logo-placeholder { padding: 40px 12px; font-size: 28px; font-weight: 700; text-align: center; overflow-wrap: anywhere; max-width: 100%; }
+main { padding: 16px 20px 24px; }
+.links { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.link { display: flex; align-items: center; gap: 14px; min-height: 72px; padding: 13px 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--ink); text-decoration: none; }
+.link-icon { display: flex; flex: 0 0 24px; color: var(--accent); }
+.link-icon svg { width: 24px; height: 24px; }
+.link-text { min-width: 0; flex: 1; overflow-wrap: anywhere; }
+.link-label { display: block; font-size: 17px; font-weight: 600; line-height: 1.3; }
+.link-detail { display: block; margin-top: 3px; color: var(--muted); font-size: 13px; line-height: 1.4; }
+.link[aria-disabled="true"] { border-style: dashed; }
+.link:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+@media (hover: hover) { a.link:hover { background: #201c14; border-color: var(--accent); } }
+#link-status { line-height: 1.5; }
+#link-status[hidden] { display: none; }
+@media (max-width: 520px), (pointer: coarse) {
+  .page { margin: 0 auto; min-height: 100svh; border-radius: 0; }
+  .brand { padding-top: max(16px, env(safe-area-inset-top)); padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+  main { padding-left: max(18px, env(safe-area-inset-left)); padding-right: max(18px, env(safe-area-inset-right)); padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+}

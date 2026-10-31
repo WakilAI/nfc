@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Retrouvez les commerces et leurs liens utiles : restauration, mode et maison, parfumerie, informatique et téléphonie.">
+  <meta name="theme-color" content="#f7f8f4">
+  <title>Nos commerces</title>
+  <link rel="stylesheet" href="directory.css">
+  <script src="stores.js" defer></script>
+  <script src="directory.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <nav class="top-nav" aria-label="Navigation principale"><a class="home-link" href="./">Nos commerces</a></nav>
+    <main>
+      <header><h1>Nos commerces</h1><p id="intro">Choisissez une catégorie pour découvrir les commerces.</p></header>
+      <p id="directory-status" role="status">Chargement des commerces… Si la liste ne s’affiche pas, actualisez la page.</p>
+      <ul id="directory" class="directory" aria-label="Catégories de commerces"></ul>
+      <noscript><div class="fallback"><p>JavaScript est désactivé. Accédez directement aux catégories :</p><ul>
+        <li><a href="food/">Restauration</a></li>
+        <li><a href="clothing-store/">Mode &amp; maison</a></li>
+        <li><a href="perfume-store/">Parfumerie</a></li>
+        <li><a href="computer-store/">Informatique</a></li>
+        <li><a href="phone-store/">Téléphonie</a></li>
+      </ul></div></noscript>
+    </main>
+    <footer>Un commerce, tous ses liens utiles.</footer>
+  </div>
+</body>
+</html>

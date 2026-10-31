@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Vegas Phone — Smartphones & accessoires</title>
+    <meta
+      name="description"
+      content="Retrouvez tous les liens de Vegas Phone : contact, réseaux sociaux et localisation."
+    />
+    <link rel="icon" href="images/logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Manrope:wght@300;400;500;600;700&display=swap"
+    />
+    <style>
+      /*
+    ╔═══════════════════════════════════════════════════════════════╗
+    ║  VEGAS PHONE — LUXURY MOBILE-FIRST PREMIUM INTERFACE        ║
+    ║  Direction artistique : noir absolu + or champagne           ║
+    ║  Viewport cible : 360–428px mobile                          ║
+    ╚═══════════════════════════════════════════════════════════════╝
+    */
+
+      /* ───────── DESIGN TOKENS ───────── */
+      :root {
+        /* Noirs — profondeur multi-niveaux */
+        --bg-0: #0a0a0a;
+        /* fond absolu */
+        --bg-1: #111111;
+        /* surface principale */
+        --bg-2: #161616;
+        /* cartes */
+        --bg-3: #1c1c1c;
+        /* carte hover */
+        --bg-4: #222222;
+        /* élévation max */
+
+        /* Or champagne — pas jaune vif, métal luxueux */
+        --gold: #c9a45a;
+        --gold-light: #d4af6a;
+        --gold-soft: #e0be78;
+        --gold-dark: #a9823f;
+        --gold-muted: rgba(201, 164, 90, 0.55);
+
+        /* Texte — blanc cassé, hiérarchie claire */
+        --text-1: #f1f1f1;
+        /* principal */
+        --text-2: #a7a7a7;
+        /* secondaire */
+        --text-3: #777777;
+        /* discret */
+        --text-4: #555555;
+        /* ultra-discret */
+
+        /* Bordures */
+        --border-card: rgba(255, 255, 255, 0.1);
+        --border-gold: rgba(201, 164, 90, 0.4);
+        --border-gold-subtle: rgba(201, 164, 90, 0.25);
+
+        /* Typographie */
+        --font:
+          "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+
+        /* Espacement (système 4px) */
+        --sp-1: 4px;
+        --sp-2: 8px;
+        --sp-3: 12px;
+        --sp-4: 16px;
+        --sp-5: 20px;
+        --sp-6: 24px;
+        --sp-7: 28px;
+        --sp-8: 32px;
+      }
+
+      /* ───────── RESET ───────── */
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        -webkit-text-size-adjust: 100%;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font);
+        background: var(--bg-0);
+        color: var(--text-1);
+        line-height: 1.5;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      /* ───────── PAGE ───────── */
+      .page {
+        min-height: 100vh;
+        min-height: 100dvh;
+        background: var(--bg-0);
+        display: flex;
+        flex-direction: column;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        padding-left: env(safe-area-inset-left, 0px);
+        padding-right: env(safe-area-inset-right, 0px);
+      }
+
+      /* ═══════════════════════════════════════════════
+         HERO — Layout split : grand logo GAUCHE, phone DROITE
+         ═══════════════════════════════════════════════ */
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 255px;
+        overflow: hidden;
+        background: var(--bg-0);
+      }
+
+      @media (min-width: 390px) {
+        .hero {
+          height: 280px;
+        }
+      }
+
+      @media (min-width: 430px) {
+        .hero {
+          height: 300px;
+        }
+      }
+
+      @media (min-width: 580px) {
+        .hero {
+          height: 335px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .hero {
+          height: 375px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .hero {
+          height: 415px;
+        }
+      }
+
+      /* Phone image — côté DROIT */
+      .hero-phone {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 84%;
+        width: auto;
+        max-width: 54%;
+        object-fit: contain;
+        object-position: right center;
+        z-index: 2;
+        filter: brightness(0.92) contrast(1.08) saturate(0.85);
+      }
+
+      @media (min-width: 390px) {
+        .hero-phone {
+          right: 2px;
+          height: 85%;
+          max-width: 53%;
+        }
+      }
+
+      @media (min-width: 430px) {
+        .hero-phone {
+          right: 6px;
+          height: 86%;
+          max-width: 52%;
+        }
+      }
+
+      @media (min-width: 580px) {
+        .hero-phone {
+          right: 12px;
+          height: 85%;
+          max-width: 50%;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .hero-phone {
+          right: 24px;
+          height: 84%;
+          max-width: 48%;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .hero-phone {
+          right: 32px;
+          height: 84%;
+          max-width: 46%;
+        }
+      }
+
+      /* Trait doré courbe derrière les téléphones — reproduit l'arc de
+       la photo de référence (un unique arc de cercle, non un demi-
+       cercle complet), ancré au coin haut-droit du hero et partant
+       de derrière la pile de téléphones. Toujours sous les téléphones
+       (z-index 1 < .hero-phone) et sous le fondu gauche (::before). */
+      .hero-arc {
+        position: absolute;
+        right: -8px;
+        top: 0;
+        height: 106%;
+        width: 64%;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .hero-arc svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow: visible;
+      }
+
+      @media (min-width: 390px) {
+        .hero-arc {
+          right: -4px;
+          width: 62%;
+        }
+      }
+
+      @media (min-width: 430px) {
+        .hero-arc {
+          right: 0;
+          width: 61%;
+        }
+      }
+
+      @media (min-width: 580px) {
+        .hero-arc {
+          right: 4px;
+          width: 59%;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .hero-arc {
+          right: 8px;
+          width: 55%;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .hero-arc {
+          right: 3%;
+          width: 53%;
+        }
+      }
+
+      /* Gradient gauche — texte/logo lisibles sur fond sombre */
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            to right,
+            var(--bg-0) 0%,
+            rgba(10, 10, 10, 0.96) 25%,
+            rgba(10, 10, 10, 0.72) 45%,
+            rgba(10, 10, 10, 0.3) 65%,
+            rgba(10, 10, 10, 0.05) 80%,
+            transparent 100%
+          ),
+          linear-gradient(
+            to top,
+            var(--bg-0) 0%,
+            rgba(10, 10, 10, 0.85) 12%,
+            rgba(10, 10, 10, 0.35) 38%,
+            transparent 65%
+          );
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      /* Trait doré en bas du hero — pleine largeur */
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          var(--gold-dark) 15%,
+          var(--gold) 35%,
+          var(--gold-light) 50%,
+          var(--gold) 65%,
+          var(--gold-dark) 85%,
+          transparent 100%
+        );
+        opacity: 0.45;
+        z-index: 6;
+      }
+
+      /* Contenu hero — grand logo, côté GAUCHE */
+      .hero-content {
+        position: relative;
+        z-index: 3;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 14px 16px 22px;
+        max-width: 52%;
+      }
+
+      /* Logo — grand, prestigieux et dominant */
+      .hero-logo {
+        width: 170px;
+        height: 170px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 0 30px rgba(201, 164, 90, 0.28))
+          drop-shadow(0 4px 18px rgba(0, 0, 0, 0.7));
+      }
+
+      @media (min-width: 390px) {
+        .hero-logo {
+          width: 190px;
+          height: 190px;
+        }
+      }
+
+      @media (min-width: 430px) {
+        .hero-logo {
+          width: 210px;
+          height: 210px;
+        }
+
+        .hero-content {
+          padding: 20px 18px 20px 24px;
+        }
+      }
+
+      @media (min-width: 580px) {
+        .hero-logo {
+          width: 235px;
+          height: 235px;
+        }
+
+        .hero-content {
+          padding: 24px 24px 24px 32px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .hero-logo {
+          width: 265px;
+          height: 265px;
+        }
+
+        .hero-content {
+          padding: 28px 32px 28px 44px;
+          max-width: 50%;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .hero-logo {
+          width: 295px;
+          height: 295px;
+        }
+
+        .hero-content {
+          padding: 32px 40px 32px 56px;
+          max-width: 48%;
+        }
+      }
+
+      /* ═══════════════════════════════════════════════
+       CARTES — Grandes cartes horizontales premium
+       Pill shape, cercle icône, flèche dorée
+       ═══════════════════════════════════════════════ */
+      .cards {
+        padding: 16px var(--sp-5) 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .card {
+        display: grid;
+        grid-template-columns: 44px 1fr 20px;
+        align-items: center;
+        gap: var(--sp-3);
+        height: 66px;
+        padding: 0 18px;
+        border-radius: 33px;
+        background: var(--bg-2);
+        border: 1px solid var(--border-card);
+        text-decoration: none;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        transition:
+          transform 200ms cubic-bezier(0.25, 1, 0.5, 1),
+          border-color 200ms ease,
+          background 200ms ease;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .card:hover {
+        background: var(--bg-3);
+        border-color: rgba(255, 255, 255, 0.16);
+        transform: translateY(-1px);
+      }
+
+      .card:active {
+        transform: scale(0.985);
+      }
+
+      .card:focus-visible {
+        outline: 2px solid var(--gold);
+        outline-offset: 2px;
+      }
+
+      /* Cercle icône — 44px, centrage mathématique absolu */
+      .card-ico {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid var(--border-gold-subtle);
+        background: var(--bg-1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        line-height: 0;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        transition:
+          border-color 200ms ease,
+          background 200ms ease;
+      }
+
+      .card:hover .card-ico {
+        border-color: var(--border-gold);
+        background: rgba(201, 164, 90, 0.08);
+      }
+
+      .card-ico svg {
+        display: block;
+        width: 20px;
+        height: 20px;
+        color: var(--gold);
+        flex-shrink: 0;
+        margin: auto;
+      }
+
+      /* Texte carte */
+      .card-body {
+        min-width: 0;
+      }
+
+      .card-title {
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        color: var(--text-1);
+        line-height: 1.3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      /* Flèche dorée */
+      .card-arrow {
+        display: grid;
+        place-items: center;
+        transition: transform 200ms ease;
+      }
+
+      .card-arrow svg {
+        width: 16px;
+        height: 16px;
+        color: var(--gold);
+        opacity: 0.55;
+        transition: opacity 200ms ease;
+      }
+
+      .card:hover .card-arrow svg {
+        opacity: 0.85;
+      }
+
+      .card:hover .card-arrow {
+        transform: translateX(2px);
+      }
+
+      /* ═══════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════ */
+      footer {
+        margin-top: auto;
+        text-align: center;
+        padding: var(--sp-6) var(--sp-5)
+          max(var(--sp-6), env(safe-area-inset-bottom, 20px));
+      }
+
+      .ft-follow-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .ft-follow {
+        font-family: "Alex Brush", cursive;
+        font-size: 34px;
+        line-height: 1;
+        color: var(--gold-soft);
+        text-shadow:
+          0 0 4px rgba(243, 221, 160, 0.85),
+          0 0 14px rgba(224, 190, 120, 0.65),
+          0 0 30px rgba(169, 130, 63, 0.55);
+      }
+
+      @media (min-width: 580px) {
+        .ft-follow {
+          font-size: 40px;
+        }
+      }
+
+      .ft-swoosh {
+        width: 130px;
+        height: 26px;
+        margin-top: 2px;
+      }
+
+      /* ═══════════════════════════════════════════════
+         ANIMATIONS — discrètes et premium
+         ═══════════════════════════════════════════════ */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      .hero-visual {
+        animation: fadeIn 0.8s ease both;
+      }
+
+      .hero-logo {
+        animation: fadeUp 0.7s ease 0.15s both;
+      }
+
+      .card {
+        animation: fadeUp 0.45s ease both;
+      }
+
+      .card:nth-child(1) {
+        animation-delay: 0.08s;
+      }
+
+      .card:nth-child(2) {
+        animation-delay: 0.14s;
+      }
+
+      .card:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+
+      .card:nth-child(4) {
+        animation-delay: 0.26s;
+      }
+
+      .card:nth-child(5) {
+        animation-delay: 0.32s;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      /* ═══════════════════════════════════════════════
+       RESPONSIVE — tablet & desktop
+       ═══════════════════════════════════════════════ */
+      @media (min-width: 640px) {
+        .cards {
+          max-width: 480px;
+          margin: 0 auto;
+        }
+
+        footer {
+          max-width: 480px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .card {
+          height: 72px;
+        }
+
+        .card-title {
+          font-size: 15.5px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .cards {
+          max-width: 520px;
+        }
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--bg-0);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgba(201, 164, 90, 0.15);
+        border-radius: 2px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(201, 164, 90, 0.28);
+      }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+#link-status, noscript p { text-align:center; padding:16px; }
+</style>
+  <script src="links.js" defer></script>
+<script src="page.js" defer></script>
+</head>
+
+  <body>
+    <div class="page">
+      <!-- ═══════════ HERO ═══════════ -->
+      <section class="hero">
+        <!-- Visuel produit premium -->
+        <div class="hero-visual">
+          <!-- Arc doré décoratif, positionné derrière les téléphones -->
+          <div class="hero-arc" aria-hidden="true">
+            <svg viewBox="0 0 428 262" preserveAspectRatio="none">
+              <defs>
+                <linearGradient
+                  id="heroArcGold"
+                  x1="0%"
+                  y1="100%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop offset="0%" stop-color="#A9823F" stop-opacity="0" />
+                  <stop offset="30%" stop-color="#C9A45A" stop-opacity="0.75" />
+                  <stop offset="65%" stop-color="#E0BE78" stop-opacity="0.95" />
+                  <stop offset="100%" stop-color="#F3DDA0" stop-opacity="1" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M 195 150 A 290 290 0 0 1 428 0"
+                fill="none"
+                stroke="url(#heroArcGold)"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <img
+            class="hero-phone"
+            src="images/hero.png"
+            alt="Smartphones premium Vegas Phone"
+          />
+        </div>
+
+        <!-- Logo, côté GAUCHE -->
+        <div class="hero-content">
+          <div class="hero-logo">
+            <img src="images/logo.png" alt="Logo officiel Vegas Phone" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════ CARTES ═══════════ -->
+      <p id="link-status" role="status">Chargement des liens…</p>
+<nav id="links" class="cards" aria-label="Liens Vegas Phone"></nav>
+<noscript><p>Activez JavaScript pour afficher les liens.</p></noscript>
+
+      <footer>
+        <div class="ft-follow-wrap">
+          <p class="ft-follow">Suivez-nous</p>
+          <svg
+            class="ft-swoosh"
+            viewBox="0 0 130 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient
+                id="swooshGrad"
+                x1="0%"
+                y1="60%"
+                x2="100%"
+                y2="20%"
+              >
+                <stop offset="0%" stop-color="#A9823F" stop-opacity="0" />
+                <stop offset="45%" stop-color="#E0BE78" stop-opacity="0.85" />
+                <stop offset="100%" stop-color="#FCEBB6" stop-opacity="1" />
+              </linearGradient>
+              <filter
+                id="swooshGlow"
+                x="-60%"
+                y="-300%"
+                width="220%"
+                height="700%"
+              >
+                <feGaussianBlur stdDeviation="1.4" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <path
+              d="M4 20 C 38 27, 88 22, 124 5"
+              stroke="url(#swooshGrad)"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              filter="url(#swooshGlow)"
+            />
+            <circle
+              cx="124"
+              cy="5"
+              r="2.2"
+              fill="#FCEBB6"
+              filter="url(#swooshGlow)"
+            />
+          </svg>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

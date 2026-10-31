@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self' data: file:; connect-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="theme-color" content="#f4f7ff" />
+    <title>MYB Hardware — Informatique · Laptops · High Tech</title>
+    <style>
+      :root {
+        --navy: #14309a;
+        --blue: #1f5eff;
+        --sky: #3aa8ff;
+        --ink: #0f1b4d;
+        --mute: #5b6690;
+        --bg: #f4f7ff;
+        --line: #d4ddf5;
+        --sans:
+          ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+        background: var(--bg);
+      }
+      body {
+        min-height: 100vh;
+        min-height: 100dvh;
+        font-family: var(--sans);
+        color: var(--ink);
+        overflow-x: clip;
+        padding: 0;
+        background:
+          radial-gradient(85% 45% at 50% 0%, #e3ecff, transparent 75%),
+          radial-gradient(60% 40% at 50% 100%, #e2edff, transparent 70%),
+          var(--bg);
+      }
+
+      /* PCB Background Texture - anchored towards bottom */
+      .bg-pcb {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image: url("public/electronic-elements/pcb-pattern-tile.svg");
+        background-repeat: repeat;
+        background-size: 360px 360px;
+        opacity: 0.03;
+        mask-image: radial-gradient(
+          ellipse at 50% 75%,
+          black 35%,
+          transparent 80%
+        );
+        -webkit-mask-image: radial-gradient(
+          ellipse at 50% 75%,
+          black 35%,
+          transparent 80%
+        );
+      }
+
+      /* Bottom electronics circuit ornaments */
+      .orn-bottom {
+        position: fixed;
+        bottom: 0;
+        z-index: 0;
+        pointer-events: none;
+        height: auto;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+      }
+      .orn-bl {
+        left: 0;
+        width: clamp(140px, 36vw, 260px);
+      }
+      .orn-br {
+        right: 0;
+        width: clamp(140px, 36vw, 260px);
+        transform: scaleX(-1);
+      }
+
+      /* Main layout — mobile-first */
+      .wrap {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: max(44px, env(safe-area-inset-top, 44px)) 22px
+          max(36px, env(safe-area-inset-bottom, 36px));
+        min-height: 100vh;
+        min-height: 100dvh;
+      }
+
+      /* Logo */
+      .logo {
+        width: min(70vw, 265px);
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 4px 16px rgb(20 48 154/0.12));
+      }
+
+      /* Tagline under logo */
+      .tag {
+        margin-top: 14px;
+        margin-bottom: 30px;
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--navy);
+      }
+
+      /* ====== LINK BUTTONS ====== */
+      .list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        list-style: none;
+        padding: 0;
+      }
+
+      .lk {
+        display: flex;
+        align-items: center;
+        height: 58px;
+        padding: 0 16px 0 16px;
+        text-decoration: none;
+        color: var(--ink);
+        background: #ffffff;
+        border: 1.5px solid var(--line);
+        border-radius: 999px;
+        overflow: hidden;
+        -webkit-tap-highlight-color: transparent;
+        box-shadow:
+          0 2px 8px rgb(20 48 154/0.06),
+          0 10px 24px -12px rgb(20 48 154/0.16);
+        transition:
+          transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+      .lk:hover,
+      .lk:focus-visible {
+        transform: translateY(-2px);
+        border-color: var(--blue);
+        box-shadow:
+          0 4px 12px rgb(20 48 154/0.08),
+          0 16px 30px -10px rgb(31 94 255/0.32);
+      }
+      .lk:active {
+        transform: scale(0.985);
+      }
+      .lk:focus-visible {
+        outline: 2px solid var(--blue);
+        outline-offset: 3px;
+      }
+
+      /* Monochrome blue icon — pushed to the right with margin */
+      .ic {
+        flex: none;
+        width: 36px;
+        height: 36px;
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--navy);
+        transition:
+          transform 0.25s ease,
+          color 0.2s ease;
+      }
+      .ic svg {
+        width: 22px;
+        height: 22px;
+        display: block;
+      }
+      .lk:hover .ic {
+        color: var(--blue);
+        transform: scale(1.1);
+      }
+
+      /* Button Title Text — centered, uppercase */
+      .tx {
+        flex: 1;
+        min-width: 0;
+        padding: 0 10px;
+        font-size: 13.5px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        text-align: center;
+        color: var(--ink);
+      }
+
+      /* Arrow */
+      .ar {
+        flex: none;
+        width: 32px;
+        height: 32px;
+        margin-right: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--navy);
+        transition:
+          transform 0.25s ease,
+          color 0.2s ease;
+      }
+      .ar svg {
+        width: 20px;
+        height: 20px;
+      }
+      .lk:hover .ar,
+      .lk:focus-visible .ar {
+        transform: translateX(4px);
+        color: var(--blue);
+      }
+
+      /* ====== ENHANCED BOTTOM SECTION ====== */
+      .footer-area {
+        margin-top: auto;
+        padding-top: 42px;
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Greeting: clear, bold, highly visible */
+      .footer-greeting {
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: var(--navy);
+        line-height: 1.4;
+      }
+
+      /* Sub-greeting / brand line */
+      .footer-brand {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--blue);
+      }
+
+      /* Reveal animation */
+      .rv {
+        opacity: 0;
+        animation: up 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        animation-delay: calc(var(--d, 0) * 70ms);
+      }
+      @keyframes up {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* Desktop: centered */
+      @media (min-width: 700px) {
+        body {
+          display: grid;
+          place-items: center;
+        }
+        .wrap {
+          min-height: auto;
+          padding-block: 56px;
+        }
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+        .rv {
+          opacity: 1;
+        }
+      }
+    #link-status { text-align:center; padding:16px; }
+</style>
+  </head>
+  <body>
+    <div class="bg-pcb" aria-hidden="true"></div>
+    <!-- Bottom electronics corner elements -->
+    <img
+      class="orn-bottom orn-bl"
+      src="public/electronic-elements/circuit-corner-bottom-left.svg"
+      alt=""
+      aria-hidden="true"
+      loading="lazy"
+    />
+    <img
+      class="orn-bottom orn-br"
+      src="public/electronic-elements/circuit-corner-bottom-left.svg"
+      alt=""
+      aria-hidden="true"
+      loading="lazy"
+    />
+
+    <noscript
+      ><p style="text-align: center; padding: 40px">
+        Activez JavaScript pour afficher les liens.
+      </p></noscript
+    >
+
+    <p id="link-status" role="status">Chargement des liens…</p>
+<main class="wrap" id="app"></main>
+
+    <script src="links.js" defer></script>
+<script src="page.js" defer></script>
+  </body>
+</html>
