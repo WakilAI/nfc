@@ -23,7 +23,7 @@ Parcourir les catégories puis les commerces, ou ouvrir directement une page de 
 Six commerces, onze catégories, registre partagé, maintien des pages et identités existantes.
 Recherche par nom sur l'accueil et dans chaque catégorie, sans distinction de casse, d'accent ou d'apostrophe.
 Pas d'administration navigateur, de compte ni d'analytique.
-URLs relatives compatibles avec `/nfc/`, à conserver après lancement. Projets regroupés sous `stores/<type>/<store>/` en source ; la préparation conserve les URL publiques.
+URLs relatives compatibles avec `/nfc/`, à conserver après lancement. Toutes les catégories sont regroupées sous `stores/<type>/` en source, avec leurs pages de catégorie et leurs commerces ; la préparation conserve les URL publiques.
 Annuaire en anglais ; pages individuelles des commerces conservées en français. Commune et wilaya à confirmer : confirmation différée explicitement par l'utilisateur.
 Sallon d’or vend des rideaux et de la décoration intérieure : catégorie Home Goods. Son ancienne URL redirige vers la nouvelle.
 

@@ -22,7 +22,7 @@ Preparation stages only required runtime files in ignored `_site/`, including fo
 
 ## Source layout
 
-All six store projects live under `stores/<type>/<store>/`. Top-level type folders contain the directory landing pages and the legacy redirect. Preparation publishes store files at their existing `<type>/<store>/` URLs; no `/stores/` segment is added publicly.
+All eleven category folders live under `stores/`, including their landing pages, individual store projects and the legacy redirect. For example, `stores/clothing-store/index.html` and `stores/clothing-store/maison-allure/`. Preparation publishes them at the existing `<type>/` and `<type>/<store>/` URLs; no `/stores/` segment is added publicly.
 
 ## Search and store types
 

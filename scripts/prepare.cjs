@@ -9,10 +9,10 @@ function registry() {
   return context.window.STORE_DIRECTORY;
 }
 
-// Store projects are grouped in source; their existing public URLs stay stable.
+// All category folders live under stores/; their public URLs stay stable.
 function sourceFile(file) {
-  const store = registry().stores.find(s => file.startsWith(`${s.category}/${s.slug}/`));
-  return path.resolve(root, store ? 'stores' : '.', file);
+  const category = registry().categories.find(c => file.startsWith(`${c.slug}/`));
+  return path.resolve(root, category ? 'stores' : '.', file);
 }
 
 // Follow local runtime references rather than publishing whole store folders.

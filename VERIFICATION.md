@@ -1,5 +1,9 @@
 # Verification and release handoff
 
+## Complete category-folder grouping — 2026-10-31
+
+Moved all eleven category folders under `stores/`, including landing pages and the legacy redirect, as clarified by the user. No category folder remains at the repository root. Updated preparation and source-path assertions. All Node/store/search/artifact checks passed; SHA-256 comparison confirms that every deployed file and public path is byte-identical before and after this source-only move. No design changes were made; browser tests were not repeated for identical runtime output.
+
 ## Previous design restored — 2026-10-31
 
 At the user's request, restored only the immediately preceding directory design from `2fb3bda`: ivory canvas, previous heading/introduction/navigation, original icon sizing and artwork, and location labels. English navigation, search, categories and store pages remain intact. Store projects remain grouped under `stores/<type>/<store>/`; the source-to-public mapping and all published URLs are unchanged. Earlier orange-layout evidence below is historical.

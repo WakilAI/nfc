@@ -26,7 +26,7 @@ Create a public English directory for Algerian stores whose customers scan NFC p
 
 ## Store organization and directory behavior
 
-Group store projects under `stores/<type>/<store>/`, keeping runtime assets and documentation together. Preparation preserves these public paths:
+Group all category folders under `stores/<type>/`, including category landing pages and projects at `stores/<type>/<store>/`. Keep runtime assets and documentation together. Preparation preserves these public paths:
 
 - `food/ino-burger/`
 - `clothing-store/maison-allure/`

@@ -12,7 +12,8 @@ const urls = new Set();
 for (const category of categories) {
   assert.match(category.slug, slug);
   assert.equal(category.name, category.slug.split('-').map(word => word[0].toUpperCase() + word.slice(1)).join(' '));
-  assert.ok(fs.existsSync(path.join(root, category.slug, 'index.html')));
+  assert.ok(fs.existsSync(sourceFile(`${category.slug}/index.html`)));
+  assert.ok(!fs.existsSync(path.join(root, category.slug)), 'Category folders must be grouped under stores/');
 }
 for (const store of stores) {
   assert.match(store.slug, slug);
@@ -35,7 +36,7 @@ for (const store of stores) {
 const expected = publicFiles();
 for (const file of ['search.js', 'wakil-ai-assests/logo.png', 'clothing-store/sallon-dor/index.html',
   'wakil-ai-assests/fonts/space-grotesk.woff2', 'wakil-ai-assests/fonts/plus-jakarta-sans.woff2']) assert.ok(expected.includes(file));
-const legacy = fs.readFileSync(path.join(root, 'clothing-store/sallon-dor/index.html'), 'utf8');
+const legacy = fs.readFileSync(sourceFile('clothing-store/sallon-dor/index.html'), 'utf8');
 assert.match(legacy, /http-equiv="refresh"/);
 assert.match(legacy, /\.\.\/\.\.\/home-goods\/sallon-dor\//);
 execFileSync(process.execPath, [path.join(root, 'scripts/check-search.cjs')], { stdio: 'inherit' });
