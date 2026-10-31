@@ -9,7 +9,7 @@
 - Chromium passed **114 viewport/route views** and 38 generated screenshots with the existing external `playwright-core`/Chromium installation, covering the new page's link order, image loading, 48px targets, keyboard focus, natural scrolling and no horizontal overflow.
 - The prepared `_site/` contains the COSMABENT page, CSS, scripts, configuration and WebP logo, with no plate references or documentation.
 - The temporary COSMABENT folder was removed after migration; the other pending stores remain untouched in `stores-not-implemented/`.
-- **Live deployment not yet run.** Confirm a push before claiming the public COSMABENT URL is live.
+- **Live-verified:** commit `8443156` (with title follow-up `014f49a`) deployed via [Actions run 41214995020](https://github.com/WakilAI/nfc/actions/runs/41214995020) and [run 41215085657](https://github.com/WakilAI/nfc/actions/runs/41215085657), both green. `https://wakilai.github.io/nfc/cosmetic-store/cosmabent/` and its CSS/JS/assets return 200; the live page title, brand lockup, six links and 512px logo render correctly, the homepage search returns the COSMABENT card, and no requests or page scripts failed.
 
 ## Complete category-folder grouping — 2026-10-31
 
