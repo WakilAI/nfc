@@ -22,5 +22,7 @@ assert.deepEqual(names('COSMABENT'), ['cosmabent']);
 assert.deepEqual(names('cosmabent', stores.filter(store => store.category === 'cosmetic-store')), ['cosmabent']);
 assert.deepEqual(names('pixel'), ['pixel-store']);
 assert.deepEqual(names('PIXEL STORE', stores.filter(store => store.category === 'phone-store')), ['pixel-store']);
+assert.deepEqual(names('ovyx'), ['ovyx']);
+assert.deepEqual(names('OVYX', stores.filter(store => store.category === 'clothing-store')), ['ovyx']);
 assert.deepEqual(names('', []), []);
 console.log('PASS search: case, accents, apostrophes, whitespace, no results and category scope.');

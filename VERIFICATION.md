@@ -1,5 +1,17 @@
 # Verification and release handoff
 
+## OVYX store page — 2026-10-31
+
+- Added OVYX at `stores/clothing-store/ovyx/` and to the shared registry as the ninth store. Clothing Store now has two stores; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.
+- Confirmed links: Google reviews, Instagram, Facebook, TikTok, WhatsApp, telephone and Google Maps. Phone is `+213 778 07 96 03` (`tel:+213778079603`); WhatsApp reuses it (`https://wa.me/213778079603`).
+- The supplied logo (1254×1254 PNG) is preserved in `references/`; a 512×512 WebP copy serves the directory card and favicon, and its alpha-keyed variant is used on the dark page hero. The supplied NFC display plate stays in `references/` and is not published.
+- Bespoke French page: near-black canvas, silver hairlines, wide-tracked uppercase labels, sharp outline cards and the gazelle-horn mark supplied in the logo. No external fonts or network requests.
+- `node check.cjs` passed: 11 categories, 9 unique stores, safe destinations, per-store checks and a 71-file deployment artifact. Search checks now cover OVYX and Clothing Store scoping.
+- Chromium passed **126 viewport/route views** and 42 generated screenshots, covering link order, image loading, 48px targets, keyboard focus, natural scrolling, no horizontal overflow, search/navigation/refresh/Back and no-JS fallbacks.
+- The prepared `_site/` contains the OVYX page, CSS, scripts and both logo variants; its `references/` and README are not published.
+- The temporary `stores-not-implemented/Clothing Store/` folder was removed after migration.
+- **Live deployment not yet run** for OVYX.
+
 ## Pixel Store page — 2026-10-31
 
 - Added Pixel Store at `stores/phone-store/pixel-store/` and to the shared registry as the eighth store. Phone Store now has two stores; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.
@@ -15,7 +27,7 @@
 ## COSMABENT store page — 2026-10-31
 
 - Added COSMABENT at `stores/cosmetic-store/cosmabent/` and to the shared registry as the seventh store. Cosmetic Store now has one store; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.
-- Confirmed links: Google reviews, Instagram, Facebook, TikTok, telephone and Google Maps. The configured WhatsApp entry has an empty destination and is not rendered. Phone is `+213 778 07 96 03` (`tel:+213778079603`).
+- Confirmed links: Google reviews, Instagram, Facebook, TikTok, WhatsApp, telephone and Google Maps. Phone is `+213 778 07 96 03` (`tel:+213778079603`); WhatsApp reuses it (`https://wa.me/213778079603`).
 - Bespoke French page uses an ivory/fuchsia palette, satin halo, serif headings and the supplied logo. The hero shows the logo uncropped and unframed on a soft dark halo, with a “Cosmabent Cosmetics” lockup in a Trajan-like serif; no square card or logo tile remains. The logo master (1080×1080 PNG) is preserved in `references/`; the transparent 512×512 WebP (129 410 octets) is used on the page and the opaque 512×512 WebP (33.6 KB) remains the directory card image. Four supplied plate mockups are stored in `references/` and are not published.
 - `node check.cjs` passed: 11 categories, 7 unique stores, safe destinations, per-store checks and a 60-file deployment artifact. Search checks now cover `COSMABENT` and Cosmetic Store scoping.
 - Chromium passed **114 viewport/route views** and 38 generated screenshots with the existing external `playwright-core`/Chromium installation, covering the new page's link order, image loading, 48px targets, keyboard focus, natural scrolling and no horizontal overflow.

@@ -26,7 +26,7 @@ window.LINKTREE_LINKS = [
     url: "https://www.tiktok.com/@cosmabent",
     icon: "tiktok",
   },
-  { label: "WhatsApp", detail: "Envoyez-nous un message", url: "", icon: "message" },
+  { label: "WhatsApp", detail: "Envoyez-nous un message", url: "https://wa.me/213778079603", icon: "message" },
   {
     label: "Téléphone",
     detail: "+213 778 07 96 03",
