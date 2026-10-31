@@ -100,6 +100,7 @@ const { configured } = require('./check-store.cjs');
       assert.ok(await fallback.locator('noscript').innerText());
       if (!route.store) assert.ok(await fallback.locator('noscript a').count());
     }
+    fs.mkdirSync(path.join(root, '.local'), { recursive: true });
     fs.writeFileSync(path.join(root, '.local/browser-report.json'), JSON.stringify(reports, null, 2));
     console.log(`PASS browser: ${reports.length} viewport/route views, 24 screenshots, all store flows, refreshes, Back, no-JS, asset loading, targets, focus, natural scrolling, link order and empty-link omission.`);
   } finally {

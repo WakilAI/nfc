@@ -139,4 +139,3 @@ Cards use gently rounded corners from the card radius token. Direction is convey
 - Don't crop or recolor store logos to fit the directory palette.
 - Don't add directory animations or decorative components absent from the implemented system.
 - Don't present unconfirmed locations as established facts.
-

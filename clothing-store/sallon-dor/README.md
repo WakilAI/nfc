@@ -8,7 +8,7 @@ Le nom reste dans le logo, sans titre supplémentaire. Logo de 270px maximum,
 espace de 18px avant les boutons. Encadrement en arche et flèches des liens ;
 les deux ornements des coins supérieurs ont été retirés.
 Style ivoire et or, langue française et ordre de `links.js` confirmés.
-Sept boutons : Avis Google, Instagram, Facebook, TikTok, WhatsApp,
+Sept entrées configurées : Avis Google, Instagram, Facebook, TikTok, WhatsApp,
 Téléphone, Localisation. Six destinations renseignées ; Avis Google reste
 masqué tant que sa destination reste vide.
 Le lien d'appel utilise le même numéro international que le lien WhatsApp fourni.

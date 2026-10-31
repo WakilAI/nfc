@@ -1,6 +1,6 @@
 # NFC store directory — implementation plan
 
-Status: Implemented and verified locally on 2026-10-31. Location confirmation deferred by the user; Pages activation and live release gates remain open. See `VERIFICATION.md` for evidence and the exact owner handoff.
+Status: Implemented, locally verified, committed and pushed to `main` on 2026-10-31. GitHub Actions checks and artifact upload passed; Pages deployment is blocked by missing Pages configuration and collaborator permissions. Location confirmation was deferred by the user. See `VERIFICATION.md` for evidence and the exact owner handoff.
 
 ## Goal and confirmed decisions
 

@@ -25,6 +25,12 @@ Live API inspection confirmed `WakilAI/nfc` is public, initially empty, and the 
 Pages inspection and creation with `build_type=workflow` returned **HTTP 404**; Actions policy inspection returned **HTTP 403**.
 These responses do not establish that organization policies allow or prohibit deployment.
 
+The implementation was committed and pushed to `main`. In [Actions run 41197780448](https://github.com/WakilAI/nfc/actions/runs/41197780448),
+the Ubuntu build job passed `node check.cjs`, artifact preparation and upload.
+The deployment job failed at `actions/configure-pages@v5` with **Get Pages site failed** / **Not Found**,
+requesting that Pages be enabled and configured for GitHub Actions. A second Pages creation attempt
+after the first push also returned HTTP 404. No successful publication or live twelve-page verification is claimed.
+
 An owner/administrator must:
 
 1. Open [WakilAI/nfc → Settings → Pages](https://github.com/WakilAI/nfc/settings/pages).
