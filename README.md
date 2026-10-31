@@ -47,6 +47,6 @@ The script serves `_site/` locally under `/nfc/`, checks 108 page/viewport combi
 
 ## Deployment
 
-[WakilAI/nfc](https://github.com/WakilAI/nfc) is the existing public repository. `.github/workflows/pages.yml` checks, prepares, uploads and deploys on pushes to `main` or manual dispatch. GitHub Pages is configured to use GitHub Actions. Expected site: [Wakil AI Store Directory](https://wakilai.github.io/nfc/).
+[WakilAI/nfc](https://github.com/WakilAI/nfc) is the existing public repository. `.github/workflows/pages.yml` checks, prepares, uploads and deploys on pushes to `main` or manual dispatch. GitHub Pages is configured to use GitHub Actions. Published and verified site: [Wakil AI Store Directory](https://wakilai.github.io/nfc/).
 
 See `VERIFICATION.md` for observed deployment status and open release gates. Confirm live URLs before programming NFC plates or printing QR codes. The commercial service’s suitability under [GitHub Pages usage limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits#usage-limits) remains unresolved.

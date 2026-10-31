@@ -12,6 +12,8 @@
 - Earlier baseline evidence below describes the initial version. The existing deferred location and hosting/release gates remain open unless subsequently verified.
 - GitHub Pages API now confirms `build_type: workflow` and `https://wakilai.github.io/nfc/`. The initial Pages activation blocker below is resolved; current deployment and live checks are recorded separately after pushing.
 - Independent visual review disposition: **ship**, no material findings. Design documents now reflect the supplied brand system. Application whitespace checks passed; the imported brand source and OFL licenses retain their original Markdown/license whitespace.
+- **Published and live-verified:** [Wakil AI Store Directory](https://wakilai.github.io/nfc/). [Actions run 41200170061](https://github.com/WakilAI/nfc/actions/runs/41200170061) for implementation commit `dc85985` passed both build and deploy jobs.
+- Live Chromium verification passed the homepage, all eleven category URLs and all six direct store URLs, including a refresh of each (**18 pages**). All **54 runtime assets** returned HTTP 200. Homepage search found Sallon by a plain apostrophe spelling, Clothing Store search excluded it, Home Goods search found it, and the legacy URL redirected to its new page. No local-page JavaScript or asset-response errors were observed.
 
 ## Local implementation — 2026-10-31
 
@@ -54,9 +56,7 @@ The initial owner/administrator handoff was:
 ## Open release gates
 
 - Confirm all six commune + wilaya labels (deferred by user).
-- Successful latest workflow deployment and any further organization/environment policy approval required by that deployment. Pages source activation is now complete.
 - Hosting-policy suitability for the commercial NFC service. GitHub's [Pages usage limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits#usage-limits) restrict online-business/e-commerce and commercial SaaS hosting; suitability is not confirmed.
-- Successful Pages deployment, actual published URL and live checks of all twelve URLs including refreshes and asset loading under `/nfc/`.
 - Physical-device and Safari acceptance are unverified; Chromium emulation does not establish them.
 
 Do not encode or print final NFC/QR destinations until the live URLs are confirmed.

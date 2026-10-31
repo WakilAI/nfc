@@ -1,6 +1,6 @@
 # NFC store directory — implementation plan
 
-Status: Initial implementation committed and pushed on 2026-10-31; follow-up Wakil AI branding, English navigation, search and category adjustments verified locally. GitHub Pages is now configured to use GitHub Actions. Location confirmation remains deferred by the user. See `VERIFICATION.md` for observed deployment evidence and remaining release gates.
+Status: Implemented, committed, pushed, deployed and live-verified on 2026-10-31, including the follow-up Wakil AI branding, English navigation, search and category adjustments. Location confirmation remains deferred by the user; hosting-policy suitability and physical-device/Safari acceptance remain open. See `VERIFICATION.md` for evidence.
 
 ## Goal and confirmed decisions
 
