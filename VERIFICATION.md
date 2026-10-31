@@ -1,5 +1,17 @@
 # Verification and release handoff
 
+## Pixel Store page — 2026-10-31
+
+- Added Pixel Store at `stores/phone-store/pixel-store/` and to the shared registry as the eighth store. Phone Store now has two stores; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.
+- Confirmed links: Google reviews, Instagram, TikTok, WhatsApp and Google Maps. Instagram and TikTok share-tracking parameters were removed in favour of canonical profile URLs. Facebook and Téléphone remain configured with empty destinations and are not rendered. WhatsApp uses `+213 553 66 92 56` (`https://wa.me/213553669256`).
+- The supplied folder contained a single promotional NFC card and no separate official logo file. The card is preserved whole in `references/` and its uncropped 512×512 WebP copy (56 026 octets) serves as the directory card and favicon. The page hero uses a typographic `pixel store` lockup in a geometric system font instead of a cropped or recreated logo; swap in an official logo file when available.
+- Bespoke French page: blue-black canvas, electric-cyan wordmark, diagonal neon ribbons, NFC signal mark, dark glow-bordered link cards and cyan focus states. No external fonts or network requests.
+- `node check.cjs` passed: 11 categories, 8 unique stores, safe destinations, per-store checks and a 65-file deployment artifact. Search checks now cover Pixel Store and Phone Store scoping.
+- Chromium passed **120 viewport/route views** and 40 generated screenshots, covering link order, image loading, 48px targets, keyboard focus, natural scrolling, no horizontal overflow, search/navigation/refresh/Back and no-JS fallbacks.
+- The prepared `_site/` contains the Pixel Store page, CSS, scripts and card image; its `references/` and README are not published.
+- The temporary `stores-not-implemented/Phone Store/` folder was removed after migration.
+- **Live deployment not yet run** for Pixel Store.
+
 ## COSMABENT store page — 2026-10-31
 
 - Added COSMABENT at `stores/cosmetic-store/cosmabent/` and to the shared registry as the seventh store. Cosmetic Store now has one store; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.

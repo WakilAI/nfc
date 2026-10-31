@@ -20,7 +20,7 @@ Parcourir les catégories puis les commerces, ou ouvrir directement une page de 
 
 ## Capabilities and Constraints
 
-Sept commerces, onze catégories, registre partagé, maintien des pages et identités existantes.
+Huit commerces, onze catégories, registre partagé, maintien des pages et identités existantes.
 Recherche par nom sur l'accueil et dans chaque catégorie, sans distinction de casse, d'accent ou d'apostrophe.
 Pas d'administration navigateur, de compte ni d'analytique.
 URLs relatives compatibles avec `/nfc/`, à conserver après lancement. Toutes les catégories sont regroupées sous `stores/<type>/` en source, avec leurs pages de catégorie et leurs commerces ; la préparation conserve les URL publiques.
@@ -40,5 +40,5 @@ portraits 320–430px, paysage tactile et bureau. Liens ordinaires de navigation
 
 ## Evidence on Hand
 
-`PLAN.md`, sept projets existants, leurs logos et destinations fournies.
+`PLAN.md`, huit projets existants, leurs logos et destinations fournies.
 Les destinations Maps sont conservées ; les libellés de localisation ne sont pas présentés comme confirmés.
