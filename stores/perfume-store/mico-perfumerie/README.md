@@ -19,4 +19,4 @@ Exécutez `node check.cjs` depuis ce dossier ou `node check.cjs` à la racine. L
 
 ## Identité
 
-Émeraude, or et crème, titres Georgia, filets dorés et coins botaniques. Le logo officiel fourni sert de visuel d'annuaire et de favicon ; sa version détourée est utilisée sur la page. Les cartes et plaques fournies restent dans `references/` et ne sont pas publiées.
+Émeraude, or et crème, titres Georgia, filets dorés et coins botaniques. Le logo officiel fourni sert de visuel d'annuaire et de favicon ; sa version détourée est utilisée sur la page. Les cartes NFC et plaques fournies sont dans `plates/` et apparaissent dans l’aperçu du commerce.

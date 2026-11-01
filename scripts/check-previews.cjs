@@ -24,6 +24,9 @@ try {
   assert.equal(plates.length, 6);
   const html = page();
   assert.equal((html.match(/class="plate-link"/g) || []).length, 6);
+  assert.ok(!html.includes('plate-caption'));
+  assert.ok(!html.includes('>Agrandir<'));
+  assert.ok(!html.includes('>01 été &amp; avis #1<'));
   assert.ok(html.includes('plates/' + encodeURIComponent(plates[0])));
   assert.ok(html.includes('02%20l%27avis.PNG'));
   assert.ok(!html.includes('Test <&" commerce'));

@@ -15,8 +15,7 @@ function previewHTML(store, plates) {
   const name = escape(store.name);
   const gallery = plates.length ? `<ul class="plate-gallery">${plates.map((file, index) => {
     const url = 'plates/' + encodeURIComponent(file).replaceAll("'", '%27');
-    const label = escape(path.parse(file).name);
-    return `<li><a class="plate-link" href="${url}"><span class="plate-image"><img src="${url}" alt="Plaque ${index + 1} — ${name}" loading="lazy"></span><span class="plate-caption">${label}<span>Agrandir</span></span></a></li>`;
+    return `<li><a class="plate-link" href="${url}" aria-label="Agrandir la plaque ${index + 1} de ${name}"><img src="${url}" alt="Plaque ${index + 1} — ${name}" loading="lazy"></a></li>`;
   }).join('\n')}</ul>` : '<div class="empty-state"><p>Aucune plaque disponible pour le moment.</p></div>';
   return `<!doctype html>
 <html lang="fr">
@@ -34,7 +33,7 @@ function previewHTML(store, plates) {
     <main>
       <header class="preview-header">
         <img class="preview-logo" src="../../${escape(store.logo)}" alt="" width="88" height="88">
-        <div><h1>${name}</h1><p id="intro">Les plaques NFC et la page de liens du commerce.</p></div>
+        <div><h1>${name}</h1></div>
         <a class="links-page-button" href="index.html">Ouvrir la page de liens</a>
       </header>
       <section aria-labelledby="plates-title">

@@ -19,4 +19,4 @@ Exécutez `node check.cjs` depuis ce dossier ou `node check.cjs` à la racine. L
 
 ## Identité
 
-Lavande, prune et blanc, titres serif, disques lilas et cartes blanches. Le logo officiel fourni sert de visuel d'annuaire et de favicon ; sa version détourée est utilisée sur la page. Les deux plaques fournies restent dans `references/` et ne sont pas publiées.
+Lavande, prune et blanc, titres serif, disques lilas et cartes blanches. Le logo officiel fourni sert de visuel d'annuaire et de favicon ; sa version détourée est utilisée sur la page. Les deux plaques fournies sont dans `plates/` et apparaissent dans l’aperçu du commerce.

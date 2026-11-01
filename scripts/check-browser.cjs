@@ -79,10 +79,11 @@ const { previewHTML } = require('./previews.cjs');
           assert.equal(await page.locator('.links-page-button').getAttribute('href'), 'index.html');
           if (route.plateCount) {
             assert.equal(await page.locator('.plate-link').count(), route.plateCount);
-            assert.equal(await page.locator('.plate-image img').evaluateAll(images => images.every(img => getComputedStyle(img).objectFit === 'contain')), true);
+            assert.equal(await page.locator('.plate-link img').evaluateAll(images => images.every(img => getComputedStyle(img).objectFit === 'contain' && Math.abs(img.clientWidth / img.clientHeight - img.naturalWidth / img.naturalHeight) < 0.02)), true);
           } else if (!await page.locator('.plate-link').count()) {
             assert.equal(await page.locator('.empty-state').innerText(), 'Aucune plaque disponible pour le moment.');
           }
+          assert.equal(await page.locator('.plate-link').allTextContents().then(labels => labels.join('').trim()), '');
         } else {
           assert.ok(metrics.links.every(link => link.href.startsWith(base)));
           const count = route.url ? stores.filter(s => s.category === route.url.slice(0, -1)).length : categories.length;

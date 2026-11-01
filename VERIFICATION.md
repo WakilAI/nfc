@@ -1,5 +1,18 @@
 # Verification and release handoff
 
+## Image-only plate gallery — 2026-11-01
+
+- Removed visible filenames and “Agrandir” captions. Images remain ordinary clickable links to full-size designs, with accessible action labels and keyboard focus.
+- Removed padded fixed-ratio frames: designs fill flowing columns at their original proportions without empty row gaps, and single-image galleries span the available width.
+- `node check.cjs` and `git diff --check` passed. Targeted Chromium verification passed 28 preview views at 390px/1440px without JavaScript: no visible captions, natural image proportions, full column width, single-image full width, direct image navigation, empty states, no horizontal overflow or failed requests. Populated desktop/mobile screenshots were visually inspected. The full directory browser matrix was not rerun; live verification remains open.
+
+## Existing plate migration — 2026-11-01
+
+- Moved 40 original NFC/QR designs into the matching stores’ `plates/` folders across 11 stores, including the Mico NFC cards, Vegas Phone artwork and travel-agency designs from `stores-not-implemented/`. Logos and other assets remain in place. Store documentation now points to the new plate locations.
+- MYB Hardware, Midho Privé and Zone-Tech Pro have no supplied plate designs and retain working empty galleries. The unregistered Perfume HQ references remain untouched.
+- SHA-256 checks confirm all 40 moved originals and published copies are unchanged. `node check.cjs` passed with 157 runtime files; `git diff --check` passed.
+- Chromium passed 28 preview views at 390px and 1440px with JavaScript disabled: all 40 images loaded, no failed requests or horizontal overflow, and all links-page buttons and empty states remained usable. Live verification of this migration remains open.
+
 ## Static plate previews — 2026-11-01
 
 - Store cards, global search and category no-JavaScript links open generated `<type>/<store>/preview.html` pages. Existing links pages and direct NFC URLs are preserved.

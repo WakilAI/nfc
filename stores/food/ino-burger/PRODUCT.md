@@ -18,7 +18,7 @@ All customers scanning the plate use phones. Prioritize mobile portrait and land
 Six links in user-supplied order: Google reviews, Instagram, TikTok, WhatsApp, telephone and Maps. Edit all destinations in a separate links.js file. Works from a static host or by opening index.html directly.
 
 ## Brand Commitments
-User selected a retro style. Use the supplied references/logo.jpg and the red, yellow and cream direction shown in references/Ino Burger retro NFC QR plate-4.png.
+User selected a retro style. Use the supplied references/logo.jpg and the red, yellow and cream direction shown in plates/Ino Burger retro NFC QR plate-4.png.
 
 ## Open Decisions
 Hosting and public domain are not specified.

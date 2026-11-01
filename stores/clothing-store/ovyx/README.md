@@ -19,4 +19,4 @@ Exécutez `node check.cjs` depuis ce dossier ou `node check.cjs` à la racine. L
 
 ## Identité
 
-Noir profond, filets argentés, lettrage capitales espacées et boutons en contour fin, inspirés de la plaque fournie. Le logo officiel fourni sert de visuel d'annuaire et de favicon ; sa version détourée est utilisée sur la page. La plaque NFC fournie reste dans `references/` et n'est pas publiée.
+Noir profond, filets argentés, lettrage capitales espacées et boutons en contour fin, inspirés de la plaque fournie. Le logo officiel fourni sert de visuel d'annuaire et de favicon ; sa version détourée est utilisée sur la page. La plaque NFC fournie est dans `plates/` et apparaît dans l’aperçu du commerce.

@@ -136,7 +136,7 @@ Cards and empty-state panels use the card radius; the search field and its clear
 
 ## Components
 
-**Store previews:** Cards and search results open a generated French `preview.html`. It inherits the directory shell, original store logo and typography, with a prominent links-page button before the plate gallery. The heading uses a fluid 32–48px size to leave room for the action. Plates retain their proportions in two columns on desktop and one on mobile; filename captions identify designs and each image opens full size. Missing plates show a quiet empty state. The footer stays in normal flow. Independent links pages keep their own designs and direct NFC URLs.
+**Store previews:** Cards and search results open a generated French `preview.html`. It inherits the directory shell, original store logo and typography, with a prominent links-page button before the plate gallery. The heading uses a fluid 32–48px size to leave room for the action. Plates fill their column at their natural aspect ratio without padded frames, filenames or visible enlarge controls. Two flowing columns on desktop keep mixed image proportions compact, becoming one column on mobile; a single plate spans the available width. Each image opens full size on click, with an accessible action label and visible keyboard focus. Missing plates show a quiet empty state. The footer stays in normal flow. Independent links pages keep their own designs and direct NFC URLs.
 
 **Category cards:** Whole-card same-tab anchors combine an SVG symbol, English category name, store count and arrow. Desktop minimum height is (144px); mobile uses (112px). Padding follows desktop-card or mobile-card. Hover changes the border to orange and the fill to panel.
 
