@@ -48,7 +48,7 @@
       const li = document.createElement("li");
       const a = document.createElement("a");
       a.className = showStores ? "store-card" : "category-card";
-      a.href = showStores && !category ? `${item.category}/${item.slug}/` : `${item.slug}/`;
+      a.href = showStores ? `${category ? "" : item.category + "/"}${item.slug}/preview.html` : `${item.slug}/`;
       if (showStores) {
         const img = document.createElement("img");
         img.src = prefix + item.logo;

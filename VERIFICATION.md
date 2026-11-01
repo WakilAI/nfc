@@ -1,5 +1,14 @@
 # Verification and release handoff
 
+## Static plate previews — 2026-11-01
+
+- Store cards, global search and category no-JavaScript links open generated `<type>/<store>/preview.html` pages. Existing links pages and direct NFC URLs are preserved.
+- All 14 registered stores have an editable `plates/` folder. Preparation discovers supported images, including encoded filenames and uppercase extensions; missing/empty folders show a friendly message. No favorites, account or database was added.
+- `node check.cjs` passed: 13 categories, 14 stores and 117 runtime files with the currently empty galleries. Tests cover missing/empty folders, one/many images, supported types, escaped text/URLs, real publication, replacement and stale-image removal. Temporary fixtures were removed.
+- Chromium passed **264 viewport/route views** and 88 screenshots: responsive layouts, empty/one/many-plate previews, full-size image navigation, search, all store flows, direct URLs, refresh/Back, no-JavaScript navigation, assets, keyboard focus and touch targets. Empty and populated previews were visually inspected on mobile and the two-column layout.
+- `git diff --check` passed. The design detector reported the existing font warnings and typography advisories; previews retain the supplied design system, with the intentional 32–48px heading documented in `DESIGN.md`.
+- **Release gates:** the evidence above is local. Physical-device and live-deployment verification remain open. After editing plates, rebuild with `node scripts/prepare.cjs` and deploy through the existing workflow.
+
 ## Mico Parfumerie page — 2026-11-01
 
 - Added Mico Parfumerie at `stores/perfume-store/mico-perfumerie/` and to the shared registry as the twelfth store. Perfume Store now has two stores; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.

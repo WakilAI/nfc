@@ -65,12 +65,30 @@ input::-webkit-search-cancel-button { -webkit-appearance: none; }
 .fallback { line-height: 1.7; }
 .fallback a { display: inline-flex; align-items: center; min-height: 48px; }
 footer { margin-top: 56px; border-top: 1px solid var(--border); padding-top: 24px; color: var(--muted); font-size: 14px; line-height: 24px; }
+.preview-header { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; }
+.preview-header > div { flex: 1 1 320px; min-width: 0; }
+.preview-header h1 { font-size: clamp(32px, 4vw, 48px); line-height: 1.15; max-width: none; margin-bottom: 12px; overflow-wrap: anywhere; }
+.preview-logo { width: 88px; height: 88px; object-fit: contain; }
+.links-page-button { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 56px; padding: 16px 24px; border-radius: 8px; background: var(--primary); color: var(--surface); text-decoration: none; font-weight: 600; }
+.links-page-button:hover { background: var(--ink); }
+.plate-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; list-style: none; padding: 0; margin: 0; }
+.plate-gallery li { min-width: 0; }
+.plate-link { display: block; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--surface); text-decoration: none; }
+.plate-link:hover { border-color: var(--orange); }
+.plate-image { display: grid; place-items: center; aspect-ratio: 4 / 3; padding: 16px; }
+.plate-image img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.plate-caption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; padding: 16px 20px; border-top: 1px solid var(--border); overflow-wrap: anywhere; }
+.plate-caption > span { color: var(--primary); font-size: 14px; }
 @media (max-width: 1100px) { .directory { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; } .shell { padding-left: max(32px, env(safe-area-inset-left)); padding-right: max(32px, env(safe-area-inset-right)); } }
 @media (max-width: 767px) {
   .shell { padding-top: max(16px, env(safe-area-inset-top)); padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
   header { padding-top: 40px; }
   h1 { font-size: 38px; line-height: 44px; letter-spacing: -.02em; }
   .directory { grid-template-columns: 1fr; gap: 16px; }
+  .plate-gallery { grid-template-columns: 1fr; gap: 16px; }
+  .preview-header { gap: 20px; }
+  .preview-header > div { flex-basis: 180px; }
+  .links-page-button { width: 100%; }
   .category-card, .store-card { min-height: 112px; padding: 20px; }
   .directory img { width: 64px; height: 64px; }
   .search-form { margin-bottom: 32px; }

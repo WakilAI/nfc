@@ -17,12 +17,14 @@ Clients de commerces algériens qui scannent une plaque NFC ou un QR code ; visi
 ## Product Purpose
 
 Parcourir les catégories puis les commerces, ou ouvrir directement une page de liens par scan.
+Les cartes ouvrent un aperçu statique des plaques NFC avec un bouton vers la page de liens existante. Les scans NFC conservent leur destination directe.
 
 ## Capabilities and Constraints
 
 Douze commerces, treize catégories, registre partagé, maintien des pages et identités existantes.
 Recherche par nom sur l'accueil et dans chaque catégorie, sans distinction de casse, d'accent ou d'apostrophe.
 Pas d'administration navigateur, de compte ni d'analytique.
+Chaque commerce possède un dossier `plates/` éditable par le développeur ; zéro ou plusieurs images sont acceptées. Les aperçus sont générés à la préparation, sans favoris ni stockage.
 URLs relatives compatibles avec `/nfc/`, à conserver après lancement. Toutes les catégories sont regroupées sous `stores/<type>/` en source, avec leurs pages de catégorie et leurs commerces ; la préparation conserve les URL publiques.
 Annuaire en anglais ; pages individuelles des commerces conservées en français. Commune et wilaya à confirmer : confirmation différée explicitement par l'utilisateur.
 Sallon d’or vend des rideaux et de la décoration intérieure : catégorie Home Goods. Son ancienne URL redirige vers la nouvelle.

@@ -40,12 +40,14 @@ const legacy = fs.readFileSync(sourceFile('clothing-store/sallon-dor/index.html'
 assert.match(legacy, /http-equiv="refresh"/);
 assert.match(legacy, /\.\.\/\.\.\/home-goods\/sallon-dor\//);
 execFileSync(process.execPath, [path.join(root, 'scripts/check-search.cjs')], { stdio: 'inherit' });
+execFileSync(process.execPath, [path.join(root, 'scripts/check-previews.cjs')], { stdio: 'inherit' });
 const built = prepare();
 assert.deepEqual(built, expected);
 const actual = fs.readdirSync(path.join(root, '_site'), { recursive: true, withFileTypes: true })
   .filter(entry => entry.isFile()).map(entry => path.relative(path.join(root, '_site'), path.join(entry.parentPath, entry.name)).split(path.sep).join('/')).sort();
 assert.deepEqual(actual, [...expected, '.nojekyll'].sort());
 assert.ok(!actual.some(file => file.startsWith('stores/')), 'Source grouping must not change public URLs');
-assert.ok(!actual.some(f => /(?:check\.cjs|README|PLAN|\.md$|\.original\.|logo-4k|design vegas|\.github|node_modules)/i.test(f)));
+assert.ok(!actual.some(f => /(?:check\.cjs|README|PLAN|\.md$|\.github|node_modules)/i.test(f)));
+assert.ok(!actual.some(f => !f.includes('/plates/') && /(?:\.original\.|logo-4k|design vegas)/i.test(f)));
 for (const file of expected.filter(f => /\.(js|cjs)$/.test(f))) execFileSync(process.execPath, ['--check', sourceFile(file)]);
 console.log(`PASS directory: ${categories.length} categories, ${stores.length} unique stores, metadata, safe links, ${built.length} runtime files.`);

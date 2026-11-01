@@ -1,6 +1,12 @@
 # Wakil AI Store Directory
 
-Static English directory for Algerian stores with NFC plates or QR codes. Browse store types or search by name, then open a store’s existing page of useful links. Individual store pages keep their own French copy and visual identity.
+Static English directory for Algerian stores with NFC plates or QR codes. Browse store types or search by name, then open a French preview of the store’s plates and its links-page button. Individual links pages keep their own French copy, visual identity and direct NFC URLs.
+
+## Plate designs
+
+Edit images directly in `stores/<type>/<store>/plates/`. PNG, JPG, JPEG, WebP, AVIF and SVG files directly inside the folder are discovered automatically, sorted by filename; subfolders and other files are ignored. A missing or empty folder shows a friendly empty state and keeps the links-page button available. There are no favorites or saved choices.
+
+Run `node scripts/prepare.cjs` after adding, replacing or removing images. It generates `_site/<type>/<store>/preview.html` and copies the current images. Preview the complete directory from `_site/index.html` or serve `_site/` locally. Changes go live after the usual deployment; do not edit generated previews. Existing `<type>/<store>/` URLs continue opening the links pages directly for NFC scans.
 
 ## Edit and check
 
@@ -40,12 +46,12 @@ Use an existing Playwright installation without adding it to the website. Set `P
 node scripts/check-browser.cjs
 ```
 
-The script serves `_site/` locally under `/nfc/`, checks 156 page/viewport combinations plus search/navigation/legacy-redirect flows, and saves ignored screenshots in `.impeccable/review/`. Node checks do not require Playwright. Use a static server for `_site/` to preview the complete site. The `stores/` source folder is mapped to existing public URLs during preparation. Individual store pages can still be opened directly.
+The script serves `_site/` locally under `/nfc/`, checks every directory, preview and links page at six viewports, plus one/many-plate fixtures, search/navigation/legacy-redirect flows, and saves ignored screenshots in `.impeccable/review/`. Node checks do not require Playwright. Use a static server for `_site/` to preview the complete site. The `stores/` source folder is mapped to existing public URLs during preparation. Individual store pages can still be opened directly.
 
 ## Add a store
 
 1. Use the `nfc-linktree` skill to create the folder under `stores/<type>/`; preserve supplied artwork and documentation.
-2. Fill `links.js`, add the store to `stores.js` with its logo, and add a direct link to the type page’s `noscript` fallback.
+2. Fill `links.js`, add the store to `stores.js` with its logo, create its `plates/` folder, and add a `<store>/preview.html` link to the type page’s `noscript` fallback. Preview pages are generated automatically.
 3. For a new type, add its registry entry, matching SVG icon in `directory.js`, category page on the existing model and homepage fallback link. Empty types are supported.
 4. Run Node checks, browser checks and release checks, then commit the intended paths and push to `main` in `WakilAI/nfc`.
 
