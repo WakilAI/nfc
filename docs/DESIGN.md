@@ -85,7 +85,7 @@ components:
 
 **Creative North Star: "Warm Tactile Precision"**
 
-The supplied `wakil-ai-assests/design-system.md` governs the directory identity: white-first warmth, clear geometric typography and purposeful Wakil Orange. This document records its implemented subset from `directory.css`; unused agency tokens are omitted. No separate visual comp governs the work.
+The supplied `wakil-ai-assests/design-system.md` governs the directory identity: white-first warmth, clear geometric typography and purposeful Wakil Orange. This document records its implemented subset from `directory/directory.css`; unused agency tokens are omitted. No separate visual comp governs the work.
 
 Scope is the English root directory and eleven category pages. The supplied Wakil AI logo identifies this shared shell. Individual store pages retain their local brands, French copy and store-local design guidance.
 

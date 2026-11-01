@@ -9,9 +9,9 @@ description: Build and update French NFC store link pages and the directory in t
 
 - Create `stores/<category>/<slug>/` with `index.html`, `styles.css`, `links.js`, `page.js`, `check.cjs`, `README.md`, `assets/` and source-only `references/`.
 - Reuse an existing store's `page.js` and `check.cjs`; keep the safe renderer contract and empty-URL behavior.
-- Register the store in `stores.js`, add its no-JS link to the category page, and extend `scripts/check-search.cjs`.
+- Register the store in `directory/stores.js`, add its no-JS link to the category page, and extend `scripts/check-search.cjs`.
 - Keep `references/` out of HTML/CSS/JS. Run `node check.cjs` and the browser check.
-- Update store counts in `README.md`, `PRODUCT.md`, `PLAN.md` and `VERIFICATION.md`.
+- Update store counts in `README.md`, `docs/PRODUCT.md`, `docs/PLAN.md` and `docs/VERIFICATION.md`.
 
 ## Contacts
 

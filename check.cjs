@@ -5,6 +5,10 @@ const { execFileSync } = require('node:child_process');
 const { root, registry, sourceFile, publicFiles, prepare } = require('./scripts/prepare.cjs');
 const { checkStore, configured } = require('./scripts/check-store.cjs');
 const { categories, stores } = registry();
+for (const file of ['directory.css', 'directory.js', 'search.js', 'stores.js']) {
+  assert.equal(sourceFile(file), path.join(root, 'directory', file));
+  assert.ok(!fs.existsSync(path.join(root, file)), 'Shared directory files must be grouped under directory/');
+}
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 assert.ok(categories.length && stores.length);
 assert.equal(new Set(categories.map(c => c.slug)).size, categories.length);

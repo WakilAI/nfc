@@ -39,7 +39,7 @@ Create an English root directory with Wakil AI branding, SVG category icons and 
 
 Store-name search on the homepage spans all stores; search inside a category is scoped to that category. Support case, accent and apostrophe differences, clearing and useful no-result messages. The directory has thirteen types: Food, Clothing Store, Perfume Store, Computer Store, Phone Store, Home Goods, Travel Agency, Cosmetic Store, Shoes Store, Dental Clinic, Jewelry Store, Optic and Repair Center. Upcoming types show zero stores with an honest empty state.
 
-Use one shared `stores.js` registry containing categories and each store's name, category, slug, confirmed location, and logo path. Derive store URLs from category and slug. Share the directory's CSS and rendering JavaScript; keep individual store pages independent of directory rendering. Provide a useful JavaScript-disabled message and ordinary navigation links.
+Use one shared `directory/stores.js` registry containing categories and each store's name, category, slug, confirmed location, and logo path. Derive store URLs from category and slug. Share the directory's CSS and rendering JavaScript; keep individual store pages independent of directory rendering. Provide a useful JavaScript-disabled message and ordinary navigation links.
 
 Resolve location labels from the existing supplied Maps destinations. Ask for confirmation when results are ambiguous; never infer an address from the store name. Confirm all six labels before treating directory content as release-ready.
 

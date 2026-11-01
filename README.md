@@ -10,9 +10,9 @@ Run `node scripts/prepare.cjs` after adding, replacing or removing images. It ge
 
 ## Edit and check
 
-- `stores.js`: store types, names, logos and locations. Type labels are their URL slug words in title case. Keep slugs stable after launch.
-- `directory.js`, `search.js`, `directory.css`: shared directory rendering, name matching and Wakil AI styling.
-- `wakil-ai-assests/design-system.md` and `logo.png`: supplied brand authority. `DESIGN.md` records the implemented directory subset. Fonts are hosted locally with their Google Fonts OFL licenses in `wakil-ai-assests/fonts/`.
+- `directory/stores.js`: store types, names, logos and locations. Type labels are their URL slug words in title case. Keep slugs stable after launch.
+- `directory/directory.js`, `directory/search.js`, `directory/directory.css`: shared directory rendering, name matching and Wakil AI styling.
+- `wakil-ai-assests/design-system.md` and `logo.png`: supplied brand authority. `docs/DESIGN.md` records the implemented directory subset. Fonts are hosted locally with their Google Fonts OFL licenses in `wakil-ai-assests/fonts/`.
 - `stores/<type>/<store>/links.js`: editable store labels, destinations and order. Ino Burger retains `window.INO_LINKS`; other stores use `window.LINKTREE_LINKS`.
 - Empty destinations are retained in configuration and omitted publicly. Only `https:`, `tel:` and `mailto:` are accepted. Editable labels render as text.
 - Cards show the previous location label again. Pending locations remain explicitly unconfirmed; supplied Maps destinations are unchanged.
@@ -22,11 +22,25 @@ node check.cjs
 node scripts/prepare.cjs
 ```
 
-No application dependencies or framework are required. Checks cover all twelve stores, search normalization and category scope, registry validity, unique URLs, safe destinations, the legacy redirect and the deployment artifact. The remaining hosting and device acceptance gates are recorded in `VERIFICATION.md`.
+No application dependencies or framework are required. Checks cover all twelve stores, search normalization and category scope, registry validity, unique URLs, safe destinations, the legacy redirect and the deployment artifact. The remaining hosting and device acceptance gates are recorded in `docs/VERIFICATION.md`.
 
 Preparation stages only required runtime files in ignored `_site/`, including fonts and their license files. Tests, docs, unused artwork, masters and local verification material stay outside the deployed artifact. Useful originals remain in the public source repository.
 
 ## Source layout
+
+```text
+index.html           Directory homepage
+directory/           Shared CSS, JavaScript and store registry
+stores/              Categories and individual store projects
+stores-not-implemented/  Supplied material for pending stores
+wakil-ai-assests/     Supplied brand assets and fonts
+scripts/             Preparation and verification helpers
+docs/                Product, design, plan and verification notes
+check.cjs            Main verification command
+_site/               Generated deployment output (ignored)
+```
+
+Preparation maps the shared files in `directory/` to their existing public paths at the site root. Serve `_site/` to browse the complete directory.
 
 All eleven category folders live under `stores/`, including their landing pages, individual store projects and the legacy redirect. For example, `stores/clothing-store/index.html` and `stores/clothing-store/maison-allure/`. Preparation publishes them at the existing `<type>/` and `<type>/<store>/` URLs; no `/stores/` segment is added publicly.
 
@@ -51,12 +65,12 @@ The script serves `_site/` locally under `/nfc/`, checks every directory, previe
 ## Add a store
 
 1. Use the `nfc-linktree` skill to create the folder under `stores/<type>/`; preserve supplied artwork and documentation.
-2. Fill `links.js`, add the store to `stores.js` with its logo, create its `plates/` folder, and add a `<store>/preview.html` link to the type page’s `noscript` fallback. Preview pages are generated automatically.
-3. For a new type, add its registry entry, matching SVG icon in `directory.js`, category page on the existing model and homepage fallback link. Empty types are supported.
+2. Fill `links.js`, add the store to `directory/stores.js` with its logo, create its `plates/` folder, and add a `<store>/preview.html` link to the type page’s `noscript` fallback. Preview pages are generated automatically.
+3. For a new type, add its registry entry, matching SVG icon in `directory/directory.js`, category page on the existing model and homepage fallback link. Empty types are supported.
 4. Run Node checks, browser checks and release checks, then commit the intended paths and push to `main` in `WakilAI/nfc`.
 
 ## Deployment
 
 [WakilAI/nfc](https://github.com/WakilAI/nfc) is the existing public repository. `.github/workflows/pages.yml` checks, prepares, uploads and deploys on pushes to `main` or manual dispatch. GitHub Pages is configured to use GitHub Actions. Published and verified site: [Wakil AI Store Directory](https://wakilai.github.io/nfc/).
 
-See `VERIFICATION.md` for observed deployment status and open release gates. Confirm live URLs before programming NFC plates or printing QR codes. The commercial service’s suitability under [GitHub Pages usage limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits#usage-limits) remains unresolved.
+See `docs/VERIFICATION.md` for observed deployment status and open release gates. Confirm live URLs before programming NFC plates or printing QR codes. The commercial service’s suitability under [GitHub Pages usage limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits#usage-limits) remains unresolved.

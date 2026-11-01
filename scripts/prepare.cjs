@@ -3,15 +3,17 @@ const path = require('node:path');
 const vm = require('node:vm');
 const { previewPages } = require('./previews.cjs');
 const root = path.resolve(__dirname, '..');
+const directoryFiles = new Set(['directory.css', 'directory.js', 'search.js', 'stores.js']);
 
 function registry() {
   const context = { window: {} };
-  vm.runInNewContext(fs.readFileSync(path.join(root, 'stores.js'), 'utf8'), context);
+  vm.runInNewContext(fs.readFileSync(path.join(root, 'directory/stores.js'), 'utf8'), context);
   return context.window.STORE_DIRECTORY;
 }
 
 // All category folders live under stores/; their public URLs stay stable.
 function sourceFile(file) {
+  if (directoryFiles.has(file)) return path.join(root, 'directory', file);
   const category = registry().categories.find(c => file.startsWith(`${c.slug}/`));
   return path.resolve(root, category ? 'stores' : '.', file);
 }

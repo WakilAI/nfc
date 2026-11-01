@@ -1,10 +1,9 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
-const path = require('node:path');
 const vm = require('node:vm');
-const { registry } = require('./prepare.cjs');
+const { registry, sourceFile } = require('./prepare.cjs');
 const context = { window: {} };
-vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../search.js'), 'utf8'), context);
+vm.runInNewContext(fs.readFileSync(sourceFile('search.js'), 'utf8'), context);
 const { stores } = registry();
 const names = (query, selection = stores) => Array.from(context.window.searchStores(selection, query), store => store.slug);
 assert.equal(names('').length, stores.length);
