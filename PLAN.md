@@ -1,6 +1,6 @@
 # NFC store directory — implementation plan
 
-Status: Implemented, committed, pushed, deployed and live-verified on 2026-10-31, including the follow-up Wakil AI branding, English navigation, search and category adjustments. COSMABENT was added later on 2026-10-31 as a seventh store, followed by Pixel Store as the eighth and OVYX as the ninth. Location confirmation remains deferred by the user; hosting-policy suitability and physical-device/Safari acceptance remain open. See `VERIFICATION.md` for evidence.
+Status: Implemented, committed, pushed, deployed and live-verified on 2026-10-31, including the follow-up Wakil AI branding, English navigation, search and category adjustments. COSMABENT was added later on 2026-10-31 as a seventh store, followed by Pixel Store as the eighth, OVYX as the ninth, Prestige Optic as the tenth, introducing the Optic type, and Zone-Tech Pro as the eleventh, introducing Repair Center. Location confirmation remains deferred by the user; hosting-policy suitability and physical-device/Safari acceptance remain open. See `VERIFICATION.md` for evidence.
 
 ## Goal and confirmed decisions
 
@@ -37,7 +37,7 @@ Group all category folders under `stores/<type>/`, including category landing pa
 
 Create an English root directory with Wakil AI branding, SVG category icons and store counts. Category labels match their URL slugs in title case (for example, Clothing Store → `clothing-store/`). Each category has its own `index.html` containing its store cards and navigation back to the homepage. The complete store card is a normal link that opens the store page in the same tab.
 
-Store-name search on the homepage spans all stores; search inside a category is scoped to that category. Support case, accent and apostrophe differences, clearing and useful no-result messages. The directory has eleven types: Food, Clothing Store, Perfume Store, Computer Store, Phone Store, Home Goods, Travel Agency, Cosmetic Store, Shoes Store, Dental Clinic and Jewelry Store. Upcoming types show zero stores with an honest empty state.
+Store-name search on the homepage spans all stores; search inside a category is scoped to that category. Support case, accent and apostrophe differences, clearing and useful no-result messages. The directory has thirteen types: Food, Clothing Store, Perfume Store, Computer Store, Phone Store, Home Goods, Travel Agency, Cosmetic Store, Shoes Store, Dental Clinic, Jewelry Store, Optic and Repair Center. Upcoming types show zero stores with an honest empty state.
 
 Use one shared `stores.js` registry containing categories and each store's name, category, slug, confirmed location, and logo path. Derive store URLs from category and slug. Share the directory's CSS and rendering JavaScript; keep individual store pages independent of directory rendering. Provide a useful JavaScript-disabled message and ordinary navigation links.
 
@@ -70,7 +70,7 @@ After local verification, commit the intended work coherently and push to the ex
 - Add meaningful checks for the three standardized older pages.
 - Add a root check covering registry validity, unique store URLs, required metadata, existing store pages/logos, safe configured destinations, and deployment asset completeness.
 - Verify homepage → category → store navigation, back navigation, and direct opening of every store URL.
-- Review directory pages and all nine stores at 320, 360, 390, and 430px portrait widths, 844×390 touch landscape, and a desktop viewport. Inspect portrait and landscape screenshots.
+- Review directory pages and all eleven stores at 320, 360, 390, and 430px portrait widths, 844×390 touch landscape, and a desktop viewport. Inspect portrait and landscape screenshots.
 - Check logo loading, horizontal overflow, keyboard focus, touch targets, natural scrolling to the last link, preserved link destinations/order, and omission of empty links. Respect reduced motion if animation is present.
 - Verify the deployment artifact excludes development material and contains every required runtime asset.
 - After deployment, check the live homepage, all eleven category URLs, all six store URLs and the legacy Sallon d’or redirect, including direct refreshes and asset loading beneath `/nfc/`.

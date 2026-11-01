@@ -21,7 +21,9 @@
     "cosmetic-store": '<path d="M8 11h8v10H8zM9 11V6l6-3v8M8 17h8"/>',
     "shoes-store": '<path d="m4 4 5 2v5l4 3 7 2 1 5H3V10l1-6Zm-1 13h9m-2-7 3 1m0 1 2 1"/>',
     "dental-clinic": '<path d="M12 5C6-1 1 5 5 12c2 4 0 9 3 9 2 0 2-7 4-7s2 7 4 7c3 0 1-5 3-9 4-7-1-13-7-7Z"/>',
-    "jewelry-store": '<path d="M6 3h12l4 6-10 13L2 9l4-6Zm-4 6h20M6 3l6 19 6-19M9 3 6 9m9-6 3 6"/>'
+    "jewelry-store": '<path d="M6 3h12l4 6-10 13L2 9l4-6Zm-4 6h20M6 3l6 19 6-19M9 3 6 9m9-6 3 6"/>',
+    optic: '<circle cx="7" cy="14" r="3.5"/><circle cx="17" cy="14" r="3.5"/><path d="M10.5 14h3M3.5 13.5 5 9h4l2 5m4.5 0 2-5h2l2 4.5"/>',
+    "repair-center": '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/>'
   };
   const text = (tag, value) => {
     const node = document.createElement(tag);

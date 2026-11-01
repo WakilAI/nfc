@@ -1,5 +1,28 @@
 # Verification and release handoff
 
+## Zone-Tech Pro page — 2026-11-01
+
+- Added the thirteenth type, Repair Center, with `stores/repair-center/index.html`, and Zone-Tech Pro at `stores/repair-center/zone-tech-pro/` as the eleventh store. Repair Center has one store; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.
+- Confirmed links, in order: Google reviews, Instagram, Facebook, TikTok, WhatsApp, mobile, landline, official website, e-mail and Google Maps. WhatsApp and mobile use `0560989890` (`+213 560 98 98 90`); the landline is `023 78 90 50` (`tel:+21323789050`). All ten entries are active; the website sits after the landline as requested.
+- The official logo was supplied as a 732×732 JPEG. It is preserved in `references/`; its trimmed transparent WebP serves the page hero, and a square white-background card serves the directory and favicon.
+- Bespoke French page follows Apple’s black-and-white identity: white canvas, black icon tiles, white cards with soft depth and a restrained entrance animation that respects reduced motion. Apple-repair positioning remains in the page metadata and README. No external fonts or network requests.
+- `node check.cjs` passed: 13 categories, 11 unique stores, 10 Zone-Tech Pro links, safe destinations, per-store checks and an 85-file deployment artifact. Search checks cover Zone-Tech Pro and Repair Center scoping.
+- Chromium passed **150 viewport/route views** and 50 generated screenshots, covering the new type, search, link order, assets, 48px targets, keyboard focus, natural scrolling, no horizontal overflow, navigation/refresh/Back and no-JS fallbacks.
+- The prepared `_site/` contains the Repair Center category page, the store page, CSS, scripts and both logo assets; README files and `references/` are not published.
+- **Live deployment not yet run** for Zone-Tech Pro.
+
+## Prestige Optic page — 2026-10-31
+
+- Added the twelfth type, Optic, with `stores/optic/index.html`, and Prestige Optic at `stores/optic/prestige-optic/` as the tenth store. Optic has one store; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.
+- Confirmed links: Google reviews, Instagram, Facebook, WhatsApp, telephone and Google Maps. WhatsApp reuses `0542532782` (`+213 542 53 27 82`, `https://wa.me/213542532782`). The configured TikTok entry has an empty destination and is not rendered.
+- The supplied logo (1254×1254 PNG) is preserved in `references/`; a 512×512 WebP copy serves the directory card and favicon, and an alpha-keyed variant is used on the lavender page hero. Both supplied plates remain in `references/` and are not published.
+- Bespoke French page: lavender canvas, plum logo and rules, italic serif tagline, service line and white rounded cards. The Optic directory page and glasses category icon follow the existing directory model. No external fonts or network requests.
+- `node check.cjs` passed: 12 categories, 10 unique stores, safe destinations, per-store checks and a 78-file deployment artifact. Search checks cover Prestige Optic and Optic scoping.
+- Chromium passed **138 viewport/route views** and 46 generated screenshots, covering the new type, search, link order, image loading, 48px targets, keyboard focus, natural scrolling, no horizontal overflow, navigation/refresh/Back and no-JS fallbacks.
+- The prepared `_site/` contains the Optic category page, the store page, CSS, scripts and both logo variants; `references/` and README files are not published.
+- The temporary `stores-not-implemented/Optic/` folder was removed after migration.
+- **Live deployment not yet run** for Prestige Optic.
+
 ## OVYX store page — 2026-10-31
 
 - Added OVYX at `stores/clothing-store/ovyx/` and to the shared registry as the ninth store. Clothing Store now has two stores; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.
