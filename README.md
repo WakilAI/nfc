@@ -16,7 +16,7 @@ node check.cjs
 node scripts/prepare.cjs
 ```
 
-No application dependencies or framework are required. Checks cover all eleven stores, search normalization and category scope, registry validity, unique URLs, safe destinations, the legacy redirect and the deployment artifact. The remaining hosting and device acceptance gates are recorded in `VERIFICATION.md`.
+No application dependencies or framework are required. Checks cover all twelve stores, search normalization and category scope, registry validity, unique URLs, safe destinations, the legacy redirect and the deployment artifact. The remaining hosting and device acceptance gates are recorded in `VERIFICATION.md`.
 
 Preparation stages only required runtime files in ignored `_site/`, including fonts and their license files. Tests, docs, unused artwork, masters and local verification material stay outside the deployed artifact. Useful originals remain in the public source repository.
 
@@ -40,7 +40,7 @@ Use an existing Playwright installation without adding it to the website. Set `P
 node scripts/check-browser.cjs
 ```
 
-The script serves `_site/` locally under `/nfc/`, checks 150 page/viewport combinations plus search/navigation/legacy-redirect flows, and saves ignored screenshots in `.impeccable/review/`. Node checks do not require Playwright. Use a static server for `_site/` to preview the complete site. The `stores/` source folder is mapped to existing public URLs during preparation. Individual store pages can still be opened directly.
+The script serves `_site/` locally under `/nfc/`, checks 156 page/viewport combinations plus search/navigation/legacy-redirect flows, and saves ignored screenshots in `.impeccable/review/`. Node checks do not require Playwright. Use a static server for `_site/` to preview the complete site. The `stores/` source folder is mapped to existing public URLs during preparation. Individual store pages can still be opened directly.
 
 ## Add a store
 

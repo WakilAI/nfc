@@ -28,5 +28,7 @@ assert.deepEqual(names('prestige'), ['prestige-optic']);
 assert.deepEqual(names('OPTIC', stores.filter(store => store.category === 'optic')), ['prestige-optic']);
 assert.deepEqual(names('zone'), ['zone-tech-pro']);
 assert.deepEqual(names('ZONE-TECH', stores.filter(store => store.category === 'repair-center')), ['zone-tech-pro']);
+assert.deepEqual(names('mico'), ['mico-perfumerie']);
+assert.deepEqual(names('MICO PARFUMERIE', stores.filter(store => store.category === 'perfume-store')), ['mico-perfumerie']);
 assert.deepEqual(names('', []), []);
 console.log('PASS search: case, accents, apostrophes, whitespace, no results and category scope.');

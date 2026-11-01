@@ -22,6 +22,7 @@ window.STORE_DIRECTORY = {
     { name: "OVYX", category: "clothing-store", slug: "ovyx", commune: null, wilaya: null, logo: "clothing-store/ovyx/assets/ovyx-logo.webp" },
     { name: "Sallon d’or", category: "home-goods", slug: "sallon-dor", commune: null, wilaya: null, logo: "home-goods/sallon-dor/assets/logo-web.webp" },
     { name: "Midho Privé", category: "perfume-store", slug: "midho-prive", commune: null, wilaya: null, logo: "perfume-store/midho-prive/images/logo.png" },
+    { name: "Mico Parfumerie", category: "perfume-store", slug: "mico-perfumerie", commune: null, wilaya: null, logo: "perfume-store/mico-perfumerie/assets/mico-logo.webp" },
     { name: "MYB Hardware", category: "computer-store", slug: "myb-hardware", commune: null, wilaya: null, logo: "computer-store/myb-hardware/public/MYB-Hardware-logo.svg" },
     { name: "Vegas Phone", category: "phone-store", slug: "vegas-phone", commune: null, wilaya: null, logo: "phone-store/vegas-phone/images/logo.png" },
     { name: "Pixel Store", category: "phone-store", slug: "pixel-store", commune: null, wilaya: null, logo: "phone-store/pixel-store/assets/pixel-store-logo.webp" },

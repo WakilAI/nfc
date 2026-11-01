@@ -1,5 +1,17 @@
 # Verification and release handoff
 
+## Mico Parfumerie page — 2026-11-01
+
+- Added Mico Parfumerie at `stores/perfume-store/mico-perfumerie/` and to the shared registry as the twelfth store. Perfume Store now has two stores; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.
+- Visible links: official website, Instagram, TikTok, Telegram, WhatsApp and telephone. Google reviews, Facebook and Localisation remain configured with empty destinations and are not rendered. The phone `0797123163` is used for both telephone (`+213 797 12 31 63`) and WhatsApp (`https://wa.me/213797123163`).
+- The supplied logo (1080×1080 JPEG) is preserved in `references/`; a 512×512 WebP copy serves the directory and favicon, and its background-keyed variant is used on the emerald page hero. Seven supplied card/plate images stay in `references/` and are not published.
+- Bespoke French page: emerald canvas, gold rules, cream cards, Georgia serif titles and botanical line corners, echoing the supplied perfume artwork. No external fonts or network requests.
+- `node check.cjs` passed: 13 categories, 12 unique stores, six rendered Mico links, safe destinations, per-store checks and a 91-file deployment artifact. Search checks cover Mico Parfumerie and Perfume Store scoping.
+- Chromium passed **156 viewport/route views** and 52 generated screenshots, covering search, link order, assets, 48px targets, keyboard focus, natural scrolling, no horizontal overflow, navigation/refresh/Back and no-JS fallbacks.
+- The prepared `_site/` contains the store page, CSS, scripts and both logo variants; `references/` and README files are not published.
+- The temporary `stores-not-implemented/Perfume Store/Mico Perfumerie/` folder was removed after migration.
+- **Live deployment not yet run** for Mico Parfumerie.
+
 ## Zone-Tech Pro page — 2026-11-01
 
 - Added the thirteenth type, Repair Center, with `stores/repair-center/index.html`, and Zone-Tech Pro at `stores/repair-center/zone-tech-pro/` as the eleventh store. Repair Center has one store; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.
