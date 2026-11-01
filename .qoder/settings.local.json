@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"C:\\\\Users\\\\mehdi\\\\OneDrive\\\\Bureau\\\\dev\\\\wakil\\\\nfc-linktree\" && find stores stores-not-implemented scripts .github wakil-ai-assests -type f | head -100)"
+    ]
+  }
+}
