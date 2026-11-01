@@ -17,6 +17,7 @@ window.STORE_DIRECTORY = {
     { slug: "repair-center", name: "Repair Center" }
   ],
   stores: [
+    { name: "Kalaa Nouran", category: "travel-agency", slug: "kalaa-nouran", commune: null, wilaya: null, logo: "travel-agency/kalaa-nouran/assets/logo.webp" },
     { name: "Ino Burger", category: "food", slug: "ino-burger", commune: null, wilaya: null, logo: "food/ino-burger/references/logo.jpg" },
     { name: "Maison Allure", category: "clothing-store", slug: "maison-allure", commune: null, wilaya: null, logo: "clothing-store/maison-allure/assets/logo.jpg" },
     { name: "OVYX", category: "clothing-store", slug: "ovyx", commune: null, wilaya: null, logo: "clothing-store/ovyx/assets/ovyx-logo.webp" },
