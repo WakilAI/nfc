@@ -9,7 +9,7 @@
 - `node check.cjs` passed: 13 categories, 11 unique stores, 10 Zone-Tech Pro links, safe destinations, per-store checks and an 85-file deployment artifact. Search checks cover Zone-Tech Pro and Repair Center scoping.
 - Chromium passed **150 viewport/route views** and 50 generated screenshots, covering the new type, search, link order, assets, 48px targets, keyboard focus, natural scrolling, no horizontal overflow, navigation/refresh/Back and no-JS fallbacks.
 - The prepared `_site/` contains the Repair Center category page, the store page, CSS, scripts and both logo assets; README files and `references/` are not published.
-- **Live deployment not yet run** for Zone-Tech Pro.
+- **Live-verified:** commit `825c12d` deployed via [Actions run 41256743816](https://github.com/WakilAI/nfc/actions/runs/41256743816). `https://wakilai.github.io/nfc/repair-center/zone-tech-pro/` returns 200 with ten links including Instagram and TikTok, the official logo, homepage search returning the store, and no failed requests.
 
 ## Prestige Optic page — 2026-10-31
 
@@ -21,7 +21,7 @@
 - Chromium passed **138 viewport/route views** and 46 generated screenshots, covering the new type, search, link order, image loading, 48px targets, keyboard focus, natural scrolling, no horizontal overflow, navigation/refresh/Back and no-JS fallbacks.
 - The prepared `_site/` contains the Optic category page, the store page, CSS, scripts and both logo variants; `references/` and README files are not published.
 - The temporary `stores-not-implemented/Optic/` folder was removed after migration.
-- **Live deployment not yet run** for Prestige Optic.
+- **Live-verified:** commit `825c12d` deployed via [Actions run 41256743816](https://github.com/WakilAI/nfc/actions/runs/41256743816). `https://wakilai.github.io/nfc/optic/prestige-optic/` returns 200 with six links, both logo variants, homepage search returning the store, and no failed requests.
 
 ## OVYX store page — 2026-10-31
 
