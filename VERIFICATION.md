@@ -10,7 +10,7 @@
 - Chromium passed **156 viewport/route views** and 52 generated screenshots, covering search, link order, assets, 48px targets, keyboard focus, natural scrolling, no horizontal overflow, navigation/refresh/Back and no-JS fallbacks.
 - The prepared `_site/` contains the store page, CSS, scripts and both logo variants; `references/` and README files are not published.
 - The temporary `stores-not-implemented/Perfume Store/Mico Perfumerie/` folder was removed after migration.
-- **Live deployment not yet run** for Mico Parfumerie.
+- **Live-verified:** commit `2806794` deployed via [Actions run 41324879304](https://github.com/WakilAI/nfc/actions/runs/41324879304). `https://wakilai.github.io/nfc/perfume-store/mico-perfumerie/` returns 200 with six links including Telegram, both logo variants, homepage search returning the store, and no failed requests.
 
 ## Zone-Tech Pro page — 2026-11-01
 
