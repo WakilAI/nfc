@@ -8,7 +8,7 @@
 - Bespoke French page: cream paper canvas, serif Palatino lockup hero with the “Beauté · Soins · Bien-être” motto in HTML, gold hairline, botanical corner sprigs, warm white cards with gold borders and a green “Avis Google” first button. No external fonts or network requests.
 - `node check.cjs` passed: 13 categories, 16 unique stores, seven rendered Maison Apothicaire links, safe destinations, per-store checks, search coverage (`maison apothicaire`, category scoping) and the deployment artifact.
 - The temporary `stores-not-implemented/maison-apothicaire/` folder was removed after migration; the supplied master stays in the store’s `references/`.
-- **Live verification:** pending deployment.
+- **Live-verified:** commit `3efc181` deployed via [Actions run 42423486036](https://github.com/WakilAI/nfc/actions/runs/42423486036). `https://wakilai.github.io/nfc/cosmetic-store/maison-apothicaire/`, its preview page, CSS/JS, both WebP logos and the plate image return 200; the published `stores.js` lists the store, so homepage and category search find it.
 
 ## Image-only plate gallery — 2026-11-01
 
