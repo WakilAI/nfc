@@ -1,0 +1,230 @@
+:root {
+  color-scheme: light;
+  --serif: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --sans: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --bg: #fbf7f1;
+  --surface: #fffefa;
+  --ink: #10320f;
+  --ink-soft: #2e4a2c;
+  --muted: #6b7563;
+  --gold: #bb9d65;
+  --gold-deep: #9d7f4c;
+  --line: #e3d9c3;
+  font-family: var(--sans);
+  color: var(--ink-soft);
+  background: var(--bg);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 280px;
+  background: var(--bg);
+}
+
+::selection { color: var(--bg); background: var(--ink); }
+html { scrollbar-color: var(--gold) var(--bg); }
+
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 500px);
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: 18px 20px 26px;
+  overflow: hidden;
+}
+
+.sprig {
+  position: absolute;
+  top: 10px;
+  width: 34px;
+  height: 92px;
+  color: var(--gold);
+  opacity: 0.55;
+  pointer-events: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+.sprig--left { left: 10px; }
+.sprig--right { right: 10px; }
+
+.hero {
+  position: relative;
+  padding: 26px 6px 4px;
+  text-align: center;
+}
+
+.hero__brand {
+  position: relative;
+  width: min(72vw, 312px);
+  margin: 0 auto;
+}
+
+.hero__brand img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero__tagline {
+  position: relative;
+  margin: 6px 0 0;
+  font-family: var(--serif);
+  font-size: clamp(15px, 4.2vw, 18px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.hero__tagline::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 1px;
+  margin: 12px auto 0;
+  background: linear-gradient(90deg, transparent, var(--gold) 30% 70%, transparent);
+}
+
+.content {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.links {
+  display: grid;
+  gap: 11px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 60px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 0 1px 0 #ffffff inset, 0 6px 18px -14px #10320f40;
+}
+
+.link-icon {
+  display: flex;
+  flex: 0 0 22px;
+  color: var(--gold-deep);
+}
+
+.link-icon svg { width: 22px; height: 22px; }
+
+.link-text { min-width: 0; overflow-wrap: anywhere; }
+
+.link-label {
+  display: block;
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.link-detail {
+  display: block;
+  margin-top: 3px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.link-arrow {
+  display: flex;
+  flex: 0 0 18px;
+  margin-left: auto;
+  color: var(--gold);
+  transition: translate 0.18s ease;
+}
+
+.link-arrow svg { width: 18px; height: 18px; }
+
+.links li:first-child .link {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+}
+
+.links li:first-child .link-icon { color: var(--gold); }
+.links li:first-child .link-detail { color: #cdd8c7; }
+
+.link:focus-visible {
+  outline: 3px solid var(--gold-deep);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .link:hover { border-color: var(--gold); box-shadow: 0 1px 0 #ffffff inset, 0 8px 22px -14px #10320f59; }
+  .link:hover .link-arrow { translate: 3px 0; }
+  .links li:first-child .link:hover { background: #143c13; }
+}
+
+.links-empty, .no-script {
+  margin: 8px 0;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+#link-status {
+  margin: 8px 0;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.footer {
+  margin-top: 30px;
+  padding-top: 14px;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+
+.footer__leaf {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 0 auto 6px;
+  color: var(--gold);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.footer span { padding-inline: 6px; color: var(--gold-deep); }
+
+@media (max-width: 340px) {
+  .page { padding-inline: 14px; }
+  .link { padding: 13px 14px; gap: 12px; }
+}
+
+@media (max-height: 540px) and (orientation: landscape) {
+  .hero { padding-top: 14px; }
+  .hero__brand { width: 180px; }
+  .footer { margin-top: 16px; }
+}

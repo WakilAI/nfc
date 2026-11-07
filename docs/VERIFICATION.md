@@ -1,5 +1,15 @@
 # Verification and release handoff
 
+## Maison Apothicaire page — 2026-11-07
+
+- Added Maison Apothicaire at `stores/cosmetic-store/maison-apothicaire/` and to the shared registry as the sixteenth store. Cosmetic Store now has two stores; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.
+- Confirmed links, in order: Google reviews, website, Instagram, Facebook, WhatsApp, telephone and Google Maps. Phone is `+213 668 33 76 42` (`tel:+213668337642`); WhatsApp reuses it (`https://wa.me/213668337642`). Instagram and Maps share-tracking parameters were removed in favour of canonical URLs; the Facebook destination is the supplied share link, left unresolved.
+- The supplied NFC/QR plate design (1254×1254 PNG) is preserved untouched in `references/`; an optimized WebP copy is published in `plates/`. The “M” arch mark was extracted from the supplied plate for the directory card and favicon (`assets/logo.webp`, 512×512 WebP, 16 KB) and the full lockup for the page hero (`assets/lockup.webp`, 35 KB). Palette sampled from the plate: cream `#FBF7F1`, forest green `#10320F`, gold `#BB9D65`.
+- Bespoke French page: cream paper canvas, serif Palatino lockup hero with the “Beauté · Soins · Bien-être” motto in HTML, gold hairline, botanical corner sprigs, warm white cards with gold borders and a green “Avis Google” first button. No external fonts or network requests.
+- `node check.cjs` passed: 13 categories, 16 unique stores, seven rendered Maison Apothicaire links, safe destinations, per-store checks, search coverage (`maison apothicaire`, category scoping) and the deployment artifact.
+- The temporary `stores-not-implemented/maison-apothicaire/` folder was removed after migration; the supplied master stays in the store’s `references/`.
+- **Live verification:** pending deployment.
+
 ## Image-only plate gallery — 2026-11-01
 
 - Removed visible filenames and “Agrandir” captions. Images remain ordinary clickable links to full-size designs, with accessible action labels and keyboard focus.

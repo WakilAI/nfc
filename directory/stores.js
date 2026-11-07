@@ -31,6 +31,7 @@ window.STORE_DIRECTORY = {
     { name: "Pixel Store", category: "phone-store", slug: "pixel-store", commune: null, wilaya: null, logo: "phone-store/pixel-store/assets/pixel-store-logo.webp" },
     { name: "COSMABENT", category: "cosmetic-store", slug: "cosmabent", commune: null, wilaya: null, logo: "cosmetic-store/cosmabent/assets/logo.webp" },
     { name: "Prestige Optic", category: "optic", slug: "prestige-optic", commune: null, wilaya: null, logo: "optic/prestige-optic/assets/prestige-optic-logo.webp" },
-    { name: "Zone-Tech Pro", category: "repair-center", slug: "zone-tech-pro", commune: null, wilaya: null, logo: "repair-center/zone-tech-pro/assets/zonetechpro-logo-card.webp" }
+    { name: "Zone-Tech Pro", category: "repair-center", slug: "zone-tech-pro", commune: null, wilaya: null, logo: "repair-center/zone-tech-pro/assets/zonetechpro-logo-card.webp" },
+    { name: "Maison Apothicaire", category: "cosmetic-store", slug: "maison-apothicaire", commune: null, wilaya: null, logo: "cosmetic-store/maison-apothicaire/assets/logo.webp" }
   ]
 };

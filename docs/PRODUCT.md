@@ -21,7 +21,7 @@ Les cartes ouvrent un aperçu statique des plaques NFC avec un bouton vers la pa
 
 ## Capabilities and Constraints
 
-Douze commerces, treize catégories, registre partagé, maintien des pages et identités existantes.
+Seize commerces, treize catégories, registre partagé, maintien des pages et identités existantes.
 Recherche par nom sur l'accueil et dans chaque catégorie, sans distinction de casse, d'accent ou d'apostrophe.
 Pas d'administration navigateur, de compte ni d'analytique.
 Chaque commerce possède un dossier `plates/` éditable par le développeur ; zéro ou plusieurs images sont acceptées. Les aperçus sont générés à la préparation, sans favoris ni stockage.
@@ -42,5 +42,5 @@ portraits 320–430px, paysage tactile et bureau. Liens ordinaires de navigation
 
 ## Evidence on Hand
 
-`PLAN.md`, douze projets existants, leurs logos et destinations fournies.
+`PLAN.md`, seize projets existants, leurs logos et destinations fournies.
 Les destinations Maps sont conservées ; les libellés de localisation ne sont pas présentés comme confirmés.
