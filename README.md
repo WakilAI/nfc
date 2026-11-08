@@ -22,7 +22,7 @@ node check.cjs
 node scripts/prepare.cjs
 ```
 
-No application dependencies or framework are required. Checks cover all sixteen stores, search normalization and category scope, registry validity, unique URLs, safe destinations, the legacy redirect and the deployment artifact. The remaining hosting and device acceptance gates are recorded in `docs/VERIFICATION.md`.
+No application dependencies or framework are required. Checks cover all seventeen stores, search normalization and category scope, registry validity, unique URLs, safe destinations, the legacy redirect and the deployment artifact. The remaining hosting and device acceptance gates are recorded in `docs/VERIFICATION.md`.
 
 Preparation stages only required runtime files in ignored `_site/`, including fonts and their license files. Tests, docs, unused artwork, masters and local verification material stay outside the deployed artifact. Useful originals remain in the public source repository.
 

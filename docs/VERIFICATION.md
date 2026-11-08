@@ -1,5 +1,13 @@
 # Verification and release handoff
 
+## Abdou My Phone page — 2026-11-08
+
+- Added Abdou My Phone at `stores/phone-store/abdou-my-phone/` and to the shared registry as the seventeenth store. Phone Store now has three stores; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.
+- Confirmed links, in order: Google reviews, Instagram, TikTok, YouTube, Snapchat, WhatsApp, telephone and Google Maps location. Phone is `+213 550 88 30 25` (`tel:+213550883025`); WhatsApp reuses it (`https://wa.me/213550883025`).
+- The circular supplied logo is preserved untouched in `references/abdou-my-phone-logo.jpeg`; its copy is published as `assets/abdou-my-phone-logo.jpg`. Both supplied plate designs are published untouched in `plates/`.
+- Bespoke French page: white canvas with azure `#1DA7EA` accents sampled from the plates, Montserrat 800 wordmark hero with « Téléphones & accessoires » baseline, NFC-wave corner motifs, white pill cards with azure icon circles, and a Caveat « Restez connectés » signature in the footer. Renderer and checks are reused from Vegas Phone with three added icons (YouTube, Snapchat, phone).
+- `node check.cjs` passed: 13 categories, 17 unique stores, eight rendered Abdou My Phone links, safe destinations, per-store checks, search coverage (`abdou`, `ABDOU MY PHONE`, category scoping) and the deployment artifact.
+
 ## Maison Apothicaire page — 2026-11-07
 
 - Added Maison Apothicaire at `stores/cosmetic-store/maison-apothicaire/` and to the shared registry as the sixteenth store. Cosmetic Store now has two stores; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.

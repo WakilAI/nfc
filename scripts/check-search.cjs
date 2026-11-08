@@ -33,5 +33,8 @@ assert.deepEqual(names('maison apothicaire'), ['maison-apothicaire']);
 assert.deepEqual(names('APOTHICAIRE'), ['maison-apothicaire']);
 assert.deepEqual(names('apothicaire', stores.filter(store => store.category === 'cosmetic-store')), ['maison-apothicaire']);
 assert.deepEqual(names('maison', stores.filter(store => store.category === 'cosmetic-store')), ['maison-apothicaire']);
+assert.deepEqual(names('abdou'), ['abdou-my-phone']);
+assert.deepEqual(names('ABDOU MY PHONE', stores.filter(store => store.category === 'phone-store')), ['abdou-my-phone']);
+assert.deepEqual(names('abdou', stores.filter(store => store.category === 'cosmetic-store')), []);
 assert.deepEqual(names('', []), []);
 console.log('PASS search: case, accents, apostrophes, whitespace, no results and category scope.');
