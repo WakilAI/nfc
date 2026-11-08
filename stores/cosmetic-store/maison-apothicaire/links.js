@@ -26,11 +26,11 @@ window.LINKTREE_LINKS = [
     url: "https://www.facebook.com/share/r/18f8xHaMAh/",
     icon: "facebook",
   },
-  { label: "WhatsApp", detail: "Envoyez-nous un message", url: "https://wa.me/213668337642", icon: "message" },
+  { label: "WhatsApp", detail: "Envoyez-nous un message", url: "https://wa.me/213561720789", icon: "message" },
   {
     label: "Téléphone",
-    detail: "+213 668 33 76 42",
-    url: "tel:+213668337642",
+    detail: "+213 561 72 07 89",
+    url: "tel:+213561720789",
     icon: "phone",
   },
   {

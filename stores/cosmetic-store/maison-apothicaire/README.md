@@ -23,4 +23,4 @@ Palette issue de la plaque fournie : crème papier `#FBF7F1`, vert sapin `#10320
 
 ## Sources
 
-La plaque NFC/QR fournie reste intacte dans `references/` ; la copie publiée dans `plates/` alimente l'aperçu de l'annuaire. Le téléphone `+213 668 33 76 42` alimente WhatsApp (`https://wa.me/213668337642`) et `tel:+213668337642`. Les paramètres de suivi des liens Instagram et Maps fournis ont été retirés au profit des URL canoniques ; la destination Facebook est le lien de partage fourni, non résolu vers une page précise.
+La plaque NFC/QR fournie reste intacte dans `references/` ; la copie publiée dans `plates/` alimente l'aperçu de l'annuaire. Le téléphone `+213 561 72 07 89` alimente WhatsApp (`https://wa.me/213561720789`) et `tel:+213561720789`. Les paramètres de suivi des liens Instagram et Maps fournis ont été retirés au profit des URL canoniques ; la destination Facebook est le lien de partage fourni, non résolu vers une page précise.
