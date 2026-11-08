@@ -7,6 +7,7 @@
 - The circular supplied logo is preserved untouched in `references/abdou-my-phone-logo.jpeg`; its copy is published as `assets/abdou-my-phone-logo.jpg`. Both supplied plate designs are published untouched in `plates/`.
 - Bespoke French page: white canvas with azure `#1DA7EA` accents sampled from the plates, Montserrat 800 wordmark hero with « Téléphones & accessoires » baseline, NFC-wave corner motifs, white pill cards with azure icon circles, and a Caveat « Restez connectés » signature in the footer. Renderer and checks are reused from Vegas Phone with three added icons (YouTube, Snapchat, phone).
 - `node check.cjs` passed: 13 categories, 17 unique stores, eight rendered Abdou My Phone links, safe destinations, per-store checks, search coverage (`abdou`, `ABDOU MY PHONE`, category scoping) and the deployment artifact.
+- **Live-verified:** commit `e8fe8dc` deployed via [Actions run 42428510444](https://github.com/WakilAI/nfc/actions/runs/42428510444). `https://wakilai.github.io/nfc/phone-store/abdou-my-phone/`, its preview page, CSS/JS, logo and both plate images return 200; the published `stores.js` lists the store, so homepage and Phone Store search find it.
 
 ## Maison Apothicaire page — 2026-11-07
 
