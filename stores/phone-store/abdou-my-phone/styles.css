@@ -104,41 +104,7 @@ img {
   }
 }
 
-/* Vagues NFC — détail créatif reprenant le pictogramme des plaques */
-.hero-waves {
-  position: absolute;
-  top: -34px;
-  right: -30px;
-  width: 190px;
-  height: 190px;
-  opacity: 0.55;
-  pointer-events: none;
-}
-
-.hero-waves svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-@media (min-width: 580px) {
-  .hero-waves {
-    width: 250px;
-    height: 250px;
-    top: -48px;
-    right: -42px;
-  }
-}
-
-/* Miroir discret côté gauche */
-.hero-waves--left {
-  top: auto;
-  right: auto;
-  bottom: -58px;
-  left: -44px;
-  transform: rotate(180deg);
-  opacity: 0.3;
-}
+/* Vagues NFC retirées : les arcs coupés aux bords lisaient mal en desktop */
 
 .hero-logo {
   position: relative;
@@ -428,10 +394,6 @@ footer {
 
 .hero-tagline {
   animation-delay: 0.16s;
-}
-
-.hero-waves {
-  animation: fadeIn 0.9s ease both;
 }
 
 .card {
