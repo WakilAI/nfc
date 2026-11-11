@@ -11,7 +11,7 @@ Page de liens d'OVYX. Ouvrez `index.html` dans un navigateur ; aucun serveur ni 
 - `url` : adresse complète en `https:`, `tel:` ou `mailto:` ;
 - `icon` : `star`, `instagram`, `facebook`, `tiktok`, `message`, `phone`, `pin` ou `globe`.
 
-Une `url` vide masque le bouton sans supprimer son objet. Le téléphone est configuré sur `tel:+213778079603` et le WhatsApp sur `https://wa.me/213778079603`. Les fichiers sont publics : n'y mettez aucun secret.
+Une `url` vide masque le bouton sans supprimer son objet. Le téléphone est configuré sur `tel:+213560321914` et le WhatsApp sur `https://wa.me/213560321914`. Les fichiers sont publics : n'y mettez aucun secret.
 
 ## Vérifier et publier
 

@@ -26,11 +26,11 @@ window.LINKTREE_LINKS = [
     url: "https://www.tiktok.com/@ovyx_16",
     icon: "tiktok",
   },
-  { label: "WhatsApp", detail: "Envoyez-nous un message", url: "https://wa.me/213778079603", icon: "message" },
+  { label: "WhatsApp", detail: "Envoyez-nous un message", url: "https://wa.me/213560321914", icon: "message" },
   {
     label: "Téléphone",
-    detail: "+213 778 07 96 03",
-    url: "tel:+213778079603",
+    detail: "+213 560 32 19 14",
+    url: "tel:+213560321914",
     icon: "phone",
   },
   {
