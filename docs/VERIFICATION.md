@@ -1,5 +1,17 @@
 # Verification and release handoff
 
+## Cleanup — 2026-11-14
+
+- Removed the temporary `stores-not-implemented/` folder: every remaining file (The Perfume HQ, Blue Diamond, Kalaa Nouran, Nessah Travel, Abdou My Phone and Khaymat Bayt Jadi logos and plates) is already preserved in the matching store's `references/`, `assets/` or `plates/` folder. README's folder map no longer lists it.
+
+## Khaymat Bayt Jadi page — 2026-11-14
+
+- Added خيمة بيت جدي (Khaymat Bayt Jadi) at `stores/food/khaymat-bayt-jadi/` and to the shared registry as the nineteenth store. Food now has two stores.
+- Confirmed links, in order: Google reviews, Facebook, WhatsApp, telephone and Google Maps location. Phone is `+213 670 62 23 24` (`tel:+213670622324`); WhatsApp reuses it (`https://wa.me/213670622324`).
+- The supplied 4096px master logo and NFC/QR plate stay untouched in `references/`; a 640px WebP copy is published as `assets/logo.webp` and serves as the directory logo and favicon. The plate is published in `plates/`.
+- Bespoke French page: dark walnut `#2b1a10` canvas with gold and kilim-red accents sampled from the logo, gold corner brackets with red diamonds, Arabic name headings, and the tagline « Cuisine traditionnelle algérienne ». Renderer and checks are reused from Maison Allure.
+- `node check.cjs` passed: 13 categories, 19 unique stores, five rendered links, safe destinations, per-store checks, search coverage (`خيمة بيت جدي`, Arabic category scoping) and the deployment artifact.
+
 ## Blue Diamond Parfumerie page — 2026-11-14
 
 - Added Blue Diamond Parfumerie at `stores/perfume-store/blue-diamond/` and to the shared registry as the eighteenth store. Perfume Store now has four stores.
