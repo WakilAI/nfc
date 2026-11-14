@@ -1,5 +1,15 @@
 # Verification and release handoff
 
+## Blue Diamond Parfumerie page — 2026-11-14
+
+- Added Blue Diamond Parfumerie at `stores/perfume-store/blue-diamond/` and to the shared registry as the eighteenth store. Perfume Store now has four stores.
+- Confirmed links, in order: Google reviews, Instagram, Facebook, TikTok, WhatsApp, telephone and Google Maps location. Phone is `+213 558 97 74 18` (`tel:+213558977418`); WhatsApp reuses it (`https://wa.me/213558977418`).
+- The supplied gold logo is preserved untouched in `references/logo.png`; its 768px WebP copy is published as `assets/blue-diamond-logo.webp` and serves as the directory logo and favicon. The three supplied plate designs are published untouched in `plates/`.
+- Bespoke French page: deep navy `#0a1e3f` canvas with gold accents sampled from the logo, Georgia titles, faceted-diamond corner motifs, cream cards with gold icon circles, and the tagline « L’éclat du parfum ». Renderer and checks are reused from Mico Parfumerie.
+- `node check.cjs` passed: 13 categories, 18 unique stores, seven rendered Blue Diamond links, safe destinations, per-store checks, search coverage (`blue diamond`, `BLUE DIAMOND PARFUMERIE`, category scoping) and the deployment artifact.
+- Browser check passed: 312 viewport/route views including the new store page, its preview with three plates, category search and the no-JS category fallback.
+- Not yet live-verified; deploy by pushing to `main` and confirm the live URL below.
+
 ## Abdou My Phone page — 2026-11-08
 
 - Added Abdou My Phone at `stores/phone-store/abdou-my-phone/` and to the shared registry as the seventeenth store. Phone Store now has three stores; Travel Agency, Shoes Store, Dental Clinic and Jewelry Store remain empty.

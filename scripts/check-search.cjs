@@ -31,6 +31,8 @@ assert.deepEqual(names('mico'), ['mico-perfumerie']);
 assert.deepEqual(names('MICO PARFUMERIE', stores.filter(store => store.category === 'perfume-store')), ['mico-perfumerie']);
 assert.deepEqual(names('maison apothicaire'), ['maison-apothicaire']);
 assert.deepEqual(names('APOTHICAIRE'), ['maison-apothicaire']);
+assert.deepEqual(names('blue diamond'), ['blue-diamond']);
+assert.deepEqual(names('BLUE DIAMOND PARFUMERIE', stores.filter(store => store.category === 'perfume-store')), ['blue-diamond']);
 assert.deepEqual(names('apothicaire', stores.filter(store => store.category === 'cosmetic-store')), ['maison-apothicaire']);
 assert.deepEqual(names('maison', stores.filter(store => store.category === 'cosmetic-store')), ['maison-apothicaire']);
 assert.deepEqual(names('abdou'), ['abdou-my-phone']);
