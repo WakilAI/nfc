@@ -26,8 +26,9 @@ window.LINKTREE_LINKS = [
     url: "https://www.tiktok.com/@maisonallureoff",
     icon: "tiktok",
   },
-  { label: "WhatsApp", detail: "", url: "", icon: "message" },
-  { label: "Téléphone", detail: "", url: "", icon: "phone" },
+  { label: "WhatsApp", detail: "+213 799 05 77 06", url: "https://wa.me/213799057706", icon: "message" },
+  { label: "Téléphone", detail: "+213 799 05 77 06", url: "tel:+213799057706", icon: "phone" },
+  { label: "Email", detail: "maisonallure16@gmail.com", url: "mailto:maisonallure16@gmail.com", icon: "mail" },
   {
     label: "Localisation",
     detail: "",

@@ -8,6 +8,7 @@
     message: '<path d="M21 11.5a9 9 0 0 1-13.4 7.9L3 21l1.6-4.6A9 9 0 1 1 21 11.5Z"/><path d="M8 10h8M8 14h5"/>',
     phone: '<path d="m8 3 3 5-3 2c1 3 3 5 6 6l2-3 5 3-1 4c-1 3-8 0-12-4S1 5 4 4Z"/>',
     pin: '<path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
   };
   const list = document.getElementById("links");
   const status = document.getElementById("link-status");
