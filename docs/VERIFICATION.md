@@ -8,7 +8,7 @@
 - Bespoke French page: deep navy `#0a1e3f` canvas with gold accents sampled from the logo, Georgia titles, faceted-diamond corner motifs, cream cards with gold icon circles, and the tagline « L’éclat du parfum ». Renderer and checks are reused from Mico Parfumerie.
 - `node check.cjs` passed: 13 categories, 18 unique stores, seven rendered Blue Diamond links, safe destinations, per-store checks, search coverage (`blue diamond`, `BLUE DIAMOND PARFUMERIE`, category scoping) and the deployment artifact.
 - Browser check passed: 312 viewport/route views including the new store page, its preview with three plates, category search and the no-JS category fallback.
-- Not yet live-verified; deploy by pushing to `main` and confirm the live URL below.
+- **Live-verified:** commit `20f505c` deployed via [Actions run 43609641050](https://github.com/WakilAI/nfc/actions/runs/43609641050). `https://wakilai.github.io/nfc/perfume-store/blue-diamond/`, its preview page, CSS/JS, logo and the three plate images return 200; the published `stores.js` lists the store, so homepage and Perfume Store search find it.
 
 ## Abdou My Phone page — 2026-11-08
 
