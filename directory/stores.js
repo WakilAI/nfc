@@ -21,7 +21,7 @@ window.STORE_DIRECTORY = {
     { name: "Nessah Travel", category: "travel-agency", slug: "nessah-travel", commune: null, wilaya: null, logo: "travel-agency/nessah-travel/assets/logo.webp" },
     { name: "Kalaa Nouran", category: "travel-agency", slug: "kalaa-nouran", commune: null, wilaya: null, logo: "travel-agency/kalaa-nouran/assets/logo.webp" },
     { name: "Ino Burger", category: "food", slug: "ino-burger", commune: null, wilaya: null, logo: "food/ino-burger/references/logo.jpg" },
-    { name: "Maison Allure", category: "clothing-store", slug: "maison-allure", commune: null, wilaya: null, logo: "clothing-store/maison-allure/assets/logo.jpg" },
+    { name: "Maison Allure", category: "clothing-store", slug: "maison-allure", commune: null, wilaya: null, logo: "clothing-store/maison-allure/assets/logo.png" },
     { name: "OVYX", category: "clothing-store", slug: "ovyx", commune: null, wilaya: null, logo: "clothing-store/ovyx/assets/ovyx-logo.webp" },
     { name: "Sallon d’or", category: "home-goods", slug: "sallon-dor", commune: null, wilaya: null, logo: "home-goods/sallon-dor/assets/logo-web.webp" },
     { name: "Midho Privé", category: "perfume-store", slug: "midho-prive", commune: null, wilaya: null, logo: "perfume-store/midho-prive/images/logo.png" },
