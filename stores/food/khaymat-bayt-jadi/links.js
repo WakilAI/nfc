@@ -14,6 +14,7 @@ window.LINKTREE_LINKS = [
     url: "https://www.facebook.com/profile.php?id=61582910109356",
     icon: "facebook",
   },
+  { label: "TikTok", detail: "Suivez-nous sur TikTok", url: "https://www.tiktok.com/@khaymetbaytjedi", icon: "tiktok" },
   { label: "WhatsApp", detail: "Envoyez-nous un message", url: "https://wa.me/213670622324", icon: "message" },
   { label: "Téléphone", detail: "+213 670 62 23 24", url: "tel:+213670622324", icon: "phone" },
   {
