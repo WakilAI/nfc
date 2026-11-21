@@ -9,6 +9,7 @@
 - `node check.cjs` passed: 13 categories, 20 unique stores, six rendered links, safe destinations, per-store checks, search coverage (`silas`, `SILAS TRAVEL`, category scoping) and the deployment artifact.
 - Fixed a pre-existing no-JS fallback in `stores/food/index.html`: Khaymat Bayt Jadi now opens its `preview.html` like the other stores instead of `index.html`.
 - Browser check passed: 336 viewport/route views including the new store page, its preview with four plates, category search and the no-JS category fallback.
+- **Live-verified:** commit `03fc7f8` deployed via [Actions run 44905088220](https://github.com/WakilAI/nfc/actions/runs/44905088220). `https://wakilai.github.io/nfc/travel-agency/silas-travel/`, its preview page, CSS/JS, logo and the category page return 200; the published `stores.js` lists the store, so homepage and Travel Agency search find it.
 
 ## Cleanup — 2026-11-14
 
