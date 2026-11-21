@@ -54,8 +54,10 @@ main { padding: 24px 24px 28px; }
 .link-arrow { display: flex; flex: 0 0 18px; color: var(--accent); }
 .link-arrow svg { width: 18px; height: 18px; }
 .link:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-.links li:first-child .link { background: var(--accent); border-color: var(--accent); color: var(--surface); }
-.links li:first-child .link-icon, .links li:first-child .link-arrow, .links li:first-child .link-detail { color: var(--surface); }
+.link--off { background: #f7f4e9; border-style: dashed; color: var(--muted); cursor: default; }
+.link--off .link-icon, .link--off .link-arrow, .link--off .link-detail { color: #a5b3c2; }
+.links li:first-child .link:not(.link--off) { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.links li:first-child .link:not(.link--off) .link-icon, .links li:first-child .link:not(.link--off) .link-arrow, .links li:first-child .link:not(.link--off) .link-detail { color: var(--surface); }
 footer {
   margin: auto 24px 0;
   padding: 20px 0 max(24px, env(safe-area-inset-bottom));

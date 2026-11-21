@@ -34,14 +34,18 @@
 
     let rendered = 0;
     for (const link of links) {
-      if (!link.url) continue;
+      if (!link.url && !link.label.trim()) continue;
       const item = document.createElement("li");
-      const control = document.createElement("a");
-      control.className = "link";
-      control.href = link.url.href;
-      if (link.url.protocol === "https:") {
-        control.target = "_blank";
-        control.rel = "noopener noreferrer";
+      const control = document.createElement(link.url ? "a" : "div");
+      control.className = link.url ? "link" : "link link--off";
+      if (link.url) {
+        control.href = link.url.href;
+        if (link.url.protocol === "https:") {
+          control.target = "_blank";
+          control.rel = "noopener noreferrer";
+        }
+      } else {
+        control.setAttribute("aria-disabled", "true");
       }
 
       const icon = document.createElement("span");
