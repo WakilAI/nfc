@@ -11,6 +11,12 @@
 - Browser check passed: 336 viewport/route views including the new store page, its preview with four plates, category search and the no-JS category fallback.
 - **Live-verified:** commit `03fc7f8` deployed via [Actions run 44905088220](https://github.com/WakilAI/nfc/actions/runs/44905088220). `https://wakilai.github.io/nfc/travel-agency/silas-travel/`, its preview page, CSS/JS, logo and the category page return 200; the published `stores.js` lists the store, so homepage and Travel Agency search find it.
 
+## Workflow hardening — 2026-11-21
+
+- `check.cjs` now asserts every category page's no-JS fallback lists `<slug>/preview.html` for each of its registered stores; the food-category bug class is caught in CI, not only by the local browser matrix.
+- Store pages always show Avis Google (first) and Localisation (last), even without a link: empty URLs render disabled « Bientôt disponible » placeholders instead of being omitted. Anchors are still created only for real, safe destinations.
+- Per this session: keep store pages simple (nothing between logo and buttons, minimal footer, no decorative elements unless requested), and commit-push to `main` directly once `node check.cjs` passes.
+
 ## Cleanup — 2026-11-14
 
 - Removed the temporary `stores-not-implemented/` folder: every remaining file (The Perfume HQ, Blue Diamond, Kalaa Nouran, Nessah Travel, Abdou My Phone and Khaymat Bayt Jadi logos and plates) is already preserved in the matching store's `references/`, `assets/` or `plates/` folder. README's folder map no longer lists it.

@@ -37,6 +37,14 @@ for (const store of stores) {
   }
   execFileSync(process.execPath, [path.join(folder, 'check.cjs')], { stdio: 'inherit' });
 }
+for (const category of categories) {
+  const page = fs.readFileSync(sourceFile(`${category.slug}/index.html`), 'utf8');
+  const noscript = page.match(/<noscript>[\s\S]*<\/noscript>/);
+  for (const store of stores.filter(s => s.category === category.slug)) {
+    assert.ok(noscript && noscript[0].includes(`href="${store.slug}/preview.html"`),
+      `${category.slug}: no-JS fallback must list ${store.slug}/preview.html`);
+  }
+}
 const expected = publicFiles();
 for (const file of ['search.js', 'wakil-ai-assests/logo.png', 'clothing-store/sallon-dor/index.html',
   'wakil-ai-assests/fonts/space-grotesk.woff2', 'wakil-ai-assests/fonts/plus-jakarta-sans.woff2']) assert.ok(expected.includes(file));
