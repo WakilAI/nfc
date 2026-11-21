@@ -1,5 +1,15 @@
 # Verification and release handoff
 
+## Silas Travel page — 2026-11-21
+
+- Added Silas Travel at `stores/travel-agency/silas-travel/` and to the shared registry as the twentieth store. Travel Agency now has three stores.
+- Confirmed links, in order: Google reviews (pending, empty URL kept in configuration and hidden publicly), Instagram, Facebook, TikTok, WhatsApp, telephone and Google Maps location. Phone is `+213 770 08 26 36` (`tel:+213770082636`); WhatsApp reuses it (`https://wa.me/213770082636`). The Maps destination is a provisional search for « Silas Travel » to be replaced with the real place once the agency has one.
+- The supplied logo is preserved untouched in `references/logo.png`; its 494×571 WebP copy is published as `assets/logo.webp` and serves as the directory logo and favicon. The four supplied plate designs stay untouched in `plates/`.
+- Bespoke French page, kept simple: cream canvas, deep blue `#25589b` sampled from the logo, a plain header stripe, a solid-blue first button and a minimal footer naming the agency and its activity. No decorative elements between the logo and the buttons. Renderer and checks are reused from Nessah Travel.
+- `node check.cjs` passed: 13 categories, 20 unique stores, six rendered links, safe destinations, per-store checks, search coverage (`silas`, `SILAS TRAVEL`, category scoping) and the deployment artifact.
+- Fixed a pre-existing no-JS fallback in `stores/food/index.html`: Khaymat Bayt Jadi now opens its `preview.html` like the other stores instead of `index.html`.
+- Browser check passed: 336 viewport/route views including the new store page, its preview with four plates, category search and the no-JS category fallback.
+
 ## Cleanup — 2026-11-14
 
 - Removed the temporary `stores-not-implemented/` folder: every remaining file (The Perfume HQ, Blue Diamond, Kalaa Nouran, Nessah Travel, Abdou My Phone and Khaymat Bayt Jadi logos and plates) is already preserved in the matching store's `references/`, `assets/` or `plates/` folder. README's folder map no longer lists it.

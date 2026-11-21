@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Retrouvez tous les liens de Silas Travel." />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="theme-color" content="#25589b" />
+    <link rel="icon" href="assets/logo.webp" />
+    <title>Silas Travel — Tous nos liens</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="links.js" defer></script>
+    <script src="page.js" defer></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="brand">
+        <img src="assets/logo.webp" alt="Silas Travel" width="494" height="571" fetchpriority="high" />
+      </header>
+      <main>
+        <nav aria-label="Nos liens">
+          <p id="link-status" role="status">Chargement des liens…</p>
+          <ul id="links" class="links"></ul>
+          <p id="links-empty" hidden>Aucun lien disponible pour le moment.</p>
+        </nav>
+        <noscript><p>Activez JavaScript pour afficher les liens.</p></noscript>
+      </main>
+      <footer>Silas Travel <span aria-hidden="true">·</span> Agence de voyages</footer>
+    </div>
+  </body>
+</html>

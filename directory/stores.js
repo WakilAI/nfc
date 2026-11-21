@@ -20,6 +20,7 @@ window.STORE_DIRECTORY = {
     { name: "The Perfume HQ", category: "perfume-store", slug: "the-perfume-hq", commune: null, wilaya: null, logo: "perfume-store/the-perfume-hq/assets/logo.webp" },
     { name: "Nessah Travel", category: "travel-agency", slug: "nessah-travel", commune: null, wilaya: null, logo: "travel-agency/nessah-travel/assets/logo.webp" },
     { name: "Kalaa Nouran", category: "travel-agency", slug: "kalaa-nouran", commune: null, wilaya: null, logo: "travel-agency/kalaa-nouran/assets/logo.webp" },
+    { name: "Silas Travel", category: "travel-agency", slug: "silas-travel", commune: null, wilaya: null, logo: "travel-agency/silas-travel/assets/logo.webp" },
     { name: "Ino Burger", category: "food", slug: "ino-burger", commune: null, wilaya: null, logo: "food/ino-burger/references/logo.jpg" },
     { name: "خيمة بيت جدي", category: "food", slug: "khaymat-bayt-jadi", commune: null, wilaya: null, logo: "food/khaymat-bayt-jadi/assets/logo.webp" },
     { name: "Maison Allure", category: "clothing-store", slug: "maison-allure", commune: null, wilaya: null, logo: "clothing-store/maison-allure/assets/logo.png" },

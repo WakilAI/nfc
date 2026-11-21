@@ -70,7 +70,7 @@ After local verification, commit the intended work coherently and push to the ex
 - Add meaningful checks for the three standardized older pages.
 - Add a root check covering registry validity, unique store URLs, required metadata, existing store pages/logos, safe configured destinations, and deployment asset completeness.
 - Verify homepage → category → store navigation, back navigation, and direct opening of every store URL.
-- Review directory pages and all nineteen stores at 320, 360, 390, and 430px portrait widths, 844×390 touch landscape, and a desktop viewport. Inspect portrait and landscape screenshots.
+- Review directory pages and all twenty stores at 320, 360, 390, and 430px portrait widths, 844×390 touch landscape, and a desktop viewport. Inspect portrait and landscape screenshots.
 - Check logo loading, horizontal overflow, keyboard focus, touch targets, natural scrolling to the last link, preserved link destinations/order, and omission of empty links. Respect reduced motion if animation is present.
 - Verify the deployment artifact excludes development material and contains every required runtime asset.
 - After deployment, check the live homepage, all thirteen category URLs, all nineteen store URLs and the legacy Sallon d’or redirect, including direct refreshes and asset loading beneath `/nfc/`.
