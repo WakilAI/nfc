@@ -1,6 +1,5 @@
 // Libellés, destinations et ordre modifiables ici.
-// Avis Google : URL vide pour le moment ; le bouton reste affiché en version inactive (« Bientôt disponible »), renseigner le lien d’avis pour l’activer.
-// Localisation : destination Google Maps provisoire à remplacer par le lieu réel de l’agence.
+// Avis Google et Localisation : URL vide pour le moment ; les boutons restent affichés en version inactive (« Bientôt disponible »), renseigner les liens pour les activer.
 window.LINKTREE_LINKS = [
   { label: "Avis Google", detail: "Bientôt disponible", icon: "star", url: "" },
   { label: "Instagram", detail: "silastravel16", icon: "instagram", url: "https://www.instagram.com/silastravel16/" },
@@ -8,5 +7,5 @@ window.LINKTREE_LINKS = [
   { label: "TikTok", detail: "silas.travel", icon: "tiktok", url: "https://www.tiktok.com/@silas.travel" },
   { label: "WhatsApp", detail: "Écrivez-nous", icon: "message", url: "https://wa.me/213770082636" },
   { label: "Téléphone", detail: "+213 770 08 26 36", icon: "phone", url: "tel:+213770082636" },
-  { label: "Localisation", detail: "Nous retrouver sur Google Maps", icon: "pin", url: "https://www.google.com/maps/search/?api=1&query=Silas%20Travel" }
+  { label: "Localisation", detail: "Bientôt disponible", icon: "pin", url: "" }
 ];

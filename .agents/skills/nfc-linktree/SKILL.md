@@ -9,7 +9,7 @@ description: Build and update French NFC store link pages and the directory in t
 
 - Create `stores/<category>/<slug>/` with `index.html`, `styles.css`, `links.js`, `page.js`, `check.cjs`, `README.md`, `assets/` and source-only `references/`.
 - Reuse an existing store's `page.js` and `check.cjs`; keep the safe renderer contract: real destinations render as anchors with safe protocols, and never create an anchor for an empty URL.
-- Avis Google (first) and Localisation (last) are always shown, even without a link: keep the entry with an empty URL and render it as a disabled, non-clickable placeholder (« Bientôt disponible »). For Localisation without a Maps link, use a provisional Google Maps search URL (`https://www.google.com/maps/search/?api=1&query=<Store+Name>`) and note it for replacement.
+- Avis Google (first) and Localisation (last) are always shown, even without a link: keep the entry with an empty URL and render it as a disabled, non-clickable placeholder (« Bientôt disponible »). Never invent a location or reviews destination — leave the URL empty until the owner supplies the exact link.
 - Keep the design simple: nothing between the logo and the buttons (no taglines, dividers or decorative motifs), a minimal footer (name · activity), colors sampled from the logo. Only add decorative elements when the user asks.
 - Preserve supplied logos: keep sources untouched in `references/`, publish an optimized WebP copy in `assets/` for the page and the registry. When image reading is unavailable, sample palette colors with local Python PIL (`Image.quantize` on a white-flattened copy).
 - Register the store in `directory/stores.js`, add its no-JS link (`<slug>/preview.html`) to the category page, and extend `scripts/check-search.cjs`.
